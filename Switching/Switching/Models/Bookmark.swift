@@ -7,12 +7,9 @@
 
 import UIKit
 import Foundation
+import RealmSwift
 
-class Bookmark{
-    @objc dynamic var url: String
-    @objc dynamic var desc: String
-    init(url: String, desc: String) {
-        self.url = url
-        self.desc = desc
-    }
+class Bookmark: Object{
+    @objc dynamic var url: String = ""
+    @objc dynamic var desc: String = ""
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		A61B21712520721400272050 /* DraftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B21702520721400272050 /* DraftViewController.swift */; };
 		A61B2178252077FA00272050 /* DraftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B2177252077FA00272050 /* DraftTableViewCell.swift */; };
 		A61B2181252092B200272050 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B2180252092B200272050 /* FeedViewController.swift */; };
+		EA25D1212526C002008AAABA /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB80022526A9B7007815B2 /* Bookmark.swift */; };
+		EA25D1252526C08B008AAABA /* BookmarkAction.js in Resources */ = {isa = PBXBuildFile; fileRef = EA25D1242526C08B008AAABA /* BookmarkAction.js */; };
 		EAAB80032526A9B7007815B2 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB80022526A9B7007815B2 /* Bookmark.swift */; };
 		EAAB800D2526B0B1007815B2 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB800C2526B0B1007815B2 /* ShareViewController.swift */; };
 		EAAB80102526B0B1007815B2 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAAB800E2526B0B1007815B2 /* MainInterface.storyboard */; };
@@ -67,6 +69,7 @@
 		A61B2180252092B200272050 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		DD70F9126A4E5D630963C687 /* Pods-BookmarkShareExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookmarkShareExtension.debug.xcconfig"; path = "Target Support Files/Pods-BookmarkShareExtension/Pods-BookmarkShareExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		E661408656CB1FBB1BB99EF3 /* Pods-Switching.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switching.release.xcconfig"; path = "Target Support Files/Pods-Switching/Pods-Switching.release.xcconfig"; sourceTree = "<group>"; };
+		EA25D1242526C08B008AAABA /* BookmarkAction.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = BookmarkAction.js; sourceTree = "<group>"; };
 		EAAB80022526A9B7007815B2 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		EAAB800A2526B0B1007815B2 /* BookmarkShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BookmarkShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAB800C2526B0B1007815B2 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +108,6 @@
 				FBC2DA85D52416919325CF90 /* Pods-Switching.debug.xcconfig */,
 				E661408656CB1FBB1BB99EF3 /* Pods-Switching.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -129,6 +131,7 @@
 		A61B214C25206EDC00272050 = {
 			isa = PBXGroup;
 			children = (
+				EAAB80012526A998007815B2 /* Models */,
 				A61B215725206EDC00272050 /* Switching */,
 				EAAB800B2526B0B1007815B2 /* BookmarkShareExtension */,
 				A61B215625206EDC00272050 /* Products */,
@@ -150,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				EAAB80202526B31B007815B2 /* Switching.entitlements */,
-				EAAB80012526A998007815B2 /* Models */,
 				A61B216D25206F0200272050 /* Scene */,
 				A60FD74D2520AF990069C29C /* SettingScene */,
 				A61B215825206EDC00272050 /* AppDelegate.swift */,
@@ -195,7 +197,8 @@
 			children = (
 				EAAB80022526A9B7007815B2 /* Bookmark.swift */,
 			);
-			path = Models;
+			name = Models;
+			path = Switching/Models;
 			sourceTree = "<group>";
 		};
 		EAAB800B2526B0B1007815B2 /* BookmarkShareExtension */ = {
@@ -205,6 +208,7 @@
 				EAAB800C2526B0B1007815B2 /* ShareViewController.swift */,
 				EAAB800E2526B0B1007815B2 /* MainInterface.storyboard */,
 				EAAB80112526B0B1007815B2 /* Info.plist */,
+				EA25D1242526C08B008AAABA /* BookmarkAction.js */,
 			);
 			path = BookmarkShareExtension;
 			sourceTree = "<group>";
@@ -302,6 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA25D1252526C08B008AAABA /* BookmarkAction.js in Resources */,
 				EAAB80102526B0B1007815B2 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAAB800D2526B0B1007815B2 /* ShareViewController.swift in Sources */,
+				EA25D1212526C002008AAABA /* Bookmark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
