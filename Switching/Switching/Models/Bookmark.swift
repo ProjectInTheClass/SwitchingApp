@@ -11,5 +11,12 @@ import RealmSwift
 
 class Bookmark: Object{
     @objc dynamic var url: String = ""
+    @objc dynamic var title: String = ""
     @objc dynamic var desc: String = ""
+    @objc dynamic var createDate: Date = Date.init()
+    @objc dynamic var image: Data = Data()
+    @objc dynamic var character: String = ""
+    @objc dynamic var isTemp: Bool = true
+    
+    let tags: List<Tag> = List<Tag>()
 }

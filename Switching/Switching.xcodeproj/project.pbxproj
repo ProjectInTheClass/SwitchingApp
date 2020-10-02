@@ -19,6 +19,12 @@
 		A61B21712520721400272050 /* DraftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B21702520721400272050 /* DraftViewController.swift */; };
 		A61B2178252077FA00272050 /* DraftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B2177252077FA00272050 /* DraftTableViewCell.swift */; };
 		A61B2181252092B200272050 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B2180252092B200272050 /* FeedViewController.swift */; };
+		BDA8CB7B25278A0C00F4BDA5 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8CB7A25278A0C00F4BDA5 /* Tag.swift */; };
+		BDA8CB7C25278A0C00F4BDA5 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8CB7A25278A0C00F4BDA5 /* Tag.swift */; };
+		BDA8CB8025278B3E00F4BDA5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8CB7F25278B3E00F4BDA5 /* Character.swift */; };
+		BDA8CB8125278B3E00F4BDA5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8CB7F25278B3E00F4BDA5 /* Character.swift */; };
+		BDA8CB8525278C2200F4BDA5 /* BookmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8CB8425278C2200F4BDA5 /* BookmarkList.swift */; };
+		BDA8CB8625278C2200F4BDA5 /* BookmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8CB8425278C2200F4BDA5 /* BookmarkList.swift */; };
 		EA25D1212526C002008AAABA /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB80022526A9B7007815B2 /* Bookmark.swift */; };
 		EA25D1252526C08B008AAABA /* BookmarkAction.js in Resources */ = {isa = PBXBuildFile; fileRef = EA25D1242526C08B008AAABA /* BookmarkAction.js */; };
 		EAAB80032526A9B7007815B2 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB80022526A9B7007815B2 /* Bookmark.swift */; };
@@ -67,6 +73,9 @@
 		A61B21702520721400272050 /* DraftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftViewController.swift; sourceTree = "<group>"; };
 		A61B2177252077FA00272050 /* DraftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftTableViewCell.swift; sourceTree = "<group>"; };
 		A61B2180252092B200272050 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		BDA8CB7A25278A0C00F4BDA5 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		BDA8CB7F25278B3E00F4BDA5 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		BDA8CB8425278C2200F4BDA5 /* BookmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkList.swift; sourceTree = "<group>"; };
 		DD70F9126A4E5D630963C687 /* Pods-BookmarkShareExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookmarkShareExtension.debug.xcconfig"; path = "Target Support Files/Pods-BookmarkShareExtension/Pods-BookmarkShareExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		E661408656CB1FBB1BB99EF3 /* Pods-Switching.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switching.release.xcconfig"; path = "Target Support Files/Pods-Switching/Pods-Switching.release.xcconfig"; sourceTree = "<group>"; };
 		EA25D1242526C08B008AAABA /* BookmarkAction.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = BookmarkAction.js; sourceTree = "<group>"; };
@@ -196,6 +205,9 @@
 			isa = PBXGroup;
 			children = (
 				EAAB80022526A9B7007815B2 /* Bookmark.swift */,
+				BDA8CB7A25278A0C00F4BDA5 /* Tag.swift */,
+				BDA8CB7F25278B3E00F4BDA5 /* Character.swift */,
+				BDA8CB8425278C2200F4BDA5 /* BookmarkList.swift */,
 			);
 			name = Models;
 			path = Switching/Models;
@@ -385,9 +397,12 @@
 				A60FD7492520AADB0069C29C /* CharacterViewController.swift in Sources */,
 				A61B2178252077FA00272050 /* DraftTableViewCell.swift in Sources */,
 				A61B215925206EDC00272050 /* AppDelegate.swift in Sources */,
+				BDA8CB8525278C2200F4BDA5 /* BookmarkList.swift in Sources */,
 				A61B21712520721400272050 /* DraftViewController.swift in Sources */,
 				A61B215B25206EDC00272050 /* SceneDelegate.swift in Sources */,
 				A60FD74F2520AFBF0069C29C /* SettingViewController.swift in Sources */,
+				BDA8CB7B25278A0C00F4BDA5 /* Tag.swift in Sources */,
+				BDA8CB8025278B3E00F4BDA5 /* Character.swift in Sources */,
 				A61B2181252092B200272050 /* FeedViewController.swift in Sources */,
 				EAAB80032526A9B7007815B2 /* Bookmark.swift in Sources */,
 			);
@@ -397,8 +412,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDA8CB7C25278A0C00F4BDA5 /* Tag.swift in Sources */,
 				EAAB800D2526B0B1007815B2 /* ShareViewController.swift in Sources */,
 				EA25D1212526C002008AAABA /* Bookmark.swift in Sources */,
+				BDA8CB8125278B3E00F4BDA5 /* Character.swift in Sources */,
+				BDA8CB8625278C2200F4BDA5 /* BookmarkList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
