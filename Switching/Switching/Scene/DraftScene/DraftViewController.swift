@@ -6,17 +6,57 @@
 //
 
 import UIKit
+import RealmSwift
+import SwiftLinkPreview
 
 class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var draftTableView: UITableView!
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        guard var fileURL = FileManager.default
+            .containerURL(forSecurityApplicationGroupIdentifier: "group.switching.Switching") else {
+                print("Container URL is nil")
+                return 0
+        }
+
+        fileURL.appendPathComponent("shared.realm")
+
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(fileURL: fileURL)
+
+        let realm = try! Realm(fileURL: fileURL)
+        return realm.objects(Bookmark.self).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! DraftTableViewCell
+        guard var fileURL = FileManager.default
+            .containerURL(forSecurityApplicationGroupIdentifier: "group.switching.Switching") else {
+                print("Container URL is nil")
+                return cell
+        }
+
+        fileURL.appendPathComponent("shared.realm")
+
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(fileURL: fileURL)
+
+        let realm = try! Realm(fileURL: fileURL)
+        if let bookmark: Bookmark = realm.objects(Bookmark.self)[indexPath[1]]{
+            cell.feedDateLabel.text = bookmark.url
+            cell.feedTitleLabel.text = bookmark.desc
+            
+            let slp = SwiftLinkPreview(session: URLSession.shared, workQueue: SwiftLinkPreview.defaultWorkQueue, responseQueue: DispatchQueue.main, cache: DisabledCache.instance)
+            slp.preview(bookmark.url,
+                        onSuccess: {
+                            result in
+                            if let imageUrl = result.image{
+                                if let imageUrl: URL = URL(string: imageUrl){
+                                    cell.feedImageView.load(url: imageUrl)
+                                }
+                            }
+                        }, onError: {error in print("error")})
+        }
         return cell
     }
     
@@ -46,3 +86,18 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     */
 
 }
+
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
+}
+

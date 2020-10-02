@@ -11,6 +11,7 @@
 		83BD8B55EBEBFCF7A45649D5 /* Pods_BookmarkShareExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F553FDC6678027717CC081 /* Pods_BookmarkShareExtension.framework */; };
 		A60FD7492520AADB0069C29C /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60FD7482520AADB0069C29C /* CharacterViewController.swift */; };
 		A60FD74F2520AFBF0069C29C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60FD74E2520AFBF0069C29C /* SettingViewController.swift */; };
+		A618AFC92527005B006F9CA9 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618AFC82527005B006F9CA9 /* AddViewController.swift */; };
 		A61B215925206EDC00272050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B215825206EDC00272050 /* AppDelegate.swift */; };
 		A61B215B25206EDC00272050 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B215A25206EDC00272050 /* SceneDelegate.swift */; };
 		A61B216025206EDC00272050 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61B215E25206EDC00272050 /* Main.storyboard */; };
@@ -26,7 +27,7 @@
 		BDA8CB8525278C2200F4BDA5 /* BookmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8CB8425278C2200F4BDA5 /* BookmarkList.swift */; };
 		BDA8CB8625278C2200F4BDA5 /* BookmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8CB8425278C2200F4BDA5 /* BookmarkList.swift */; };
 		EA25D1212526C002008AAABA /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB80022526A9B7007815B2 /* Bookmark.swift */; };
-		EA25D1252526C08B008AAABA /* BookmarkAction.js in Resources */ = {isa = PBXBuildFile; fileRef = EA25D1242526C08B008AAABA /* BookmarkAction.js */; };
+		EA25D1252526C08B008AAABA /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = EA25D1242526C08B008AAABA /* Action.js */; };
 		EAAB80032526A9B7007815B2 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB80022526A9B7007815B2 /* Bookmark.swift */; };
 		EAAB800D2526B0B1007815B2 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB800C2526B0B1007815B2 /* ShareViewController.swift */; };
 		EAAB80102526B0B1007815B2 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAAB800E2526B0B1007815B2 /* MainInterface.storyboard */; };
@@ -63,6 +64,7 @@
 		7852078D2F498235BAC93933 /* Pods-BookmarkShareExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookmarkShareExtension.release.xcconfig"; path = "Target Support Files/Pods-BookmarkShareExtension/Pods-BookmarkShareExtension.release.xcconfig"; sourceTree = "<group>"; };
 		A60FD7482520AADB0069C29C /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		A60FD74E2520AFBF0069C29C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		A618AFC82527005B006F9CA9 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		A61B215525206EDC00272050 /* Switching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Switching.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61B215825206EDC00272050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A61B215A25206EDC00272050 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +80,7 @@
 		BDA8CB8425278C2200F4BDA5 /* BookmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkList.swift; sourceTree = "<group>"; };
 		DD70F9126A4E5D630963C687 /* Pods-BookmarkShareExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookmarkShareExtension.debug.xcconfig"; path = "Target Support Files/Pods-BookmarkShareExtension/Pods-BookmarkShareExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		E661408656CB1FBB1BB99EF3 /* Pods-Switching.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switching.release.xcconfig"; path = "Target Support Files/Pods-Switching/Pods-Switching.release.xcconfig"; sourceTree = "<group>"; };
-		EA25D1242526C08B008AAABA /* BookmarkAction.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = BookmarkAction.js; sourceTree = "<group>"; };
+		EA25D1242526C08B008AAABA /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
 		EAAB80022526A9B7007815B2 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		EAAB800A2526B0B1007815B2 /* BookmarkShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BookmarkShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAB800C2526B0B1007815B2 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,14 @@
 			path = SettingScene;
 			sourceTree = "<group>";
 		};
+		A618AFC32526FD8E006F9CA9 /* AddScene */ = {
+			isa = PBXGroup;
+			children = (
+				A618AFC82527005B006F9CA9 /* AddViewController.swift */,
+			);
+			path = AddScene;
+			sourceTree = "<group>";
+		};
 		A61B214C25206EDC00272050 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +171,7 @@
 		A61B215725206EDC00272050 /* Switching */ = {
 			isa = PBXGroup;
 			children = (
+				A618AFC32526FD8E006F9CA9 /* AddScene */,
 				EAAB80202526B31B007815B2 /* Switching.entitlements */,
 				A61B216D25206F0200272050 /* Scene */,
 				A60FD74D2520AF990069C29C /* SettingScene */,
@@ -220,7 +231,7 @@
 				EAAB800C2526B0B1007815B2 /* ShareViewController.swift */,
 				EAAB800E2526B0B1007815B2 /* MainInterface.storyboard */,
 				EAAB80112526B0B1007815B2 /* Info.plist */,
-				EA25D1242526C08B008AAABA /* BookmarkAction.js */,
+				EA25D1242526C08B008AAABA /* Action.js */,
 			);
 			path = BookmarkShareExtension;
 			sourceTree = "<group>";
@@ -318,7 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA25D1252526C08B008AAABA /* BookmarkAction.js in Resources */,
+				EA25D1252526C08B008AAABA /* Action.js in Resources */,
 				EAAB80102526B0B1007815B2 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +407,7 @@
 			files = (
 				A60FD7492520AADB0069C29C /* CharacterViewController.swift in Sources */,
 				A61B2178252077FA00272050 /* DraftTableViewCell.swift in Sources */,
+				A618AFC92527005B006F9CA9 /* AddViewController.swift in Sources */,
 				A61B215925206EDC00272050 /* AppDelegate.swift in Sources */,
 				BDA8CB8525278C2200F4BDA5 /* BookmarkList.swift in Sources */,
 				A61B21712520721400272050 /* DraftViewController.swift in Sources */,
@@ -589,7 +601,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.switching.Switching;
+				PRODUCT_BUNDLE_IDENTIFIER = com.switching.Switching;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -611,7 +623,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.switching.Switching;
+				PRODUCT_BUNDLE_IDENTIFIER = com.switching.Switching;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -631,7 +643,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.switching.Switching.BookmarkShareExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.switching.Switching.BookmarkShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -652,7 +664,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.switching.Switching.BookmarkShareExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.switching.Switching.BookmarkShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;

@@ -1,6 +1,6 @@
-var BookmarkAction = function() {};
+var Action = function() {};
 
-BookmarkAction.prototype = {
+Action.prototype = {
     run: function(arguments) {
         arguments.completionFunction({
             "URL": document.URL,
@@ -13,5 +13,5 @@ BookmarkAction.prototype = {
     }
 };
 
-var ExtensionPreprocessingJS = new BookmarkAction
+var ExtensionPreprocessingJS = new Action
 
