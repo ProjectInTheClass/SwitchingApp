@@ -1,0 +1,26 @@
+PODS:
+  - Realm (5.4.1):
+    - Realm/Headers (= 5.4.1)
+  - Realm/Headers (5.4.1)
+  - RealmSwift (5.4.1):
+    - Realm (= 5.4.1)
+  - SwiftLinkPreview (3.1.0)
+
+DEPENDENCIES:
+  - RealmSwift
+  - SwiftLinkPreview
+
+SPEC REPOS:
+  trunk:
+    - Realm
+    - RealmSwift
+    - SwiftLinkPreview
+
+SPEC CHECKSUMS:
+  Realm: 7e887608ef1de2d0c3a33dd9b1449e08fc9d9807
+  RealmSwift: ef998d9b678fd74e047c56ef4d99d9b77e87c1eb
+  SwiftLinkPreview: 3d924eeaae8d17410a827a4b37675713af1a0a8a
+
+PODFILE CHECKSUM: c7d24bf23485af091bd58e2489ed6d42a0d2c94d
+
+COCOAPODS: 1.9.3

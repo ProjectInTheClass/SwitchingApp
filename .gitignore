@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 reated by https://www.toptal.com/developers/gitignore/api/osx,xcode,swift
 # Edit at https://www.toptal.com/developers/gitignore?templates=osx,xcode,swift
 
@@ -29,6 +30,20 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+<<<<<<< HEAD
+=======
+### OSX ###
+# General
+
+# Icon must end with two \r
+
+# Thumbnails
+
+# Files that might appear in the root of a volume
+
+# Directories potentially created on remote AFP share
+
+>>>>>>> 65465c63bf31c0ec1ac00e2875851e5094c6c766
 ### Swift ###
 # Xcode
 #
@@ -121,6 +136,7 @@ iOSInjectionProject/
 
 
 ## Gcc Patch
+<<<<<<< HEAD
 /*.gcno
 
 ### Xcode Patch ###
@@ -131,3 +147,16 @@ iOSInjectionProject/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.toptal.com/developers/gitignore/api/osx,xcode,swift
+=======
+#/*.gcno
+
+### Xcode Patch ###
+#*.xcodeproj/*
+#!*.xcodeproj/project.pbxproj
+#!*.xcodeproj/xcshareddata/
+#!*.xcworkspace/contents.xcworkspacedata
+#**/xcshareddata/WorkspaceSettings.xcsettings
+
+# End of https://www.toptal.com/developers/gitignore/api/osx,macos,xcode,swift
+
+>>>>>>> 65465c63bf31c0ec1ac00e2875851e5094c6c766
