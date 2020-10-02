@@ -17,6 +17,7 @@
 		A61B21712520721400272050 /* DraftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B21702520721400272050 /* DraftViewController.swift */; };
 		A61B2178252077FA00272050 /* DraftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B2177252077FA00272050 /* DraftTableViewCell.swift */; };
 		A61B2181252092B200272050 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B2180252092B200272050 /* FeedViewController.swift */; };
+		EAAB80032526A9B7007815B2 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB80022526A9B7007815B2 /* Bookmark.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A61B21702520721400272050 /* DraftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftViewController.swift; sourceTree = "<group>"; };
 		A61B2177252077FA00272050 /* DraftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftTableViewCell.swift; sourceTree = "<group>"; };
 		A61B2180252092B200272050 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		EAAB80022526A9B7007815B2 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		A61B215725206EDC00272050 /* Switching */ = {
 			isa = PBXGroup;
 			children = (
+				EAAB80012526A998007815B2 /* Models */,
 				A61B216D25206F0200272050 /* Scene */,
 				A60FD74D2520AF990069C29C /* SettingScene */,
 				A61B215825206EDC00272050 /* AppDelegate.swift */,
@@ -109,6 +112,14 @@
 				A61B2180252092B200272050 /* FeedViewController.swift */,
 			);
 			path = FeedScene;
+			sourceTree = "<group>";
+		};
+		EAAB80012526A998007815B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EAAB80022526A9B7007815B2 /* Bookmark.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +199,7 @@
 				A61B215B25206EDC00272050 /* SceneDelegate.swift in Sources */,
 				A60FD74F2520AFBF0069C29C /* SettingViewController.swift in Sources */,
 				A61B2181252092B200272050 /* FeedViewController.swift in Sources */,
+				EAAB80032526A9B7007815B2 /* Bookmark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
