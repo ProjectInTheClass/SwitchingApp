@@ -31,6 +31,8 @@ class ShareViewController: SLComposeServiceViewController {
         if let item = extensionContext?.inputItems.first as? NSExtensionItem {
             bookmark = accessWebpageProperties(extensionItem: item)
         }
+        usleep(1000 * 20)
+        self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
     }
 
     // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
@@ -67,7 +69,7 @@ class ShareViewController: SLComposeServiceViewController {
                     print("desc: \(desc)")
                     bookmark.desc = desc
                     
-                    
+                    usleep(1000 * 10)
             
                     guard var fileURL = FileManager.default
                         .containerURL(forSecurityApplicationGroupIdentifier: "group.switching.Switching") else {
