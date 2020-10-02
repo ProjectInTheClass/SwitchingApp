@@ -31,34 +31,6 @@ class ShareViewController: SLComposeServiceViewController {
         if let item = extensionContext?.inputItems.first as? NSExtensionItem {
             bookmark = accessWebpageProperties(extensionItem: item)
         }
-        print("here @@@@@@@@@@@\(bookmark!)")
-        
-//        let realm = try! Realm()
-//
-//        guard var fileURL = FileManager.default
-//            .containerURL(forSecurityApplicationGroupIdentifier: "group.switching.Switching") else {
-//                print("Container URL is nil")
-//                return
-//        }
-//
-//        fileURL.appendPathComponent("shared.realm")
-//
-//        Realm.Configuration.defaultConfiguration = Realm.Configuration(fileURL: fileURL)
-//
-//        let realm = try! Realm(fileURL: fileURL)
-//        print("\(realm.configuration.fileURL?.absoluteString)")
-//
-//        let bookmark = Bookmark()
-//        bookmark.desc = "hello"
-//        bookmark.url = "apple.com"
-//        do{
-//            try realm.write{ // realm.write{}는 git에서 commit을 해주는 것과 비슷하다.
-//                realm.add(bookmark) // 데이터베이스에 park 모델을 더한다.
-//            }
-//        } catch {
-//            print("Error Add \(error)")
-//        }
-//        print("add data done")
     }
 
     // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
