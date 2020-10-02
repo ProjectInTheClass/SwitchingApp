@@ -18,7 +18,34 @@
 		A61B2178252077FA00272050 /* DraftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B2177252077FA00272050 /* DraftTableViewCell.swift */; };
 		A61B2181252092B200272050 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B2180252092B200272050 /* FeedViewController.swift */; };
 		EAAB80032526A9B7007815B2 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB80022526A9B7007815B2 /* Bookmark.swift */; };
+		EAAB800D2526B0B1007815B2 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB800C2526B0B1007815B2 /* ShareViewController.swift */; };
+		EAAB80102526B0B1007815B2 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAAB800E2526B0B1007815B2 /* MainInterface.storyboard */; };
+		EAAB80142526B0B1007815B2 /* BookmarkShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EAAB800A2526B0B1007815B2 /* BookmarkShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EAAB80122526B0B1007815B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A61B214D25206EDC00272050 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAB80092526B0B1007815B2;
+			remoteInfo = BookmarkShareExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EAAB80182526B0B1007815B2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EAAB80142526B0B1007815B2 /* BookmarkShareExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A60FD7482520AADB0069C29C /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
@@ -34,10 +61,21 @@
 		A61B2177252077FA00272050 /* DraftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftTableViewCell.swift; sourceTree = "<group>"; };
 		A61B2180252092B200272050 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		EAAB80022526A9B7007815B2 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
+		EAAB800A2526B0B1007815B2 /* BookmarkShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BookmarkShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAAB800C2526B0B1007815B2 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		EAAB800F2526B0B1007815B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		EAAB80112526B0B1007815B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A61B215225206EDC00272050 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAAB80072526B0B1007815B2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -59,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				A61B215725206EDC00272050 /* Switching */,
+				EAAB800B2526B0B1007815B2 /* BookmarkShareExtension */,
 				A61B215625206EDC00272050 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				A61B215525206EDC00272050 /* Switching.app */,
+				EAAB800A2526B0B1007815B2 /* BookmarkShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,6 +162,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		EAAB800B2526B0B1007815B2 /* BookmarkShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				EAAB800C2526B0B1007815B2 /* ShareViewController.swift */,
+				EAAB800E2526B0B1007815B2 /* MainInterface.storyboard */,
+				EAAB80112526B0B1007815B2 /* Info.plist */,
+			);
+			path = BookmarkShareExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,15 +182,34 @@
 				A61B215125206EDC00272050 /* Sources */,
 				A61B215225206EDC00272050 /* Frameworks */,
 				A61B215325206EDC00272050 /* Resources */,
+				EAAB80182526B0B1007815B2 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EAAB80132526B0B1007815B2 /* PBXTargetDependency */,
 			);
 			name = Switching;
 			productName = Switching;
 			productReference = A61B215525206EDC00272050 /* Switching.app */;
 			productType = "com.apple.product-type.application";
+		};
+		EAAB80092526B0B1007815B2 /* BookmarkShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAAB80152526B0B1007815B2 /* Build configuration list for PBXNativeTarget "BookmarkShareExtension" */;
+			buildPhases = (
+				EAAB80062526B0B1007815B2 /* Sources */,
+				EAAB80072526B0B1007815B2 /* Frameworks */,
+				EAAB80082526B0B1007815B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BookmarkShareExtension;
+			productName = BookmarkShareExtension;
+			productReference = EAAB800A2526B0B1007815B2 /* BookmarkShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -153,6 +222,9 @@
 				TargetAttributes = {
 					A61B215425206EDC00272050 = {
 						CreatedOnToolsVersion = 12.0;
+					};
+					EAAB80092526B0B1007815B2 = {
+						CreatedOnToolsVersion = 12.0.1;
 					};
 				};
 			};
@@ -170,6 +242,7 @@
 			projectRoot = "";
 			targets = (
 				A61B215425206EDC00272050 /* Switching */,
+				EAAB80092526B0B1007815B2 /* BookmarkShareExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -182,6 +255,14 @@
 				A61B216525206EDC00272050 /* LaunchScreen.storyboard in Resources */,
 				A61B216225206EDC00272050 /* Assets.xcassets in Resources */,
 				A61B216025206EDC00272050 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAAB80082526B0B1007815B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAAB80102526B0B1007815B2 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +284,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EAAB80062526B0B1007815B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAAB800D2526B0B1007815B2 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EAAB80132526B0B1007815B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAAB80092526B0B1007815B2 /* BookmarkShareExtension */;
+			targetProxy = EAAB80122526B0B1007815B2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A61B215E25206EDC00272050 /* Main.storyboard */ = {
@@ -220,6 +317,14 @@
 				A61B216425206EDC00272050 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EAAB800E2526B0B1007815B2 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAAB800F2526B0B1007815B2 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -344,10 +449,11 @@
 		A61B216A25206EDC00272050 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4QG3GC35LA;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Switching/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -363,10 +469,11 @@
 		A61B216B25206EDC00272050 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4QG3GC35LA;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Switching/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -374,6 +481,44 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.switching.Switching;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EAAB80162526B0B1007815B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4QG3GC35LA;
+				INFOPLIST_FILE = BookmarkShareExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.switching.Switching.BookmarkShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EAAB80172526B0B1007815B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4QG3GC35LA;
+				INFOPLIST_FILE = BookmarkShareExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.switching.Switching.BookmarkShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -396,6 +541,15 @@
 			buildConfigurations = (
 				A61B216A25206EDC00272050 /* Debug */,
 				A61B216B25206EDC00272050 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAAB80152526B0B1007815B2 /* Build configuration list for PBXNativeTarget "BookmarkShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAAB80162526B0B1007815B2 /* Debug */,
+				EAAB80172526B0B1007815B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
