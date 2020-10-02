@@ -55,7 +55,7 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
                                     cell.feedImageView.load(url: imageUrl)
                                 }
                             }
-                        }, onError: {error in print("error")})
+                        }, onError: {error in print("slp error")})
         }
         return cell
     }
@@ -72,8 +72,19 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.draftTableView.delegate = self
         self.draftTableView.dataSource = self
         // Do any additional setup after loading the view.
+        
+        self.draftTableView.refreshControl = UIRefreshControl()
+        self.draftTableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
     }
     
+    @objc private func didPullToRefresh() {
+        print("start refresh")
+        self.draftTableView.reloadData()
+        self.viewDidLoad()
+        DispatchQueue.main.async {
+            self.draftTableView.refreshControl?.endRefreshing()
+        }
+    }
 
     /*
     // MARK: - Navigation
