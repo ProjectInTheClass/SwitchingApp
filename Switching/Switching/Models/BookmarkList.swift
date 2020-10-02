@@ -26,7 +26,7 @@ struct TempBookmarkList {
         let results: Results<Bookmark>
         
         if let selected = bookmark {
-            results = self.realm.objects(Bookmark.self).filter("istemp == \(selected)")
+            results = self.realm.objects(Bookmark.self).filter("isTemp == \(selected)")
         } else {
             results = self.realm.objects(Bookmark.self)
         }
