@@ -1,74 +1,81 @@
-//
-//  ShareViewController.swift
-//  BookmarkShareExtension
-//
-//  Created by 김기훈 on 2020/10/02.
-//
 
 import UIKit
 import Social
 import MobileCoreServices
 import RealmSwift
 
+
 class ShareViewController: SLComposeServiceViewController {
 
     override func isContentValid() -> Bool {
         // Do validation of contentText and/or NSExtensionContext attachments here
+        
+        // contentText : 유저가 공유하기 창을 눌러 넘어온 문자열 값(상수)
+        if let currentMessage = contentText{
+            let currentMessageLength = currentMessage.count
+            // charactersRemaining : 문자열 길이 제한 값(상수)
+            charactersRemaining = (100 - currentMessageLength) as NSNumber
+            
+            print("currentMessage : \(currentMessage) // 길이 : \(currentMessageLength) // 제한 : \(charactersRemaining)")
+            if Int(charactersRemaining) < 0 {
+                print("100자가 넘었을때는 공유할 수 없다!")
+                return false
+            }
+        }
         return true
     }
 
     override func didSelectPost() {
-        // This is called after the user selects Post. Do the upload of contentText and/or NSExtensionContext attachments.
-        var newBookmark: Bookmark?
+        print("didselectPost")
+        var bookmark: Bookmark?
         if let item = extensionContext?.inputItems.first as? NSExtensionItem {
-            newBookmark = accessWebpageProperties(extensionItem: item)
+            bookmark = accessWebpageProperties(extensionItem: item)
         }
+        print("here @@@@@@@@@@@\(bookmark!)")
         
-        
-        // init Realm
-        
-        guard var fileURL = FileManager.default
-            .containerURL(forSecurityApplicationGroupIdentifier: "group.imageTest3") else {
-                print("Container URL is nil")
-                return
-        }
-
-        fileURL.appendPathComponent("shared.realm")
-
-        Realm.Configuration.defaultConfiguration = Realm.Configuration(fileURL: fileURL)
-        
-        let realm = try! Realm(fileURL: fileURL)
-        
-        // push new bookmark to Realm DB
-        if let bookmark: Bookmark = newBookmark{
-            do{
-                try realm.write{
-                    realm.add(bookmark)
-                }
-            } catch {
-                print("Error Add \(error)")
-            }
-        }
-        
-        
-        
-        
-    
-        // Inform the host that we're done, so it un-blocks its UI. Note: Alternatively you could call super's -didSelectPost, which will similarly complete the extension context.
-        self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
+//        let realm = try! Realm()
+//
+//        guard var fileURL = FileManager.default
+//            .containerURL(forSecurityApplicationGroupIdentifier: "group.switching.Switching") else {
+//                print("Container URL is nil")
+//                return
+//        }
+//
+//        fileURL.appendPathComponent("shared.realm")
+//
+//        Realm.Configuration.defaultConfiguration = Realm.Configuration(fileURL: fileURL)
+//
+//        let realm = try! Realm(fileURL: fileURL)
+//        print("\(realm.configuration.fileURL?.absoluteString)")
+//
+//        let bookmark = Bookmark()
+//        bookmark.desc = "hello"
+//        bookmark.url = "apple.com"
+//        do{
+//            try realm.write{ // realm.write{}는 git에서 commit을 해주는 것과 비슷하다.
+//                realm.add(bookmark) // 데이터베이스에 park 모델을 더한다.
+//            }
+//        } catch {
+//            print("Error Add \(error)")
+//        }
+//        print("add data done")
     }
 
+    // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
     override func configurationItems() -> [Any]! {
-        // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
-        return []
+        let item = SLComposeSheetConfigurationItem()
+        
+        item?.title = "여기는 제목입니다"
+        // item?.tapHandler : 유저가 터치했을 때 호출되는 핸들러
+        return [item]
     }
     
-    private func accessWebpageProperties(extensionItem: NSExtensionItem) -> Bookmark? {
+    private func accessWebpageProperties(extensionItem: NSExtensionItem) -> Bookmark{
 
-        var bookmark:Bookmark?
         
         // url 가져오기
         let propertyList = kUTTypePropertyList as String
+        var bookmark = Bookmark()
 
         for attachment in extensionItem.attachments! where attachment.hasItemConformingToTypeIdentifier(propertyList) {
             attachment.loadItem(
@@ -79,13 +86,38 @@ class ShareViewController: SLComposeServiceViewController {
                     guard let dictionary = item as? NSDictionary,
                         let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
                         let url = results["URL"] as? String,
-                        let desc = results["title"] as? String
-                        else {
+                        let desc = results["title"] as? String else {
                             return
                         }
-                    bookmark = Bookmark()
-                    bookmark?.url = url
-                    bookmark?.desc = desc
+
+                    print("url: \(url)")
+                    bookmark.url = url
+                    print("desc: \(desc)")
+                    bookmark.desc = desc
+                    
+                    
+            
+                    guard var fileURL = FileManager.default
+                        .containerURL(forSecurityApplicationGroupIdentifier: "group.switching.Switching") else {
+                            print("Container URL is nil")
+                            return
+                    }
+            
+                    fileURL.appendPathComponent("shared.realm")
+            
+                    Realm.Configuration.defaultConfiguration = Realm.Configuration(fileURL: fileURL)
+            
+                    let realm = try! Realm(fileURL: fileURL)
+                    print("\(realm.configuration.fileURL?.absoluteString)")
+
+                    do{
+                        try realm.write{ // realm.write{}는 git에서 commit을 해주는 것과 비슷하다.
+                            realm.add(bookmark) // 데이터베이스에 park 모델을 더한다.
+                        }
+                    } catch {
+                        print("Error Add \(error)")
+                    }
+                    print("add data done")
                 }
             )
         }

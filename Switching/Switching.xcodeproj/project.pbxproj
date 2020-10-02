@@ -21,7 +21,7 @@
 		A61B2178252077FA00272050 /* DraftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B2177252077FA00272050 /* DraftTableViewCell.swift */; };
 		A61B2181252092B200272050 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B2180252092B200272050 /* FeedViewController.swift */; };
 		EA25D1212526C002008AAABA /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB80022526A9B7007815B2 /* Bookmark.swift */; };
-		EA25D1252526C08B008AAABA /* BookmarkAction.js in Resources */ = {isa = PBXBuildFile; fileRef = EA25D1242526C08B008AAABA /* BookmarkAction.js */; };
+		EA25D1252526C08B008AAABA /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = EA25D1242526C08B008AAABA /* Action.js */; };
 		EAAB80032526A9B7007815B2 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB80022526A9B7007815B2 /* Bookmark.swift */; };
 		EAAB800D2526B0B1007815B2 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB800C2526B0B1007815B2 /* ShareViewController.swift */; };
 		EAAB80102526B0B1007815B2 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAAB800E2526B0B1007815B2 /* MainInterface.storyboard */; };
@@ -71,7 +71,7 @@
 		A61B2180252092B200272050 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		DD70F9126A4E5D630963C687 /* Pods-BookmarkShareExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookmarkShareExtension.debug.xcconfig"; path = "Target Support Files/Pods-BookmarkShareExtension/Pods-BookmarkShareExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		E661408656CB1FBB1BB99EF3 /* Pods-Switching.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switching.release.xcconfig"; path = "Target Support Files/Pods-Switching/Pods-Switching.release.xcconfig"; sourceTree = "<group>"; };
-		EA25D1242526C08B008AAABA /* BookmarkAction.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = BookmarkAction.js; sourceTree = "<group>"; };
+		EA25D1242526C08B008AAABA /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
 		EAAB80022526A9B7007815B2 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		EAAB800A2526B0B1007815B2 /* BookmarkShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BookmarkShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAB800C2526B0B1007815B2 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -219,7 +219,7 @@
 				EAAB800C2526B0B1007815B2 /* ShareViewController.swift */,
 				EAAB800E2526B0B1007815B2 /* MainInterface.storyboard */,
 				EAAB80112526B0B1007815B2 /* Info.plist */,
-				EA25D1242526C08B008AAABA /* BookmarkAction.js */,
+				EA25D1242526C08B008AAABA /* Action.js */,
 			);
 			path = BookmarkShareExtension;
 			sourceTree = "<group>";
@@ -317,7 +317,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA25D1252526C08B008AAABA /* BookmarkAction.js in Resources */,
+				EA25D1252526C08B008AAABA /* Action.js in Resources */,
 				EAAB80102526B0B1007815B2 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,7 +583,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.switching.Switching;
+				PRODUCT_BUNDLE_IDENTIFIER = com.switching.Switching;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -605,7 +605,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.switching.Switching;
+				PRODUCT_BUNDLE_IDENTIFIER = com.switching.Switching;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -625,7 +625,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.switching.Switching.BookmarkShareExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.switching.Switching.BookmarkShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -646,7 +646,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.switching.Switching.BookmarkShareExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.switching.Switching.BookmarkShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
