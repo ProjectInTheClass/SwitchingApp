@@ -42,7 +42,7 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         Realm.Configuration.defaultConfiguration = Realm.Configuration(fileURL: fileURL)
 
         let realm = try! Realm(fileURL: fileURL)
-        if let bookmark: Bookmark = realm.objects(Bookmark.self)[indexPath[1]]{
+        if let bookmark: Bookmark = realm.objects(Bookmark.self)[indexPath.row]{
             cell.feedDateLabel.text = bookmark.url
             cell.feedTitleLabel.text = bookmark.desc
             
@@ -85,17 +85,37 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.draftTableView.refreshControl?.endRefreshing()
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    private func mainCharacter(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .normal, title: "Main") { [weak self] (_, _, _) in
+            print("mainCharacter clicked \(indexPath.row)")
+        }
+        return action
     }
-    */
-
+    
+    private func subCharacter(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .normal, title: "Sub") { [weak self] (_, _, _) in
+            print("subCharacter clicked \(indexPath.row)")
+        }
+        return action
+    }
+    
+    private func delete(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (_, _, _) in
+            guard let self = self else {return}
+            print("delete clicked \(indexPath.row)")
+        }
+        return action
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let mainCharacterBtn = self.mainCharacter(rowIndexPathAt: indexPath)
+        let subCharacterBtn = self.subCharacter(rowIndexPathAt: indexPath)
+        let deleteBtn = self.delete(rowIndexPathAt: indexPath)
+        let swipe = UISwipeActionsConfiguration(actions: [mainCharacterBtn, subCharacterBtn, deleteBtn])
+        return swipe
+    }
 }
 
 extension UIImageView {
