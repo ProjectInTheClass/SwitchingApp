@@ -80,7 +80,6 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @objc private func didPullToRefresh() {
         print("start refresh")
         self.draftTableView.reloadData()
-        self.viewDidLoad()
         DispatchQueue.main.async {
             self.draftTableView.refreshControl?.endRefreshing()
         }
@@ -103,7 +102,19 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func delete(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (_, _, _) in
-            guard let self = self else {return}
+            let fileURL = FileManager.default
+                .containerURL(forSecurityApplicationGroupIdentifier: "group.switching.Switching")
+            if var url = fileURL{
+                url.appendPathComponent("shared.realm")
+                Realm.Configuration.defaultConfiguration = Realm.Configuration(fileURL: url)
+                let realm = try! Realm(fileURL: url)
+                
+                let bookmark: Bookmark = realm.objects(Bookmark.self)[indexPath.row]
+                try! realm.write{
+                    realm.delete(bookmark)
+                }
+            }
+            self?.draftTableView.reloadData()
             print("delete clicked \(indexPath.row)")
         }
         return action
