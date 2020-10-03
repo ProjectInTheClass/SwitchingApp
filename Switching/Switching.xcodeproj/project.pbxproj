@@ -10,7 +10,6 @@
 		701E0B45AB18CB2BE8C9EEAB /* Pods_Switching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4FF0E5E9652E6C940B03C0 /* Pods_Switching.framework */; };
 		83BD8B55EBEBFCF7A45649D5 /* Pods_BookmarkShareExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F553FDC6678027717CC081 /* Pods_BookmarkShareExtension.framework */; };
 		A60FD7492520AADB0069C29C /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60FD7482520AADB0069C29C /* CharacterViewController.swift */; };
-		A60FD74F2520AFBF0069C29C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60FD74E2520AFBF0069C29C /* SettingViewController.swift */; };
 		A618AFC92527005B006F9CA9 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618AFC82527005B006F9CA9 /* AddViewController.swift */; };
 		A61B215925206EDC00272050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B215825206EDC00272050 /* AppDelegate.swift */; };
 		A61B215B25206EDC00272050 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B215A25206EDC00272050 /* SceneDelegate.swift */; };
@@ -20,6 +19,8 @@
 		A61B21712520721400272050 /* DraftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B21702520721400272050 /* DraftViewController.swift */; };
 		A61B2178252077FA00272050 /* DraftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B2177252077FA00272050 /* DraftTableViewCell.swift */; };
 		A61B2181252092B200272050 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B2180252092B200272050 /* FeedViewController.swift */; };
+		A69459FC252909830001FF7E /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69459FB252909820001FF7E /* SettingTableViewCell.swift */; };
+		A6945A022529105F0001FF7E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6945A012529105F0001FF7E /* SettingViewController.swift */; };
 		BDA8CB7B25278A0C00F4BDA5 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8CB7A25278A0C00F4BDA5 /* Tag.swift */; };
 		BDA8CB7C25278A0C00F4BDA5 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8CB7A25278A0C00F4BDA5 /* Tag.swift */; };
 		BDA8CB8025278B3E00F4BDA5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8CB7F25278B3E00F4BDA5 /* Character.swift */; };
@@ -63,7 +64,6 @@
 		37F553FDC6678027717CC081 /* Pods_BookmarkShareExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookmarkShareExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7852078D2F498235BAC93933 /* Pods-BookmarkShareExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookmarkShareExtension.release.xcconfig"; path = "Target Support Files/Pods-BookmarkShareExtension/Pods-BookmarkShareExtension.release.xcconfig"; sourceTree = "<group>"; };
 		A60FD7482520AADB0069C29C /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
-		A60FD74E2520AFBF0069C29C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A618AFC82527005B006F9CA9 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		A61B215525206EDC00272050 /* Switching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Switching.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61B215825206EDC00272050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +75,8 @@
 		A61B21702520721400272050 /* DraftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftViewController.swift; sourceTree = "<group>"; };
 		A61B2177252077FA00272050 /* DraftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftTableViewCell.swift; sourceTree = "<group>"; };
 		A61B2180252092B200272050 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		A69459FB252909820001FF7E /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		A6945A012529105F0001FF7E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		BDA8CB7A25278A0C00F4BDA5 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		BDA8CB7F25278B3E00F4BDA5 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		BDA8CB8425278C2200F4BDA5 /* BookmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkList.swift; sourceTree = "<group>"; };
@@ -131,14 +133,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A60FD74D2520AF990069C29C /* SettingScene */ = {
-			isa = PBXGroup;
-			children = (
-				A60FD74E2520AFBF0069C29C /* SettingViewController.swift */,
-			);
-			path = SettingScene;
-			sourceTree = "<group>";
-		};
 		A618AFC32526FD8E006F9CA9 /* AddScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,7 +168,6 @@
 				A618AFC32526FD8E006F9CA9 /* AddScene */,
 				EAAB80202526B31B007815B2 /* Switching.entitlements */,
 				A61B216D25206F0200272050 /* Scene */,
-				A60FD74D2520AF990069C29C /* SettingScene */,
 				A61B215825206EDC00272050 /* AppDelegate.swift */,
 				A61B215A25206EDC00272050 /* SceneDelegate.swift */,
 				A61B215E25206EDC00272050 /* Main.storyboard */,
@@ -191,6 +184,8 @@
 				A60FD7482520AADB0069C29C /* CharacterViewController.swift */,
 				A61B217F2520927600272050 /* FeedScene */,
 				A61B216F252071F700272050 /* DraftScene */,
+				A69459FF25290FCE0001FF7E /* NotificationScene */,
+				A6945A00252910220001FF7E /* SettingScene */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -210,6 +205,22 @@
 				A61B2180252092B200272050 /* FeedViewController.swift */,
 			);
 			path = FeedScene;
+			sourceTree = "<group>";
+		};
+		A69459FF25290FCE0001FF7E /* NotificationScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NotificationScene;
+			sourceTree = "<group>";
+		};
+		A6945A00252910220001FF7E /* SettingScene */ = {
+			isa = PBXGroup;
+			children = (
+				A6945A012529105F0001FF7E /* SettingViewController.swift */,
+				A69459FB252909820001FF7E /* SettingTableViewCell.swift */,
+			);
+			path = SettingScene;
 			sourceTree = "<group>";
 		};
 		EAAB80012526A998007815B2 /* Models */ = {
@@ -410,9 +421,10 @@
 				A618AFC92527005B006F9CA9 /* AddViewController.swift in Sources */,
 				A61B215925206EDC00272050 /* AppDelegate.swift in Sources */,
 				BDA8CB8525278C2200F4BDA5 /* BookmarkList.swift in Sources */,
+				A6945A022529105F0001FF7E /* SettingViewController.swift in Sources */,
 				A61B21712520721400272050 /* DraftViewController.swift in Sources */,
 				A61B215B25206EDC00272050 /* SceneDelegate.swift in Sources */,
-				A60FD74F2520AFBF0069C29C /* SettingViewController.swift in Sources */,
+				A69459FC252909830001FF7E /* SettingTableViewCell.swift in Sources */,
 				BDA8CB7B25278A0C00F4BDA5 /* Tag.swift in Sources */,
 				BDA8CB8025278B3E00F4BDA5 /* Character.swift in Sources */,
 				A61B2181252092B200272050 /* FeedViewController.swift in Sources */,
