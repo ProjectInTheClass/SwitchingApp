@@ -133,6 +133,16 @@
             </objects>
             <point key="canvasLocation" x="1031.2" y="118.22660098522168"/>
         </scene>
+        <!--Notification-->
+        <scene sceneID="dry-IS-SSH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Notification" id="yxa-BY-jnm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="알림" id="hy0-kx-XNY"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s5R-2N-p6I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030" y="664"/>
+        </scene>
         <!--Character View Controller-->
         <scene sceneID="D8C-EG-hME">
             <objects>
@@ -192,11 +202,11 @@
                         <constraints>
                             <constraint firstItem="n1u-N1-MT1" firstAttribute="top" secondItem="8xd-JZ-fuH" secondAttribute="top" constant="20" id="1RQ-wd-VOn"/>
                             <constraint firstItem="HDf-Bq-gig" firstAttribute="top" secondItem="Usb-rb-aSV" secondAttribute="bottom" constant="40" id="6rw-ja-s62"/>
-                            <constraint firstItem="n1u-N1-MT1" firstAttribute="leading" secondItem="8xd-JZ-fuH" secondAttribute="leading" constant="325" id="9Lx-Dl-gjD"/>
                             <constraint firstItem="Usb-rb-aSV" firstAttribute="centerX" secondItem="8xd-JZ-fuH" secondAttribute="centerX" id="Nfi-wm-pTW"/>
                             <constraint firstItem="Usb-rb-aSV" firstAttribute="top" secondItem="8xd-JZ-fuH" secondAttribute="top" constant="120" id="YAf-MG-xvU"/>
                             <constraint firstItem="HDf-Bq-gig" firstAttribute="centerX" secondItem="8xd-JZ-fuH" secondAttribute="centerX" id="YEc-Yp-Rwa"/>
-                            <constraint firstItem="8xd-JZ-fuH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="n1u-N1-MT1" secondAttribute="trailing" id="ze0-xD-tmH"/>
+                            <constraint firstItem="8xd-JZ-fuH" firstAttribute="trailing" secondItem="n1u-N1-MT1" secondAttribute="trailing" constant="20" id="eSY-wB-rIn"/>
+                            <constraint firstItem="n1u-N1-MT1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8xd-JZ-fuH" secondAttribute="leading" constant="325" id="zE0-t6-uba"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cYx-ut-dci"/>
@@ -352,105 +362,15 @@
             </objects>
             <point key="canvasLocation" x="1031" y="-604"/>
         </scene>
-        <!--알림-->
-        <scene sceneID="DMH-Cb-Mf1">
+        <!--Setting-->
+        <scene sceneID="u0P-9L-9rF">
             <objects>
-                <viewController id="1pA-us-Vul" customClass="NotificationViewController" customModule="Switching" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wWp-Bd-Ds2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V0D-f8-gsi">
-                                <rect key="frame" x="0.0" y="124" width="375" height="605"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notificationCell" id="ALj-rd-Iqc">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ALj-rd-Iqc" id="hy1-Ia-VsU">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="4kB-Mg-Dmk"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="4kB-Mg-Dmk" firstAttribute="bottom" secondItem="V0D-f8-gsi" secondAttribute="bottom" id="5ZO-ns-N5w"/>
-                            <constraint firstItem="V0D-f8-gsi" firstAttribute="top" secondItem="4kB-Mg-Dmk" secondAttribute="top" constant="80" id="cL8-X6-bjY"/>
-                            <constraint firstItem="4kB-Mg-Dmk" firstAttribute="trailing" secondItem="V0D-f8-gsi" secondAttribute="trailing" id="sHv-ws-hUW"/>
-                            <constraint firstItem="V0D-f8-gsi" firstAttribute="leading" secondItem="4kB-Mg-Dmk" secondAttribute="leading" id="xCY-C3-XsS"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="알림" id="Y1l-uI-cYZ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cte-zY-C4a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Setting" id="2xO-Gg-sQk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="설정" id="nsN-BG-NGk"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6p7-JK-6eo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1031" y="859"/>
-        </scene>
-        <!--설정-->
-        <scene sceneID="nbk-d5-w5Z">
-            <objects>
-                <viewController id="K7Q-te-ywl" customClass="SettingViewController" customModule="Switching" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0CZ-at-rik">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vty-rw-FHM">
-                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingCell" id="Kir-2H-Jn2" customClass="SettingTableViewCell" customModule="Switching" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="59.333332061767578"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kir-2H-Jn2" id="DlV-nB-FjZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="347.66666666666669" height="59.333332061767578"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캐릭터 수정" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcD-SR-lQe">
-                                                    <rect key="frame" x="26" y="21" width="64.666666666666671" height="17.333333333333329"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="UcD-SR-lQe" secondAttribute="bottom" constant="10" id="7Is-IG-rwG"/>
-                                                <constraint firstItem="UcD-SR-lQe" firstAttribute="leading" secondItem="DlV-nB-FjZ" secondAttribute="leadingMargin" constant="10" id="8PW-rc-KP7"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UcD-SR-lQe" secondAttribute="trailing" constant="20" symbolic="YES" id="HQ4-ve-KQT"/>
-                                                <constraint firstItem="UcD-SR-lQe" firstAttribute="top" secondItem="DlV-nB-FjZ" secondAttribute="topMargin" constant="10" id="UAC-3N-o4H"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="settingTitleLabel" destination="UcD-SR-lQe" id="haR-TP-zVr"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="K7Q-te-ywl" id="I8W-0Z-Pjc"/>
-                                    <outlet property="delegate" destination="K7Q-te-ywl" id="OKS-j8-C32"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="PWp-WB-QO6"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="vty-rw-FHM" firstAttribute="leading" secondItem="PWp-WB-QO6" secondAttribute="leading" id="DI8-e2-FrD"/>
-                            <constraint firstItem="PWp-WB-QO6" firstAttribute="bottom" secondItem="vty-rw-FHM" secondAttribute="bottom" id="Slp-zu-9VS"/>
-                            <constraint firstItem="vty-rw-FHM" firstAttribute="top" secondItem="PWp-WB-QO6" secondAttribute="top" id="YTz-fh-W5q"/>
-                            <constraint firstItem="PWp-WB-QO6" firstAttribute="trailing" secondItem="vty-rw-FHM" secondAttribute="trailing" id="gP3-zS-TPo"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="설정" id="5iw-T5-JXc"/>
-                    <connections>
-                        <outlet property="SettingTableView" destination="vty-rw-FHM" id="CkA-ih-nSZ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ase-rF-Yyz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1029.5999999999999" y="1580.5418719211823"/>
+            <point key="canvasLocation" x="1029" y="836"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mwS-su-R3j">
@@ -465,8 +385,8 @@
                     <connections>
                         <segue destination="CoA-ND-eeU" kind="relationship" relationship="viewControllers" id="835-0M-oOa"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="fhb-l0-Wrb"/>
-                        <segue destination="1pA-us-Vul" kind="relationship" relationship="viewControllers" id="9NY-nV-LcZ"/>
-                        <segue destination="K7Q-te-ywl" kind="relationship" relationship="viewControllers" id="hpH-Vv-VBy"/>
+                        <segue destination="yxa-BY-jnm" kind="relationship" relationship="viewControllers" id="AuG-zm-bKo"/>
+                        <segue destination="2xO-Gg-sQk" kind="relationship" relationship="viewControllers" id="kZM-cE-oHe"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4kM-Ng-GcV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

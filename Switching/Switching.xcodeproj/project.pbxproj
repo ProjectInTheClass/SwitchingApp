@@ -21,6 +21,10 @@
 		A61B2181252092B200272050 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B2180252092B200272050 /* FeedViewController.swift */; };
 		A69459FC252909830001FF7E /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69459FB252909820001FF7E /* SettingTableViewCell.swift */; };
 		A6945A022529105F0001FF7E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6945A012529105F0001FF7E /* SettingViewController.swift */; };
+		A6C0FE8F2529FDC7003B1070 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C0FE8E2529FDC7003B1070 /* Setting.storyboard */; };
+		A6C0FE932529FFD9003B1070 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C0FE922529FFD9003B1070 /* Notification.storyboard */; };
+		A6C0FE99252A012A003B1070 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C0FE98252A012A003B1070 /* NotificationViewController.swift */; };
+		A6C0FE9D252A032C003B1070 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C0FE9C252A032C003B1070 /* NotificationTableViewCell.swift */; };
 		BDA8CB7B25278A0C00F4BDA5 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8CB7A25278A0C00F4BDA5 /* Tag.swift */; };
 		BDA8CB7C25278A0C00F4BDA5 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8CB7A25278A0C00F4BDA5 /* Tag.swift */; };
 		BDA8CB8025278B3E00F4BDA5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8CB7F25278B3E00F4BDA5 /* Character.swift */; };
@@ -77,6 +81,10 @@
 		A61B2180252092B200272050 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		A69459FB252909820001FF7E /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		A6945A012529105F0001FF7E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		A6C0FE8E2529FDC7003B1070 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		A6C0FE922529FFD9003B1070 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
+		A6C0FE98252A012A003B1070 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		A6C0FE9C252A032C003B1070 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		BDA8CB7A25278A0C00F4BDA5 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		BDA8CB7F25278B3E00F4BDA5 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		BDA8CB8425278C2200F4BDA5 /* BookmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkList.swift; sourceTree = "<group>"; };
@@ -210,6 +218,9 @@
 		A69459FF25290FCE0001FF7E /* NotificationScene */ = {
 			isa = PBXGroup;
 			children = (
+				A6C0FE922529FFD9003B1070 /* Notification.storyboard */,
+				A6C0FE98252A012A003B1070 /* NotificationViewController.swift */,
+				A6C0FE9C252A032C003B1070 /* NotificationTableViewCell.swift */,
 			);
 			path = NotificationScene;
 			sourceTree = "<group>";
@@ -219,6 +230,7 @@
 			children = (
 				A6945A012529105F0001FF7E /* SettingViewController.swift */,
 				A69459FB252909820001FF7E /* SettingTableViewCell.swift */,
+				A6C0FE8E2529FDC7003B1070 /* Setting.storyboard */,
 			);
 			path = SettingScene;
 			sourceTree = "<group>";
@@ -332,6 +344,8 @@
 			files = (
 				A61B216525206EDC00272050 /* LaunchScreen.storyboard in Resources */,
 				A61B216225206EDC00272050 /* Assets.xcassets in Resources */,
+				A6C0FE8F2529FDC7003B1070 /* Setting.storyboard in Resources */,
+				A6C0FE932529FFD9003B1070 /* Notification.storyboard in Resources */,
 				A61B216025206EDC00272050 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,10 +436,12 @@
 				A61B215925206EDC00272050 /* AppDelegate.swift in Sources */,
 				BDA8CB8525278C2200F4BDA5 /* BookmarkList.swift in Sources */,
 				A6945A022529105F0001FF7E /* SettingViewController.swift in Sources */,
+				A6C0FE9D252A032C003B1070 /* NotificationTableViewCell.swift in Sources */,
 				A61B21712520721400272050 /* DraftViewController.swift in Sources */,
 				A61B215B25206EDC00272050 /* SceneDelegate.swift in Sources */,
 				A69459FC252909830001FF7E /* SettingTableViewCell.swift in Sources */,
 				BDA8CB7B25278A0C00F4BDA5 /* Tag.swift in Sources */,
+				A6C0FE99252A012A003B1070 /* NotificationViewController.swift in Sources */,
 				BDA8CB8025278B3E00F4BDA5 /* Character.swift in Sources */,
 				A61B2181252092B200272050 /* FeedViewController.swift in Sources */,
 				EAAB80032526A9B7007815B2 /* Bookmark.swift in Sources */,
