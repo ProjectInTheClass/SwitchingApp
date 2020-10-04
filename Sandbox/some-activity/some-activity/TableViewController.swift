@@ -47,6 +47,7 @@ class TableViewController: UITableViewController {
 
         // Configure the cell...
         cell.textLabel?.text = personArray[indexPath.row].name
+        cell.detailTextLabel?.text = "\(personArray[indexPath.row].age)"
 
         return cell
     }
