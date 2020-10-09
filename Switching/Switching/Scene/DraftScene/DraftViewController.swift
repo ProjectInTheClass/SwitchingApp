@@ -25,7 +25,7 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         Realm.Configuration.defaultConfiguration = Realm.Configuration(fileURL: fileURL)
 
         let realm = try! Realm(fileURL: fileURL)
-        return realm.objects(Bookmark.self).count
+        return realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

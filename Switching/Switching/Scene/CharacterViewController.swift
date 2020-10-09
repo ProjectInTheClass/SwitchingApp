@@ -20,6 +20,12 @@ class CharacterViewController: UIViewController {
             }
         }
         print("\(#function) \(selectedButton)")
+        if selectedButton == 0{
+            SharedData.instance.selectedCharacter = "main"
+        }
+        else if selectedButton == 1{
+            SharedData.instance.selectedCharacter = "sub"
+        }
     }
     
     override func viewDidLoad() {

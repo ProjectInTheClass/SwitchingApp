@@ -169,7 +169,7 @@
                                             <action selector="characterButtonClicked:" destination="Xgd-R4-vRh" eventType="touchUpInside" id="gnb-Mf-sT0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXU-eu-VFB">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXU-eu-VFB">
                                         <rect key="frame" x="157" y="0.0" width="100" height="100"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <constraints>
