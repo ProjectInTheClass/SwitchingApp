@@ -26,6 +26,7 @@ class CharacterViewController: UIViewController {
         else if selectedButton == 1{
             SharedData.instance.selectedCharacter = "sub"
         }
+        NotificationCenter.default.post(name: Notification.Name("characterChanged"), object: characterButtons)
     }
     
     override func viewDidLoad() {

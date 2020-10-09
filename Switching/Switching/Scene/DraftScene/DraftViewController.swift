@@ -75,7 +75,14 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         self.draftTableView.refreshControl = UIRefreshControl()
         self.draftTableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(notification:)), name: Notification.Name("characterChanged"), object: nil)
     }
+    
+    @objc func notificationReceived(notification: Notification) {
+            // Notification에 담겨진 object와 userInfo를 얻어 처리 가능
+        self.draftTableView.reloadData()
+        }
     
     @objc private func didPullToRefresh() {
         print("start refresh")
