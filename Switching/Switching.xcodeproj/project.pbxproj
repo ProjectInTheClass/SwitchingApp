@@ -37,6 +37,8 @@
 		EAAB800D2526B0B1007815B2 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB800C2526B0B1007815B2 /* ShareViewController.swift */; };
 		EAAB80102526B0B1007815B2 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAAB800E2526B0B1007815B2 /* MainInterface.storyboard */; };
 		EAAB80142526B0B1007815B2 /* BookmarkShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EAAB800A2526B0B1007815B2 /* BookmarkShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EADDCD5A25305DB100673641 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDCD5925305DB100673641 /* SharedData.swift */; };
+		EADDCD5B25305DB100673641 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDCD5925305DB100673641 /* SharedData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,7 @@
 		EAAB80112526B0B1007815B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAAB80202526B31B007815B2 /* Switching.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Switching.entitlements; sourceTree = "<group>"; };
 		EAAB80272526B3FE007815B2 /* BookmarkShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BookmarkShareExtension.entitlements; sourceTree = "<group>"; };
+		EADDCD5925305DB100673641 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		FBC2DA85D52416919325CF90 /* Pods-Switching.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switching.debug.xcconfig"; path = "Target Support Files/Pods-Switching/Pods-Switching.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -242,6 +245,7 @@
 				BDA8CB7A25278A0C00F4BDA5 /* Tag.swift */,
 				BDA8CB7F25278B3E00F4BDA5 /* Character.swift */,
 				BDA8CB8425278C2200F4BDA5 /* BookmarkList.swift */,
+				EADDCD5925305DB100673641 /* SharedData.swift */,
 			);
 			name = Models;
 			path = Switching/Models;
@@ -442,6 +446,7 @@
 				A69459FC252909830001FF7E /* SettingTableViewCell.swift in Sources */,
 				BDA8CB7B25278A0C00F4BDA5 /* Tag.swift in Sources */,
 				A6C0FE99252A012A003B1070 /* NotificationViewController.swift in Sources */,
+				EADDCD5A25305DB100673641 /* SharedData.swift in Sources */,
 				BDA8CB8025278B3E00F4BDA5 /* Character.swift in Sources */,
 				A61B2181252092B200272050 /* FeedViewController.swift in Sources */,
 				EAAB80032526A9B7007815B2 /* Bookmark.swift in Sources */,
@@ -452,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EADDCD5B25305DB100673641 /* SharedData.swift in Sources */,
 				BDA8CB7C25278A0C00F4BDA5 /* Tag.swift in Sources */,
 				EAAB800D2526B0B1007815B2 /* ShareViewController.swift in Sources */,
 				EA25D1212526C002008AAABA /* Bookmark.swift in Sources */,
