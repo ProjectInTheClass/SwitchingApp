@@ -11,6 +11,6 @@ class SharedData{
     static let instance = SharedData()
     private init(){
     }
-    var selectedCharacter: Int = 0
+    var selectedCharacter: String = "main"
 }
 
