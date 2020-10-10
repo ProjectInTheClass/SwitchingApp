@@ -19,6 +19,10 @@
 		A61B21712520721400272050 /* DraftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B21702520721400272050 /* DraftViewController.swift */; };
 		A61B2178252077FA00272050 /* DraftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B2177252077FA00272050 /* DraftTableViewCell.swift */; };
 		A61B2181252092B200272050 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B2180252092B200272050 /* FeedViewController.swift */; };
+		A625FFE1253184AA00F94007 /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A625FFE0253184AA00F94007 /* Add.storyboard */; };
+		A625FFE52531855000F94007 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A625FFE42531855000F94007 /* Feed.storyboard */; };
+		A625FFE92531863100F94007 /* Draft.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A625FFE82531863100F94007 /* Draft.storyboard */; };
+		A625FFEE2531877B00F94007 /* Character.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A625FFED2531877B00F94007 /* Character.storyboard */; };
 		A69459FC252909830001FF7E /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69459FB252909820001FF7E /* SettingTableViewCell.swift */; };
 		A6945A022529105F0001FF7E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6945A012529105F0001FF7E /* SettingViewController.swift */; };
 		A6C0FE8F2529FDC7003B1070 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C0FE8E2529FDC7003B1070 /* Setting.storyboard */; };
@@ -81,6 +85,10 @@
 		A61B21702520721400272050 /* DraftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftViewController.swift; sourceTree = "<group>"; };
 		A61B2177252077FA00272050 /* DraftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftTableViewCell.swift; sourceTree = "<group>"; };
 		A61B2180252092B200272050 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		A625FFE0253184AA00F94007 /* Add.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
+		A625FFE42531855000F94007 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
+		A625FFE82531863100F94007 /* Draft.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Draft.storyboard; sourceTree = "<group>"; };
+		A625FFED2531877B00F94007 /* Character.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Character.storyboard; sourceTree = "<group>"; };
 		A69459FB252909820001FF7E /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		A6945A012529105F0001FF7E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A6C0FE8E2529FDC7003B1070 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
@@ -148,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				A618AFC82527005B006F9CA9 /* AddViewController.swift */,
+				A625FFE0253184AA00F94007 /* Add.storyboard */,
 			);
 			path = AddScene;
 			sourceTree = "<group>";
@@ -176,7 +185,6 @@
 		A61B215725206EDC00272050 /* Switching */ = {
 			isa = PBXGroup;
 			children = (
-				A618AFC32526FD8E006F9CA9 /* AddScene */,
 				EAAB80202526B31B007815B2 /* Switching.entitlements */,
 				A61B216D25206F0200272050 /* Scene */,
 				A61B215825206EDC00272050 /* AppDelegate.swift */,
@@ -192,7 +200,8 @@
 		A61B216D25206F0200272050 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				A60FD7482520AADB0069C29C /* CharacterViewController.swift */,
+				A618AFC32526FD8E006F9CA9 /* AddScene */,
+				A625FFEC2531873F00F94007 /* CharacterScene */,
 				A61B217F2520927600272050 /* FeedScene */,
 				A61B216F252071F700272050 /* DraftScene */,
 				A69459FF25290FCE0001FF7E /* NotificationScene */,
@@ -206,6 +215,7 @@
 			children = (
 				A61B21702520721400272050 /* DraftViewController.swift */,
 				A61B2177252077FA00272050 /* DraftTableViewCell.swift */,
+				A625FFE82531863100F94007 /* Draft.storyboard */,
 			);
 			path = DraftScene;
 			sourceTree = "<group>";
@@ -214,8 +224,18 @@
 			isa = PBXGroup;
 			children = (
 				A61B2180252092B200272050 /* FeedViewController.swift */,
+				A625FFE42531855000F94007 /* Feed.storyboard */,
 			);
 			path = FeedScene;
+			sourceTree = "<group>";
+		};
+		A625FFEC2531873F00F94007 /* CharacterScene */ = {
+			isa = PBXGroup;
+			children = (
+				A60FD7482520AADB0069C29C /* CharacterViewController.swift */,
+				A625FFED2531877B00F94007 /* Character.storyboard */,
+			);
+			path = CharacterScene;
 			sourceTree = "<group>";
 		};
 		A69459FF25290FCE0001FF7E /* NotificationScene */ = {
@@ -346,11 +366,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A625FFE92531863100F94007 /* Draft.storyboard in Resources */,
+				A625FFE1253184AA00F94007 /* Add.storyboard in Resources */,
+				A625FFE52531855000F94007 /* Feed.storyboard in Resources */,
 				A61B216525206EDC00272050 /* LaunchScreen.storyboard in Resources */,
 				A61B216225206EDC00272050 /* Assets.xcassets in Resources */,
 				A6C0FE8F2529FDC7003B1070 /* Setting.storyboard in Resources */,
 				A6C0FE932529FFD9003B1070 /* Notification.storyboard in Resources */,
 				A61B216025206EDC00272050 /* Main.storyboard in Resources */,
+				A625FFEE2531877B00F94007 /* Character.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WMZ-fn-LiF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Character View Controller-->
+        <scene sceneID="v0b-w5-gEo">
+            <objects>
+                <viewController id="WMZ-fn-LiF" customClass="CharacterViewController" customModule="Switching" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y9g-hG-9yJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="57" translatesAutoresizingMaskIntoConstraints="NO" id="DzC-fY-Kuj">
+                                <rect key="frame" x="78.5" y="223.5" width="257" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnV-RO-iGd">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="7d4-kP-IM7"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="hZB-Ij-Vjj"/>
+                                            <constraint firstAttribute="width" secondItem="WnV-RO-iGd" secondAttribute="height" multiplier="1:1" id="kAT-aD-tAj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="본캐"/>
+                                        <connections>
+                                            <action selector="characterButtonClicked:" destination="WMZ-fn-LiF" eventType="touchUpInside" id="dyG-df-pgO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dy2-kK-8u1">
+                                        <rect key="frame" x="157" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="dy2-kK-8u1" secondAttribute="height" multiplier="1:1" id="4Up-o4-kty"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="SdM-HQ-7Or"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="pQv-Bh-wcY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="부캐"/>
+                                        <connections>
+                                            <action selector="characterButtonClicked:" destination="WMZ-fn-LiF" eventType="touchUpInside" id="mwI-h5-iIb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpi-sb-AnL">
+                                <rect key="frame" x="364" y="64" width="30" height="30"/>
+                                <state key="normal" title="완료"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캐릭터 선택하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5NE-Ul-xcs">
+                                <rect key="frame" x="156.5" y="164" width="101" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7em-5B-kY8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5NE-Ul-xcs" firstAttribute="top" secondItem="7em-5B-kY8" secondAttribute="top" constant="120" id="5BC-os-O5D"/>
+                            <constraint firstItem="DzC-fY-Kuj" firstAttribute="top" secondItem="5NE-Ul-xcs" secondAttribute="bottom" constant="40" id="OEM-XP-zGC"/>
+                            <constraint firstItem="Dpi-sb-AnL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7em-5B-kY8" secondAttribute="leading" constant="325" id="RGr-mb-D11"/>
+                            <constraint firstItem="Dpi-sb-AnL" firstAttribute="top" secondItem="7em-5B-kY8" secondAttribute="top" constant="20" id="Wo2-8V-PfN"/>
+                            <constraint firstItem="7em-5B-kY8" firstAttribute="trailing" secondItem="Dpi-sb-AnL" secondAttribute="trailing" constant="20" id="XhG-Bs-KPA"/>
+                            <constraint firstItem="DzC-fY-Kuj" firstAttribute="centerX" secondItem="7em-5B-kY8" secondAttribute="centerX" id="l5G-yL-2yt"/>
+                            <constraint firstItem="5NE-Ul-xcs" firstAttribute="centerX" secondItem="7em-5B-kY8" secondAttribute="centerX" id="nlt-6h-03z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mLK-XL-ZLv"/>
+                    <connections>
+                        <outletCollection property="characterButtons" destination="dy2-kK-8u1" collectionClass="NSMutableArray" id="dCv-ba-c4d"/>
+                        <outletCollection property="characterButtons" destination="WnV-RO-iGd" collectionClass="NSMutableArray" id="Jp3-V8-G6t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Eu-M2-cuX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2122" y="118"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

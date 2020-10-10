@@ -17,7 +17,9 @@ class NotificationViewController: UIViewController, UITableViewDataSource, UITab
         var days: Int
     }
     
-    let notifications = [Notification(character: "본캐", feedCount: 2, days: 4), Notification(character: "본캐", feedCount: 1, days: 2), Notification(character: "부캐", feedCount: 2, days: 1),]
+    var notifications = [Notification(character: "본캐", feedCount: 2, days: 4),
+                         Notification(character: "본캐", feedCount: 1, days: 2),
+                         Notification(character: "부캐", feedCount: 2, days: 1),]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notifications.count
@@ -29,7 +31,18 @@ class NotificationViewController: UIViewController, UITableViewDataSource, UITab
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            notifications.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            tableView.endUpdates()
+        }
+    }
     
     
     override func viewDidLoad() {
