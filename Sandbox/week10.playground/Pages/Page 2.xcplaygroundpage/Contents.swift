@@ -28,3 +28,7 @@ for proverb in data{
     }
 }
 print(count)
+
+print("\nQ1")
+let ans: Int = data.reduce(0, {$1.contains("the") == true ? $0 + 1 : $0})
+print(ans == count)

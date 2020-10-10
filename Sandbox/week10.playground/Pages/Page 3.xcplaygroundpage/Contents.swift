@@ -14,6 +14,9 @@ func reduceCopy_1(array:[Int]) -> Int {
 }
 var answer1 = reduceCopy_1(array: items1)
 
+print("Q4")
+print(items1.reduce(0){$0 + $1} == answer1)
+
 
 // Page 3 - Q 2
 var items2: [String] = [
@@ -30,6 +33,10 @@ func reduceCopy_2(array:[String]) -> Int {
     return result
 }
 var answer2 = reduceCopy_2(array: items2)
+
+// Answer 5
+print("Q5")
+print(items2.reduce(0){$0 + $1.count} == answer2)
 
 
 //: [Next](@next)

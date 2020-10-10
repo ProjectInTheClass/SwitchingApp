@@ -20,6 +20,8 @@ for student in students {
     q1.append(student.name)
 }
 print(q1)
+print("Q2")
+print(students.map { $0.name } == q1)
 
 
 //Q 나이의 총 합?
@@ -28,3 +30,5 @@ for student in students {
     q2 += student.age
 }
 print(q2)
+print("Q3")
+print(students.reduce(0) { $0 + $1.age } == q2)
