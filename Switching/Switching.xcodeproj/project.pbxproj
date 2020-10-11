@@ -176,7 +176,6 @@
 		A61B215725206EDC00272050 /* Switching */ = {
 			isa = PBXGroup;
 			children = (
-				A618AFC32526FD8E006F9CA9 /* AddScene */,
 				EAAB80202526B31B007815B2 /* Switching.entitlements */,
 				A61B216D25206F0200272050 /* Scene */,
 				A61B215825206EDC00272050 /* AppDelegate.swift */,
@@ -192,6 +191,7 @@
 		A61B216D25206F0200272050 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				A618AFC32526FD8E006F9CA9 /* AddScene */,
 				A60FD7482520AADB0069C29C /* CharacterViewController.swift */,
 				A61B217F2520927600272050 /* FeedScene */,
 				A61B216F252071F700272050 /* DraftScene */,
