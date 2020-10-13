@@ -15,15 +15,15 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard var fileURL = FileManager.default
-            .containerURL(forSecurityApplicationGroupIdentifier: "group.switching.Switching") else {
-                print("Container URL is nil")
-                return 0
+                .containerURL(forSecurityApplicationGroupIdentifier: "group.switching.Switching") else {
+            print("Container URL is nil")
+            return 0
         }
-
+        
         fileURL.appendPathComponent("shared.realm")
-
+        
         Realm.Configuration.defaultConfiguration = Realm.Configuration(fileURL: fileURL)
-
+        
         let realm = try! Realm(fileURL: fileURL)
         return realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").count
     }
@@ -32,30 +32,41 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! DraftTableViewCell
         guard var fileURL = FileManager.default
-            .containerURL(forSecurityApplicationGroupIdentifier: "group.switching.Switching") else {
-                print("Container URL is nil")
-                return cell
+                .containerURL(forSecurityApplicationGroupIdentifier: "group.switching.Switching") else {
+            print("Container URL is nil")
+            return cell
         }
-
+        
         fileURL.appendPathComponent("shared.realm")
-
+        
         Realm.Configuration.defaultConfiguration = Realm.Configuration(fileURL: fileURL)
-
+        
         let realm = try! Realm(fileURL: fileURL)
         if let bookmark: Bookmark = realm.objects(Bookmark.self)[indexPath.row]{
             cell.feedURLLabel.text = bookmark.url
             cell.feedTitleLabel.text = bookmark.desc
             
-            let slp = SwiftLinkPreview(session: URLSession.shared, workQueue: SwiftLinkPreview.defaultWorkQueue, responseQueue: DispatchQueue.main, cache: DisabledCache.instance)
-            slp.preview(bookmark.url,
-                        onSuccess: {
-                            result in
-                            if let imageUrl = result.image{
-                                if let imageUrl: URL = URL(string: imageUrl){
-                                    cell.feedImageView.load(url: imageUrl)
+            if bookmark.image == nil{
+                
+                let slp = SwiftLinkPreview(session: URLSession.shared, workQueue: SwiftLinkPreview.defaultWorkQueue, responseQueue: DispatchQueue.main, cache: DisabledCache.instance)
+                slp.preview(bookmark.url,
+                            onSuccess: {
+                                result in
+                                if let imageUrl = result.image{
+                                    if let url = URL(string: imageUrl){
+                                        if let data: Data = getImageDataFromURL(url: url){
+                                            try! realm.write{
+                                                bookmark.image = data
+                                            }
+                                            cell.feedImageView.image = UIImage(data: data)
+                                        }
+                                    }
                                 }
-                            }
-                        }, onError: {error in print("slp error")})
+                            }, onError: {error in print("slp error")})
+                
+            } else if let data = bookmark.image{
+                cell.feedImageView.image = UIImage(data: data)
+            }
         }
         return cell
     }
@@ -80,9 +91,9 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @objc func notificationReceived(notification: Notification) {
-            // Notification에 담겨진 object와 userInfo를 얻어 처리 가능
+        // Notification에 담겨진 object와 userInfo를 얻어 처리 가능
         self.draftTableView.reloadData()
-        }
+    }
     
     @objc private func didPullToRefresh() {
         print("start refresh")
@@ -150,3 +161,8 @@ extension UIImageView {
     }
 }
 
+func getImageDataFromURL(url: URL) -> Data? {
+    var data: Data?
+    data = try? Data(contentsOf: url)
+    return data
+}
