@@ -1,20 +1,22 @@
 //
-//  FeedViewController.swift
+//  EditAccountViewController.swift
 //  Switching
 //
-//  Created by JNGSJN on 2020/09/27.
+//  Created by JNGSJN on 2020/10/16.
 //
 
 import UIKit
 
-class FeedViewController: UIViewController {
-    @IBOutlet weak var accountButton: UIButton!
-    @IBOutlet weak var addButton: UIButton!
+class EditAccountViewController: UIViewController {
+    
+    @IBOutlet weak var accountTextField: UITextField!
+    @IBAction func cancelClicked(_ sender: UIButton) {
+          self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addButton.layer.cornerRadius = addButton.frame.height/2
-        accountButton.layer.cornerRadius = accountButton.frame.height/2
+
         // Do any additional setup after loading the view.
     }
     

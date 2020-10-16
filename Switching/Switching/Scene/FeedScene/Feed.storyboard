@@ -28,22 +28,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jXL-fR-7pT">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jXL-fR-7pT">
                                                     <rect key="frame" x="10" y="10" width="80" height="80"/>
-                                                    <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="jXL-fR-7pT" secondAttribute="height" multiplier="1:1" id="DmO-Uz-vDz"/>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="L1F-xa-Pdq"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpm-ac-nd0">
-                                                    <rect key="frame" x="98" y="20" width="37" height="21"/>
+                                                    <rect key="frame" x="98" y="15" width="296" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRQ-6v-34w">
-                                                    <rect key="frame" x="324.5" y="73" width="69.5" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URLLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRQ-6v-34w">
+                                                    <rect key="frame" x="98" y="41" width="296" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="highlightedColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smr-T4-udg">
+                                                    <rect key="frame" x="358.5" y="73" width="35.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -51,21 +56,18 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="jXL-fR-7pT" firstAttribute="top" secondItem="I9l-GU-A55" secondAttribute="top" constant="10" id="4bO-UZ-ps7"/>
-                                                <constraint firstItem="Xpm-ac-nd0" firstAttribute="top" secondItem="jXL-fR-7pT" secondAttribute="top" constant="10" id="7KF-7D-lUc"/>
-                                                <constraint firstItem="oRQ-6v-34w" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jXL-fR-7pT" secondAttribute="trailing" constant="8" symbolic="YES" id="C2h-FR-Jcg"/>
+                                                <constraint firstItem="Smr-T4-udg" firstAttribute="bottom" secondItem="jXL-fR-7pT" secondAttribute="bottom" id="5ha-dw-BZi"/>
+                                                <constraint firstItem="Xpm-ac-nd0" firstAttribute="top" secondItem="jXL-fR-7pT" secondAttribute="top" constant="5" id="7KF-7D-lUc"/>
                                                 <constraint firstItem="jXL-fR-7pT" firstAttribute="leading" secondItem="I9l-GU-A55" secondAttribute="leading" constant="10" id="H2B-wm-BnH"/>
                                                 <constraint firstAttribute="bottom" secondItem="jXL-fR-7pT" secondAttribute="bottom" constant="10" id="VZ9-X1-3ya"/>
+                                                <constraint firstItem="Smr-T4-udg" firstAttribute="trailing" secondItem="Xpm-ac-nd0" secondAttribute="trailing" id="W8h-TQ-j2z"/>
                                                 <constraint firstItem="Xpm-ac-nd0" firstAttribute="leading" secondItem="jXL-fR-7pT" secondAttribute="trailing" constant="8" symbolic="YES" id="c48-aY-QCt"/>
-                                                <constraint firstItem="oRQ-6v-34w" firstAttribute="trailing" secondItem="I9l-GU-A55" secondAttribute="trailingMargin" id="jBv-RX-78b"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xpm-ac-nd0" secondAttribute="trailing" constant="20" symbolic="YES" id="vgq-gf-oSv"/>
-                                                <constraint firstItem="oRQ-6v-34w" firstAttribute="bottom" secondItem="jXL-fR-7pT" secondAttribute="bottom" id="wy8-xq-aHB"/>
+                                                <constraint firstItem="oRQ-6v-34w" firstAttribute="top" secondItem="Xpm-ac-nd0" secondAttribute="bottom" constant="5" id="fyf-Gz-bpj"/>
+                                                <constraint firstItem="oRQ-6v-34w" firstAttribute="leading" secondItem="Xpm-ac-nd0" secondAttribute="leading" id="j77-ar-ohN"/>
+                                                <constraint firstItem="oRQ-6v-34w" firstAttribute="trailing" secondItem="Xpm-ac-nd0" secondAttribute="trailing" id="tLc-u5-avJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Xpm-ac-nd0" secondAttribute="trailing" constant="20" id="vgq-gf-oSv"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="feedDateLabel" destination="oRQ-6v-34w" id="wLg-7I-X2i"/>
-                                            <outlet property="feedImageView" destination="jXL-fR-7pT" id="egh-vP-HXy"/>
-                                            <outlet property="feedTitleLabel" destination="Xpm-ac-nd0" id="R5G-FK-HRo"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -148,6 +150,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="피드" id="qSp-pa-bUe"/>
+                    <connections>
+                        <outlet property="accountButton" destination="HJL-yy-i2Q" id="xVQ-a8-Vox"/>
+                        <outlet property="addButton" destination="u4r-ef-Mvd" id="Knp-rT-WiR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m82-Th-96u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -163,10 +169,10 @@
             </objects>
             <point key="canvasLocation" x="1843" y="-605"/>
         </scene>
-        <!--Character-->
+        <!--Account-->
         <scene sceneID="bCa-Kr-Kbt">
             <objects>
-                <viewControllerPlaceholder storyboardName="Character" id="yKZ-AR-AQM" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Account" id="yKZ-AR-AQM" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="P2L-NH-CZb"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kji-bz-ofS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

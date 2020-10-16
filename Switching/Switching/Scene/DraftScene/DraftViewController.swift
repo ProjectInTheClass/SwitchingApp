@@ -43,7 +43,7 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         let realm = try! Realm(fileURL: fileURL)
         if let bookmark: Bookmark = realm.objects(Bookmark.self)[indexPath.row]{
-            cell.feedDateLabel.text = bookmark.url
+            cell.feedURLLabel.text = bookmark.url
             cell.feedTitleLabel.text = bookmark.desc
             
             let slp = SwiftLinkPreview(session: URLSession.shared, workQueue: SwiftLinkPreview.defaultWorkQueue, responseQueue: DispatchQueue.main, cache: DisabledCache.instance)
@@ -61,14 +61,14 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
   
-    @IBOutlet weak var characterButton: UIButton!
+    @IBOutlet weak var accountButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addButton.layer.cornerRadius = addButton.frame.height/2
-        characterButton.layer.cornerRadius = characterButton.frame.height/2
+        accountButton.layer.cornerRadius = accountButton.frame.height/2
         self.draftTableView.delegate = self
         self.draftTableView.dataSource = self
         // Do any additional setup after loading the view.

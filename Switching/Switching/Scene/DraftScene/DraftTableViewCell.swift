@@ -12,6 +12,7 @@ class DraftTableViewCell: UITableViewCell {
 
     @IBOutlet weak var feedImageView: UIImageView!
     @IBOutlet weak var feedTitleLabel: UILabel!
+    @IBOutlet weak var feedURLLabel: UILabel!
     @IBOutlet weak var feedDateLabel: UILabel!
     
     override func awakeFromNib() {
