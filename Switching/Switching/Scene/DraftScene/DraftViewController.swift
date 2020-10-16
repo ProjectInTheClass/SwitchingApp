@@ -14,34 +14,14 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var draftTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard var fileURL = FileManager.default
-                .containerURL(forSecurityApplicationGroupIdentifier: "group.switching.Switching") else {
-            print("Container URL is nil")
-            return 0
-        }
-        
-        fileURL.appendPathComponent("shared.realm")
-        
-        Realm.Configuration.defaultConfiguration = Realm.Configuration(fileURL: fileURL)
-        
-        let realm = try! Realm(fileURL: fileURL)
+        let realm = SharedData.instance.realm
         return realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! DraftTableViewCell
-        guard var fileURL = FileManager.default
-                .containerURL(forSecurityApplicationGroupIdentifier: "group.switching.Switching") else {
-            print("Container URL is nil")
-            return cell
-        }
-        
-        fileURL.appendPathComponent("shared.realm")
-        
-        Realm.Configuration.defaultConfiguration = Realm.Configuration(fileURL: fileURL)
-        
-        let realm = try! Realm(fileURL: fileURL)
+        let realm = SharedData.instance.realm
         if let bookmark: Bookmark = realm.objects(Bookmark.self)[indexPath.row]{
             cell.feedURLLabel.text = bookmark.url
             cell.feedTitleLabel.text = bookmark.desc
@@ -120,17 +100,10 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func delete(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (_, _, _) in
-            let fileURL = FileManager.default
-                .containerURL(forSecurityApplicationGroupIdentifier: "group.switching.Switching")
-            if var url = fileURL{
-                url.appendPathComponent("shared.realm")
-                Realm.Configuration.defaultConfiguration = Realm.Configuration(fileURL: url)
-                let realm = try! Realm(fileURL: url)
-                
-                let bookmark: Bookmark = realm.objects(Bookmark.self)[indexPath.row]
-                try! realm.write{
-                    realm.delete(bookmark)
-                }
+            let realm = SharedData.instance.realm
+            let bookmark: Bookmark = realm.objects(Bookmark.self)[indexPath.row]
+            try! realm.write{
+                realm.delete(bookmark)
             }
             self?.draftTableView.reloadData()
             print("delete clicked \(indexPath.row)")

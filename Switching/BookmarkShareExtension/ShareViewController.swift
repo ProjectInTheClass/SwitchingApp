@@ -46,20 +46,7 @@ class ShareViewController: UIViewController {
                         bookmark.character = "main"
     
                         usleep(1000 * 10)
-    
-                        guard var fileURL = FileManager.default
-                            .containerURL(forSecurityApplicationGroupIdentifier: "group.switching.Switching") else {
-                                print("Container URL is nil")
-                                return
-                        }
-    
-                        fileURL.appendPathComponent("shared.realm")
-    
-                        Realm.Configuration.defaultConfiguration = Realm.Configuration(fileURL: fileURL)
-    
-                        let realm = try! Realm(fileURL: fileURL)
-                        print("\(realm.configuration.fileURL?.absoluteString)")
-    
+                        let realm = SharedData.instance.realm
                         do{
                             try realm.write{ // realm.write{}는 git에서 commit을 해주는 것과 비슷하다.
                                 realm.add(bookmark) // 데이터베이스에 park 모델을 더한다.
