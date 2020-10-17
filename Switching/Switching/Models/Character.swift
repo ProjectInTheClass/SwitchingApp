@@ -9,4 +9,5 @@ import RealmSwift
 
 class Character: Object {
     @objc dynamic var character: String = ""
+    @objc dynamic var tags: [String] = []
 }
