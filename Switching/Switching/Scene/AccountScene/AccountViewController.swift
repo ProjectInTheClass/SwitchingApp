@@ -8,12 +8,17 @@
 import UIKit
 
 class AccountViewController: UIViewController {
+    @IBOutlet weak var characterCollectionView: UICollectionView!
     @IBAction func cancelClicked(_ sender: UIButton) {
           self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(notification:)), name: Notification.Name("newCharacterCreated"), object: nil)
+    }
+    @objc func notificationReceived(notification: Notification) {
+        self.characterCollectionView.reloadData()
     }
 }
 

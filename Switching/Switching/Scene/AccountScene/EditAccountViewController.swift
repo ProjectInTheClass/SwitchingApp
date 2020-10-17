@@ -26,7 +26,7 @@ class EditAccountViewController: UIViewController {
         } catch {
             print("Error Add \(error)")
         }
-        
+        NotificationCenter.default.post(name: Notification.Name("newCharacterCreated"), object: nil)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
