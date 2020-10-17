@@ -11,7 +11,23 @@ class EditAccountViewController: UIViewController {
     
     @IBOutlet weak var accountTextField: UITextField!
     @IBAction func cancelClicked(_ sender: UIButton) {
-          self.presentingViewController?.dismiss(animated: true, completion: nil)
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func summitClicked(_ sender: Any) {
+        guard let text = accountTextField.text else{ return }
+        let newCharacter = Character()
+        newCharacter.character = text
+        
+        let realm = SharedData.instance.realm
+        do{
+            try realm.write{
+                realm.add(newCharacter)
+            }
+        } catch {
+            print("Error Add \(error)")
+        }
+        
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
