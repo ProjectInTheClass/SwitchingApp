@@ -23,8 +23,7 @@
 		A625FFE52531855000F94007 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A625FFE42531855000F94007 /* Feed.storyboard */; };
 		A625FFE92531863100F94007 /* Draft.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A625FFE82531863100F94007 /* Draft.storyboard */; };
 		A625FFEE2531877B00F94007 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A625FFED2531877B00F94007 /* Account.storyboard */; };
-		A69459FC252909830001FF7E /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69459FB252909820001FF7E /* SettingTableViewCell.swift */; };
-		A6945A022529105F0001FF7E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6945A012529105F0001FF7E /* SettingViewController.swift */; };
+		A63A1C1F253ED192003E2BBE /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63A1C1E253ED192003E2BBE /* SettingTableViewController.swift */; };
 		A6C0FE8F2529FDC7003B1070 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C0FE8E2529FDC7003B1070 /* Setting.storyboard */; };
 		A6C0FE932529FFD9003B1070 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C0FE922529FFD9003B1070 /* Notification.storyboard */; };
 		A6C0FE99252A012A003B1070 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C0FE98252A012A003B1070 /* NotificationViewController.swift */; };
@@ -92,8 +91,7 @@
 		A625FFE42531855000F94007 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		A625FFE82531863100F94007 /* Draft.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Draft.storyboard; sourceTree = "<group>"; };
 		A625FFED2531877B00F94007 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
-		A69459FB252909820001FF7E /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
-		A6945A012529105F0001FF7E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		A63A1C1E253ED192003E2BBE /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		A6C0FE8E2529FDC7003B1070 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		A6C0FE922529FFD9003B1070 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		A6C0FE98252A012A003B1070 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -260,9 +258,8 @@
 		A6945A00252910220001FF7E /* SettingScene */ = {
 			isa = PBXGroup;
 			children = (
-				A6945A012529105F0001FF7E /* SettingViewController.swift */,
-				A69459FB252909820001FF7E /* SettingTableViewCell.swift */,
 				A6C0FE8E2529FDC7003B1070 /* Setting.storyboard */,
+				A63A1C1E253ED192003E2BBE /* SettingTableViewController.swift */,
 			);
 			path = SettingScene;
 			sourceTree = "<group>";
@@ -473,12 +470,11 @@
 				A6DF497525396BE0004A065B /* AddAccountCollectionViewCell.swift in Sources */,
 				A618AFC92527005B006F9CA9 /* AddViewController.swift in Sources */,
 				A61B215925206EDC00272050 /* AppDelegate.swift in Sources */,
+				A63A1C1F253ED192003E2BBE /* SettingTableViewController.swift in Sources */,
 				BDA8CB8525278C2200F4BDA5 /* BookmarkList.swift in Sources */,
-				A6945A022529105F0001FF7E /* SettingViewController.swift in Sources */,
 				A6C0FE9D252A032C003B1070 /* NotificationTableViewCell.swift in Sources */,
 				A61B21712520721400272050 /* DraftViewController.swift in Sources */,
 				A61B215B25206EDC00272050 /* SceneDelegate.swift in Sources */,
-				A69459FC252909830001FF7E /* SettingTableViewCell.swift in Sources */,
 				BDA8CB7B25278A0C00F4BDA5 /* Tag.swift in Sources */,
 				A6C0FE99252A012A003B1070 /* NotificationViewController.swift in Sources */,
 				EADDCD5A25305DB100673641 /* SharedData.swift in Sources */,
