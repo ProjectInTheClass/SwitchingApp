@@ -51,6 +51,7 @@ class AddViewController: UIViewController {
         bookmark.url = url!
         bookmark.desc = title!
         bookmark.character = "main"
+        bookmark.isTemp = false
         
         guard var fileURL = FileManager.default.containerURL(
             forSecurityApplicationGroupIdentifier: "group.switching.Switching"

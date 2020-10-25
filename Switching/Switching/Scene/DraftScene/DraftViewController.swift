@@ -15,7 +15,11 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let realm = SharedData.instance.realm
-        return realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").count
+        var objects = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'")
+        objects = objects.filter("isTemp = true")
+        var td = objects.count
+        return objects.count
+//        return realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
