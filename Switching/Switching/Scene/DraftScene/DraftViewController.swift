@@ -88,16 +88,11 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     
-    private func mainCharacter(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .normal, title: "Main") { [weak self] (_, _, _) in
-            print("mainCharacter clicked \(indexPath.row)")
-        }
-        return action
-    }
-    
-    private func subCharacter(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .normal, title: "Sub") { [weak self] (_, _, _) in
-            print("subCharacter clicked \(indexPath.row)")
+    private func edit(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .normal, title: "수정") { [weak self] (_, _, _) in
+            let storyboard = UIStoryboard.init(name: "Add", bundle: nil)
+            let addVc = storyboard.instantiateInitialViewController()!
+            self?.present(addVc, animated: true, completion: nil)
         }
         return action
     }
@@ -115,11 +110,15 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return action
     }
     
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editBtn = self.edit(rowIndexPathAt: indexPath)
+        let swipe = UISwipeActionsConfiguration(actions: [editBtn])
+        return swipe
+    }
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let mainCharacterBtn = self.mainCharacter(rowIndexPathAt: indexPath)
-        let subCharacterBtn = self.subCharacter(rowIndexPathAt: indexPath)
         let deleteBtn = self.delete(rowIndexPathAt: indexPath)
-        let swipe = UISwipeActionsConfiguration(actions: [mainCharacterBtn, subCharacterBtn, deleteBtn])
+        let swipe = UISwipeActionsConfiguration(actions: [deleteBtn])
         return swipe
     }
 }

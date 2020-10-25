@@ -12,39 +12,22 @@ class AddViewController: UIViewController {
 
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var tagTextField: UITextField!
-    @IBOutlet var characterButtons: [UIButton]!
     
     var selectedCharact: Character?
     var bookmarkList: TempBookmarkList?
     
-    @IBAction func characterButtonClicked(_ sender: UIButton) {
-        let selectedButton = sender.tag
-        for button in self.characterButtons {
-            if (button==sender) {
-                button.alpha = 1
-            } else {
-                button.alpha = 0.6
-            }
-        }
-        print("\(#function) \(selectedButton)")
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        for button in self.characterButtons {
-            button.layer.cornerRadius = button.frame.width/2
-            button.alpha = 0.6
-        }
+    }
+    
+    @IBAction func cancelBookmarkButtonPressed(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addBoomarkButtonPressed(_ sender: UIButton) {
         
         let url = self.urlTextField.text
         let title = self.titleTextField.text
-        let tag = self.tagTextField.text
-        let character = self.characterButtons
         
         let bookmark = Bookmark()
         
@@ -71,6 +54,7 @@ class AddViewController: UIViewController {
             print("Error Add \(error)")
         }
         print("add data done")
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
 }
