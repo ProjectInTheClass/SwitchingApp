@@ -31,6 +31,7 @@
 		A6DF497125396A4C004A065B /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF497025396A4C004A065B /* AccountCollectionViewCell.swift */; };
 		A6DF497525396BE0004A065B /* AddAccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF497425396BE0004A065B /* AddAccountCollectionViewCell.swift */; };
 		A6DF497B253976E8004A065B /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF497A253976E8004A065B /* EditAccountViewController.swift */; };
+		BD1D339625446C4E00706CF5 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1D339525446C4E00706CF5 /* FeedTableViewCell.swift */; };
 		BDA8CB7B25278A0C00F4BDA5 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8CB7A25278A0C00F4BDA5 /* Tag.swift */; };
 		BDA8CB7C25278A0C00F4BDA5 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8CB7A25278A0C00F4BDA5 /* Tag.swift */; };
 		BDA8CB8025278B3E00F4BDA5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8CB7F25278B3E00F4BDA5 /* Character.swift */; };
@@ -99,6 +100,7 @@
 		A6DF497025396A4C004A065B /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6DF497425396BE0004A065B /* AddAccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6DF497A253976E8004A065B /* EditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
+		BD1D339525446C4E00706CF5 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		BDA8CB7A25278A0C00F4BDA5 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		BDA8CB7F25278B3E00F4BDA5 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		BDA8CB8425278C2200F4BDA5 /* BookmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkList.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				A61B2180252092B200272050 /* FeedViewController.swift */,
 				A625FFE42531855000F94007 /* Feed.storyboard */,
+				BD1D339525446C4E00706CF5 /* FeedTableViewCell.swift */,
 			);
 			path = FeedScene;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 			files = (
 				A6DF497B253976E8004A065B /* EditAccountViewController.swift in Sources */,
 				A60FD7492520AADB0069C29C /* AccountViewController.swift in Sources */,
+				BD1D339625446C4E00706CF5 /* FeedTableViewCell.swift in Sources */,
 				A61B2178252077FA00272050 /* DraftTableViewCell.swift in Sources */,
 				A6DF497525396BE0004A065B /* AddAccountCollectionViewCell.swift in Sources */,
 				A618AFC92527005B006F9CA9 /* AddViewController.swift in Sources */,
@@ -661,7 +665,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Switching/Switching.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8ML2WPP2FM;
+				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				INFOPLIST_FILE = Switching/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -683,7 +687,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Switching/Switching.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8ML2WPP2FM;
+				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				INFOPLIST_FILE = Switching/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="194" width="414" height="668"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" id="LXE-4K-VX4" customClass="DraftTableViewCell" customModule="Switching" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" id="LXE-4K-VX4" customClass="FeedTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LXE-4K-VX4" id="I9l-GU-A55">
@@ -68,6 +68,12 @@
                                                 <constraint firstAttribute="trailing" secondItem="Xpm-ac-nd0" secondAttribute="trailing" constant="20" id="vgq-gf-oSv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="feedfeedDateLabel" destination="Smr-T4-udg" id="Yag-PD-Mqf"/>
+                                            <outlet property="feedfeedImageView" destination="jXL-fR-7pT" id="iKp-3W-iAZ"/>
+                                            <outlet property="feedfeedTitleLabel" destination="Xpm-ac-nd0" id="ovk-0C-Iv1"/>
+                                            <outlet property="feedfeedURLLabel" destination="oRQ-6v-34w" id="co6-xZ-p1A"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -153,6 +159,7 @@
                     <connections>
                         <outlet property="accountButton" destination="HJL-yy-i2Q" id="xVQ-a8-Vox"/>
                         <outlet property="addButton" destination="u4r-ef-Mvd" id="Knp-rT-WiR"/>
+                        <outlet property="feedTableView" destination="uci-Oj-wXG" id="mgf-BG-QA3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m82-Th-96u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
