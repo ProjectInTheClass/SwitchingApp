@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kSO-Hi-qj3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="194" width="414" height="668"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" id="LXE-4K-VX4" customClass="FeedTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedfeedCell" id="LXE-4K-VX4" customClass="FeedTableViewCell" customModule="Switching" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LXE-4K-VX4" id="I9l-GU-A55">
@@ -69,10 +69,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="feedfeedDateLabel" destination="Smr-T4-udg" id="Yag-PD-Mqf"/>
-                                            <outlet property="feedfeedImageView" destination="jXL-fR-7pT" id="iKp-3W-iAZ"/>
-                                            <outlet property="feedfeedTitleLabel" destination="Xpm-ac-nd0" id="ovk-0C-Iv1"/>
-                                            <outlet property="feedfeedURLLabel" destination="oRQ-6v-34w" id="co6-xZ-p1A"/>
+                                            <outlet property="feedfeedDateLabel" destination="Smr-T4-udg" id="wU0-Ye-YBJ"/>
+                                            <outlet property="feedfeedImageView" destination="jXL-fR-7pT" id="HZG-Fp-Jqb"/>
+                                            <outlet property="feedfeedTitleLabel" destination="Xpm-ac-nd0" id="RgA-C0-d9M"/>
+                                            <outlet property="feedfeedURLLabel" destination="oRQ-6v-34w" id="c2S-04-85K"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
