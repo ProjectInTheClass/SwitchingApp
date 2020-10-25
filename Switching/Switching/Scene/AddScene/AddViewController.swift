@@ -54,7 +54,7 @@ class AddViewController: UIViewController {
         bookmark.isTemp = false
         
         guard var fileURL = FileManager.default.containerURL(
-            forSecurityApplicationGroupIdentifier: "group.switching.Switching"
+            forSecurityApplicationGroupIdentifier: "group.switching.SwitchingApp"
         ) else {
             print("Container URL is nil")
             return
