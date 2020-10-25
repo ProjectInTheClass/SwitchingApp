@@ -16,8 +16,8 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let realm = SharedData.instance.realm
         var objects = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'")
-        objects = objects.filter("isTemp = true")
-        var td = objects.count
+        objects = objects.filter("isTemp == True")
+        print(objects.count)
         return objects.count
 //        return realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").count
     }
@@ -26,7 +26,7 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! DraftTableViewCell
         let realm = SharedData.instance.realm
-        if let bookmark: Bookmark = realm.objects(Bookmark.self)[indexPath.row]{
+        if let bookmark: Bookmark = realm.objects(Bookmark.self).filter("isTemp == True")[indexPath.row]{
             cell.feedURLLabel.text = bookmark.url
             cell.feedTitleLabel.text = bookmark.desc
             
