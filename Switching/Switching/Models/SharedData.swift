@@ -15,6 +15,9 @@ class SharedData{
     }
     var selectedCharacter: String = "main"
     var realm: Realm = getRealm()!
+    func newRealm() -> Realm{
+        return getRealm()!
+    }
 }
 
 func getRealm() -> Realm? {
