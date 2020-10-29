@@ -88,7 +88,12 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private func edit(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "수정") { [weak self] (_, _, _) in
             let storyboard = UIStoryboard.init(name: "Add", bundle: nil)
-            let addVc = storyboard.instantiateInitialViewController()!
+            guard let addVc = storyboard.instantiateInitialViewController() as? AddViewController else {
+                return
+            }
+            let realm = SharedData.instance.realm
+            var objects = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == True")
+            addVc.selectedBookmark = objects[indexPath.row]
             self?.present(addVc, animated: true, completion: nil)
         }
         return action
