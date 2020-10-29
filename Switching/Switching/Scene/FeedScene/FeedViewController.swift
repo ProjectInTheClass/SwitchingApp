@@ -15,9 +15,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let realm = SharedData.instance.realm
-        var objects = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'")
-        objects = objects.filter("isTemp == False")
-        print(objects.count)
+        var objects = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == False")
+        var bookmarks = realm.objects(Bookmark.self).filter("character = 'main'").filter("isTemp == False")
         return objects.count
     }
     
@@ -25,7 +24,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedfeedCell", for: indexPath) as! FeedTableViewCell
         let realm = SharedData.instance.realm
-        if let bookmark: Bookmark = realm.objects(Bookmark.self).filter("isTemp == False")[indexPath.row]{
+        if let bookmark: Bookmark = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == False")[indexPath.row]{
             cell.feedfeedURLLabel.text = bookmark.url
             cell.feedfeedTitleLabel.text = bookmark.desc
             
