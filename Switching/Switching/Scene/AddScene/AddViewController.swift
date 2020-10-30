@@ -12,10 +12,13 @@ class AddViewController: UIViewController {
 
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var selectTagCollectionView: UICollectionView!
     
     var selectedCharact: Character?
     var bookmarkList: TempBookmarkList?
     var selectedBookmark: Bookmark?
+    
+    var selectedTags: Array<String> = [] //임시데이터
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,5 +78,33 @@ class AddViewController: UIViewController {
         }
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+    
+}
+class SelectedTagsCollectionViewCell: UICollectionViewCell{
+    @IBOutlet weak var selectedTagButton: UIButton!
+}
+extension AddViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if selectedTags.count == 0 {
+            return 1
+        } else {
+            return selectedTags.count
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "selectedTagsCell", for: indexPath) as! SelectedTagsCollectionViewCell
+        if selectedTags.count == 0 {
+            cell.selectedTagButton?.setTitle("등록된 태그가 없습니다", for: .normal)
+        } else {
+            cell.selectedTagButton?.setTitle(selectedTags[indexPath.row], for: .normal)
+        }
+        cell.contentView.layer.cornerRadius = 15
+        cell.contentView.layer.borderWidth = 1.0
+        cell.contentView.layer.borderColor = UIColor.clear.cgColor
+        cell.contentView.layer.masksToBounds = true;
+        return cell
+    }
+    
     
 }

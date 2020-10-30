@@ -24,6 +24,7 @@
 		A625FFE92531863100F94007 /* Draft.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A625FFE82531863100F94007 /* Draft.storyboard */; };
 		A625FFEE2531877B00F94007 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A625FFED2531877B00F94007 /* Account.storyboard */; };
 		A63A1C1F253ED192003E2BBE /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63A1C1E253ED192003E2BBE /* SettingTableViewController.swift */; };
+		A67DEC44254C9453002650B1 /* AddSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67DEC43254C9453002650B1 /* AddSelectViewController.swift */; };
 		A6BCF98E254C5DAF00E42AAC /* FeedFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BCF98D254C5DAF00E42AAC /* FeedFilterViewController.swift */; };
 		A6C0FE8F2529FDC7003B1070 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C0FE8E2529FDC7003B1070 /* Setting.storyboard */; };
 		A6C0FE932529FFD9003B1070 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C0FE922529FFD9003B1070 /* Notification.storyboard */; };
@@ -98,6 +99,7 @@
 		A625FFE82531863100F94007 /* Draft.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Draft.storyboard; sourceTree = "<group>"; };
 		A625FFED2531877B00F94007 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		A63A1C1E253ED192003E2BBE /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		A67DEC43254C9453002650B1 /* AddSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSelectViewController.swift; sourceTree = "<group>"; };
 		A6BCF98D254C5DAF00E42AAC /* FeedFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFilterViewController.swift; sourceTree = "<group>"; };
 		A6C0FE8E2529FDC7003B1070 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		A6C0FE922529FFD9003B1070 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			children = (
 				A618AFC82527005B006F9CA9 /* AddViewController.swift */,
 				A625FFE0253184AA00F94007 /* Add.storyboard */,
+				A67DEC47254C948D002650B1 /* AddSelectScene */,
 			);
 			path = AddScene;
 			sourceTree = "<group>";
@@ -256,6 +259,14 @@
 				A6DF497A253976E8004A065B /* EditAccountViewController.swift */,
 			);
 			path = AccountScene;
+			sourceTree = "<group>";
+		};
+		A67DEC47254C948D002650B1 /* AddSelectScene */ = {
+			isa = PBXGroup;
+			children = (
+				A67DEC43254C9453002650B1 /* AddSelectViewController.swift */,
+			);
+			path = AddSelectScene;
 			sourceTree = "<group>";
 		};
 		A69459FF25290FCE0001FF7E /* NotificationScene */ = {
@@ -501,6 +512,7 @@
 				BDA8CB8525278C2200F4BDA5 /* BookmarkList.swift in Sources */,
 				A6C0FE9D252A032C003B1070 /* NotificationTableViewCell.swift in Sources */,
 				A61B21712520721400272050 /* DraftViewController.swift in Sources */,
+				A67DEC44254C9453002650B1 /* AddSelectViewController.swift in Sources */,
 				A61B215B25206EDC00272050 /* SceneDelegate.swift in Sources */,
 				BDA8CB7B25278A0C00F4BDA5 /* Tag.swift in Sources */,
 				A6C0FE99252A012A003B1070 /* NotificationViewController.swift in Sources */,
