@@ -10,7 +10,7 @@ import UIKit
 class FeedFilterViewController: UIViewController {
     
     var tags: Array<String> = ["태그1번", "태그2번", "태그3번"] //임시데이터
-    var selectedTags: Array<String> = [] //임시데이터
+    var filteredTags: Array<String> = [] //임시데이터
     
     @IBOutlet weak var FeedFilterTableView: UITableView!
     @IBAction func backButtonClicked(_ sender: UIButton) {
@@ -25,9 +25,9 @@ class FeedFilterViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "unwindToFeedVC" {
             let vc = segue.destination as? FeedViewController
-            vc!.filteredTags = selectedTags
+            vc!.filteredTags = filteredTags
         }
-        print("filteredTags로 데이터 이동")
+        print("feedVC로 데이터 이동")
     }
 }
 
@@ -57,8 +57,8 @@ extension FeedFilterViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.accessoryType = .checkmark
             }
         }
-        selectedTags.append(tags[indexPath.row])
-        print("선택된 태그는 \(selectedTags)")
+        filteredTags.append(tags[indexPath.row])
+        print("선택된 태그는 \(filteredTags)")
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -67,9 +67,9 @@ extension FeedFilterViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.accessoryType = .none
             }
         }
-        if let index = selectedTags.firstIndex(of: tags[indexPath.row]) {
-            selectedTags.remove(at: index)
+        if let index = filteredTags.firstIndex(of: tags[indexPath.row]) {
+            filteredTags.remove(at: index)
         }
-        print("선택된 태그는 \(selectedTags)")
+        print("선택된 태그는 \(filteredTags)")
     }
 }
