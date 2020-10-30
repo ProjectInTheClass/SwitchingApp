@@ -147,7 +147,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="128" height="44"/>
                                         <connections>
-                                            <outlet property="filterdTagButton" destination="pbX-cb-l0t" id="QC9-gw-pLg"/>
+                                            <outlet property="filteredTagButton" destination="pbX-cb-l0t" id="oCb-X5-EO6"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

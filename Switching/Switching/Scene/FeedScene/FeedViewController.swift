@@ -169,7 +169,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     */
 class FilteredTagsCollectionViewCell: UICollectionViewCell{
-        @IBOutlet weak var filterdTagButton: UIButton!
+    @IBOutlet weak var filteredTagButton: UIButton!
 }
 
 extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSource{
@@ -184,9 +184,9 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filteredTagsCell", for: indexPath) as! FilteredTagsCollectionViewCell
         if filteredTags.count == 0 {
-            cell.filterdTagButton?.setTitle("See All", for: .normal)
+            cell.filteredTagButton?.setTitle("See All", for: .normal)
         } else {
-            cell.filterdTagButton?.setTitle(filteredTags[indexPath.row], for: .normal)
+            cell.filteredTagButton?.setTitle(filteredTags[indexPath.row], for: .normal)
         }
         cell.contentView.layer.cornerRadius = 15 //cell.contentView.frame.height/2 적용 오류
         cell.contentView.layer.borderWidth = 1.0
