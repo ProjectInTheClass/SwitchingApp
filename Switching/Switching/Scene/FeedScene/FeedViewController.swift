@@ -8,6 +8,7 @@
 import UIKit
 import RealmSwift
 import SwiftLinkPreview
+import SafariServices
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -117,6 +118,15 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let deleteBtn = self.delete(rowIndexPathAt: indexPath)
         let swipe = UISwipeActionsConfiguration(actions: [mainCharacterBtn, subCharacterBtn, deleteBtn])
         return swipe
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let realm = SharedData.instance.realm
+        let bookmark: Bookmark = realm.objects(Bookmark.self)[indexPath.row]
+        guard let url = URL(string: bookmark.url) else { return }
+        let safariViewController = SFSafariViewController(url: url)
+        print("safariviewController 실행됨")
+        present(safariViewController, animated: true, completion: nil)
+        tableView.deselectRow(at: indexPath, animated: true) //select 표시 해제
     }
 }
 
