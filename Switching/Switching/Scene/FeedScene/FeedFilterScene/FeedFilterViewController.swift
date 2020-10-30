@@ -13,12 +13,21 @@ class FeedFilterViewController: UIViewController {
     var selectedTags: Array<String> = [] //임시데이터
     
     @IBOutlet weak var FeedFilterTableView: UITableView!
+    @IBAction func backButtonClicked(_ sender: UIButton) {
+        performSegue(withIdentifier: "unwindToFeedVC", sender: sender)
+//        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    @IBAction func backButtonClicked(_ sender: UIButton) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "unwindToFeedVC" {
+            let vc = segue.destination as? FeedViewController
+            vc!.filteredTags = selectedTags
+        }
+        print("filteredTags로 데이터 이동")
     }
 }
 

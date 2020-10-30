@@ -112,7 +112,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cae-xP-BUs">
-                                <rect key="frame" x="0.0" y="144" width="414" height="50"/>
+                                <rect key="frame" x="20" y="144" width="374" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="gbH-wB-kFX"/>
@@ -124,7 +124,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jnr-xa-Yr8">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filteredTagsCell" id="jnr-xa-Yr8" customClass="FilteredTagsCollectionViewCell" customModule="Switching" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DZb-g7-1uC">
@@ -146,8 +146,15 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="128" height="44"/>
+                                        <connections>
+                                            <outlet property="filterdTagButton" destination="pbX-cb-l0t" id="QC9-gw-pLg"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="kSO-Hi-qj3" id="kiM-A6-8Ln"/>
+                                    <outlet property="delegate" destination="kSO-Hi-qj3" id="LZS-08-jM6"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-1E-LkO">
                                 <rect key="frame" x="314" y="106" width="80" height="22"/>
@@ -155,7 +162,7 @@
                                     <color key="titleColor" name="AccentColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ctS-41-2ar" kind="show" id="EfC-WI-31M"/>
+                                    <segue destination="ctS-41-2ar" kind="presentation" modalPresentationStyle="fullScreen" id="eyf-xJ-lfT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -169,11 +176,11 @@
                             <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="u4r-ef-Mvd" secondAttribute="trailing" constant="30" id="HVk-fW-IdB"/>
                             <constraint firstItem="uci-Oj-wXG" firstAttribute="leading" secondItem="VoZ-aP-Ujy" secondAttribute="leading" id="K84-3D-nJ0"/>
                             <constraint firstItem="TCS-m5-Oop" firstAttribute="width" secondItem="TCS-m5-Oop" secondAttribute="height" multiplier="1:1" id="Nav-KV-yGM"/>
-                            <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="cae-xP-BUs" secondAttribute="trailing" id="QmV-Jf-497"/>
+                            <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="cae-xP-BUs" secondAttribute="trailing" constant="20" id="QmV-Jf-497"/>
                             <constraint firstItem="VoZ-aP-Ujy" firstAttribute="bottom" secondItem="u4r-ef-Mvd" secondAttribute="bottom" constant="30" id="W7n-JI-lXy"/>
                             <constraint firstItem="HJL-yy-i2Q" firstAttribute="leading" secondItem="VoZ-aP-Ujy" secondAttribute="leading" constant="20" id="XwG-HJ-9DM"/>
                             <constraint firstItem="uci-Oj-wXG" firstAttribute="top" secondItem="cae-xP-BUs" secondAttribute="bottom" id="eil-qt-IAH"/>
-                            <constraint firstItem="cae-xP-BUs" firstAttribute="leading" secondItem="VoZ-aP-Ujy" secondAttribute="leading" id="haJ-C0-5NI"/>
+                            <constraint firstItem="cae-xP-BUs" firstAttribute="leading" secondItem="VoZ-aP-Ujy" secondAttribute="leading" constant="20" id="haJ-C0-5NI"/>
                             <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="uci-Oj-wXG" secondAttribute="trailing" id="hf2-Ae-a4N"/>
                             <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="TCS-m5-Oop" secondAttribute="trailing" constant="20" id="r4o-ez-aig"/>
                             <constraint firstItem="TCS-m5-Oop" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HJL-yy-i2Q" secondAttribute="trailing" constant="8" symbolic="YES" id="toA-Y7-EWO"/>
@@ -186,6 +193,7 @@
                         <outlet property="accountButton" destination="HJL-yy-i2Q" id="xVQ-a8-Vox"/>
                         <outlet property="addButton" destination="u4r-ef-Mvd" id="Knp-rT-WiR"/>
                         <outlet property="feedTableView" destination="uci-Oj-wXG" id="mgf-BG-QA3"/>
+                        <outlet property="filteredTagsCollectionView" destination="cae-xP-BUs" id="8fq-Wt-q1n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m82-Th-96u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -207,22 +215,22 @@
             <objects>
                 <viewController id="ctS-41-2ar" customClass="FeedFilterViewController" customModule="Switching" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kCZ-5A-nhm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzp-qn-2o4">
-                                <rect key="frame" x="20" y="20" width="52" height="30"/>
+                                <rect key="frame" x="20" y="64" width="52" height="30"/>
                                 <state key="normal" title="뒤로가기"/>
                                 <connections>
-                                    <action selector="backButtonClicked:" destination="ctS-41-2ar" eventType="touchUpInside" id="3ql-Rc-nGw"/>
+                                    <action selector="backButtonClicked:" destination="ctS-41-2ar" eventType="touchUpInside" id="nAh-Tx-JnG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Np-gt-LwL">
-                                <rect key="frame" x="338" y="20" width="56" height="30"/>
+                                <rect key="frame" x="338" y="64" width="56" height="30"/>
                                 <state key="normal" title="모두 해제"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ecU-PP-Plb">
-                                <rect key="frame" x="0.0" y="60" width="414" height="748"/>
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tagCell" id="6wG-to-X1F">
@@ -256,11 +264,13 @@
                     <navigationItem key="navigationItem" id="TIl-Ct-Fmc"/>
                     <connections>
                         <outlet property="FeedFilterTableView" destination="ecU-PP-Plb" id="Oix-b6-gg5"/>
+                        <segue destination="Wdx-NY-gv0" kind="unwind" identifier="unwindToFeedVC" unwindAction="unwindVCWithSegue:" id="Emx-F3-Mwi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hnb-pL-qaQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Wdx-NY-gv0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2068" y="-447"/>
+            <point key="canvasLocation" x="2022" y="-424"/>
         </scene>
         <!--Account-->
         <scene sceneID="bCa-Kr-Kbt">

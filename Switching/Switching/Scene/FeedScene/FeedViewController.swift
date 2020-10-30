@@ -12,7 +12,11 @@ import SafariServices
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var filteredTags: Array<String> = [] //임시데이터
+    
     @IBOutlet weak var feedTableView: UITableView!
+    @IBOutlet weak var filteredTagsCollectionView: UICollectionView!
+    @IBAction func unwindVC (segue : UIStoryboardSegue) {}
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let realm = SharedData.instance.realm
@@ -69,6 +73,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.feedTableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
         
         NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(notification:)), name: Notification.Name("characterChanged"), object: nil)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.filteredTagsCollectionView.reloadData()
+        print("\(filteredTags)을 FeedVC에서 표시")
     }
     
     @objc func notificationReceived(notification: Notification) {
@@ -160,3 +168,32 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Pass the selected object to the new view controller.
     }
     */
+class FilteredTagsCollectionViewCell: UICollectionViewCell{
+        @IBOutlet weak var filterdTagButton: UIButton!
+}
+
+extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if filteredTags.count == 0 {
+            return 1
+        } else {
+            return filteredTags.count
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filteredTagsCell", for: indexPath) as! FilteredTagsCollectionViewCell
+        if filteredTags.count == 0 {
+            cell.filterdTagButton?.setTitle("See All", for: .normal)
+        } else {
+            cell.filterdTagButton?.setTitle(filteredTags[indexPath.row], for: .normal)
+        }
+        cell.contentView.layer.cornerRadius = 15 //cell.contentView.frame.height/2 적용 오류
+        cell.contentView.layer.borderWidth = 1.0
+        cell.contentView.layer.borderColor = UIColor.clear.cgColor
+        cell.contentView.layer.masksToBounds = true;
+        return cell
+    }
+    
+    
+}
