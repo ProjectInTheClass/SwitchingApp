@@ -12,7 +12,8 @@ class AddViewController: UIViewController {
 
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var selectTagCollectionView: UICollectionView!
+    @IBOutlet weak var selectedTagsCollectionView: UICollectionView!
+    @IBAction func unwindVC (segue : UIStoryboardSegue) {}
     
     var selectedCharact: Character?
     var bookmarkList: TempBookmarkList?
@@ -26,6 +27,10 @@ class AddViewController: UIViewController {
             urlTextField.text = savedBookmark.url
             titleTextField.text = savedBookmark.desc
         }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.selectedTagsCollectionView.reloadData()
+        print("\(selectedTags)을 AddVC에서 표시")
     }
     
     @IBAction func cancelBookmarkButtonPressed(_ sender: Any) {

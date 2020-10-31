@@ -7,16 +7,57 @@
 
 import UIKit
 
+
 class AddSelectViewController: UIViewController {
     var tags: Array<String> = ["태그1번", "태그2번", "태그3번"] //임시데이터
+    var selectedIndexPathRows: Array<Int> = [] //임시데이터
     var selectedTags: Array<String> = [] //임시데이터
+
+    @IBOutlet weak var createTagTextField: UITextField!
+    @IBOutlet weak var createTagButton: UIButton!
+    @IBAction func backButtonClicked(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "unwindToAddVC", sender: sender)
+//        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "unwindToAddVC" {
+            let vc = segue.destination as? AddViewController
+            vc!.selectedTags = selectedTags
+        }
+        print("AddVC로 데이터 이동")
+    }
+    
+    @IBOutlet weak var selectTagsTableView: UITableView!
+    @IBAction func createTagClicked(_ sender: Any) {
+        tags.append(createTagTextField.text!)
+        self.selectTagsTableView.reloadData()
+    }
+    
+    func textFieldsSetUp() {
+        createTagButton.isEnabled = false
+        createTagTextField.addTarget(self, action: #selector(textFieldsIsNotEmpty),
+                                    for: .editingChanged)
+    }
+    @objc func textFieldsIsNotEmpty(sender: UITextField) {
+        guard let tag = createTagTextField.text, !tag.isEmpty
+          else {
+          self.createTagButton.isEnabled = false
+          return
+        }
+        createTagButton.isEnabled = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        textFieldsSetUp()
+        createTagButton.isEnabled = false
+//        self.navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        self.selectTagsTableView.reloadData()
+        print("\(selectedIndexPathRows)")
+    }
 
     /*
     // MARK: - Navigation
@@ -47,6 +88,9 @@ extension AddSelectViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.textLabel?.text = tags[indexPath.row]
         }
+        if selectedIndexPathRows.contains(indexPath.row) {
+            cell.accessoryType = .checkmark
+        }
         return cell
     }
 
@@ -57,7 +101,8 @@ extension AddSelectViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         selectedTags.append(tags[indexPath.row])
-        print("선택된 태그는 \(selectedTags)")
+        selectedIndexPathRows.append(indexPath.row)
+        print("선택된 태그는 \(selectedIndexPathRows)")
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -67,8 +112,11 @@ extension AddSelectViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         if let index = selectedTags.firstIndex(of: tags[indexPath.row]) {
-            selectedTags.remove(at: index)
+                    selectedTags.remove(at: index)
         }
-        print("선택된 태그는 \(selectedTags)")
+        if let index = selectedIndexPathRows.firstIndex(of: indexPath.row) {
+            selectedIndexPathRows.remove(at: index)
+        }
+        print("선택된 태그는 \(selectedIndexPathRows)")
     }
 }

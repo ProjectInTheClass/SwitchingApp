@@ -127,8 +127,8 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="6XS-Xg-3Pj" id="nmb-zy-eeu"/>
-                                    <outlet property="delegate" destination="6XS-Xg-3Pj" id="8vc-2n-qbI"/>
+                                    <outlet property="dataSource" destination="6XS-Xg-3Pj" id="w4m-jf-ChA"/>
+                                    <outlet property="delegate" destination="6XS-Xg-3Pj" id="SDN-DY-ns8"/>
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd2-3f-zhU">
@@ -175,7 +175,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="n9N-Kx-4v7"/>
                     <connections>
-                        <outlet property="selectTagCollectionView" destination="1rr-VH-Ipb" id="OVz-pH-fGB"/>
+                        <outlet property="selectedTagsCollectionView" destination="1rr-VH-Ipb" id="UOf-zq-F7W"/>
                         <outlet property="titleTextField" destination="r8L-AX-Zcx" id="SmY-ED-U6j"/>
                         <outlet property="urlTextField" destination="F43-FV-6V4" id="Wd5-F9-mdc"/>
                     </connections>
@@ -192,7 +192,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2P2-6N-Q30">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2P2-6N-Q30">
                                 <rect key="frame" x="0.0" y="148" width="414" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -218,6 +218,9 @@
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExS-ge-vwY">
                                 <rect key="frame" x="364" y="103" width="30" height="30"/>
                                 <state key="normal" title="생성"/>
+                                <connections>
+                                    <action selector="createTagClicked:" destination="gsA-ne-JOv" eventType="touchUpInside" id="p3x-Cq-8RW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tdT-Jf-mIe"/>
@@ -235,9 +238,22 @@
                             <constraint firstItem="2P2-6N-Q30" firstAttribute="top" secondItem="tdT-Jf-mIe" secondAttribute="top" constant="60" id="np0-aY-xKc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VMn-ht-dKT"/>
+                    <navigationItem key="navigationItem" id="VMn-ht-dKT">
+                        <barButtonItem key="leftBarButtonItem" title="뒤로 가기" id="VC4-o2-zg4">
+                            <connections>
+                                <action selector="backButtonClicked:" destination="gsA-ne-JOv" id="HWD-ga-ld5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="createTagButton" destination="ExS-ge-vwY" id="iqS-cc-h3O"/>
+                        <outlet property="createTagTextField" destination="Kdp-i3-NqK" id="OnL-ZK-BKJ"/>
+                        <outlet property="selectTagsTableView" destination="2P2-6N-Q30" id="wvT-rH-X97"/>
+                        <segue destination="JMp-o1-JoI" kind="unwind" identifier="unwindToAddVC" unwindAction="unwindVCWithSegue:" id="Iib-2T-m41"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UyV-MK-Wan" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="JMp-o1-JoI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3511.594202898551" y="-604.01785714285711"/>
         </scene>
