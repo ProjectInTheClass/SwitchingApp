@@ -123,6 +123,12 @@
                                     <action selector="cancelClicked:" destination="Uxf-9d-5h3" eventType="touchUpInside" id="WBW-Fg-I7g"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TGh-VE-6lk">
+                                <rect key="frame" x="159" y="431" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sxk-E9-nB1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -143,6 +149,7 @@
                     <navigationItem key="navigationItem" id="heN-Yt-8B8"/>
                     <connections>
                         <outlet property="characterCollectionView" destination="4bF-3h-qaT" id="i70-43-E2V"/>
+                        <outlet property="tagTextField" destination="TGh-VE-6lk" id="qEc-r6-VWz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cNH-Ae-JPx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

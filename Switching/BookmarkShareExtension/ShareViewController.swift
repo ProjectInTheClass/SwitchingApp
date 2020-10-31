@@ -9,6 +9,7 @@ class ShareViewController: UIViewController {
         self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+    @IBOutlet weak var tagTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +53,7 @@ extension ShareViewController: UICollectionViewDelegate, UICollectionViewDataSou
             print("버튼이 클릭됨 \(indexPath.row)")
             var bookmark: Bookmark?
             if let item = extensionContext?.inputItems.first as? NSExtensionItem {
-                bookmark = accessWebpageProperties(extensionItem: item, characterName: characters[indexPath.row].character)
+                bookmark = accessWebpageProperties(extensionItem: item, characterName: characters[indexPath.row].character, tagList: tagTextField.text)
             }
             bookmark?.character = characters[indexPath.row].character
             usleep(1000 * 20)
@@ -62,7 +63,7 @@ extension ShareViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
 }
 
-private func accessWebpageProperties(extensionItem: NSExtensionItem, characterName: String) -> Bookmark{
+private func accessWebpageProperties(extensionItem: NSExtensionItem, characterName: String, tagList: String?) -> Bookmark{
         // url 가져오기
         let propertyList = kUTTypePropertyList as String
         var bookmark = Bookmark()
@@ -86,6 +87,14 @@ private func accessWebpageProperties(extensionItem: NSExtensionItem, characterNa
                     bookmark.desc = desc
                     bookmark.character = characterName
                     print("character: \(bookmark.character)")
+                    
+                    if let tags = tagList {
+                        for tag in tags.split(separator: " "){
+                            let newTag = Tag()
+                            newTag.tag = String(tag)
+                            bookmark.tags.append(newTag)
+                        }
+                    }
 
                     usleep(1000 * 10)
                     let realm = SharedData.instance.newRealm()
