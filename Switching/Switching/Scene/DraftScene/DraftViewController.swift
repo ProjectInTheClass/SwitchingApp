@@ -89,7 +89,7 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private func edit(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "수정") { [weak self] (_, _, _) in
             let storyboard = UIStoryboard.init(name: "Add", bundle: nil)
-            guard let addVc = storyboard.instantiateInitialViewController() as? AddViewController else {
+            guard let addVc = storyboard.instantiateViewController(withIdentifier: "addVC") as? AddViewController else {
                 return
             }
             let realm = SharedData.instance.realm

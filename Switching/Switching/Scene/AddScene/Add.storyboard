@@ -13,7 +13,7 @@
         <!--Add View Controller-->
         <scene sceneID="OJQ-oi-nsd">
             <objects>
-                <viewController id="6XS-Xg-3Pj" customClass="AddViewController" customModule="Switching" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addVC" id="6XS-Xg-3Pj" customClass="AddViewController" customModule="Switching" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8rh-tX-edA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
