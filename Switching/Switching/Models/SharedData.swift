@@ -18,6 +18,33 @@ class SharedData{
     func newRealm() -> Realm{
         return getRealm()!
     }
+    
+    func getTagListOfSelectedCharacterAll() -> Array<String>{
+        var tags: Array<String> = []
+        let myRealm = newRealm()
+        let bookmarks = myRealm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'")
+        for bookmark in bookmarks{
+            for tag in bookmark.tags{
+                if !tags.contains(tag.tag){
+                    tags.append(tag.tag)
+                }
+            }
+        }
+        return tags
+    }
+    func getTagListOfSelectedCharacterFeed() -> Array<String>{
+        var tags: Array<String> = []
+        let myRealm = newRealm()
+        let bookmarks = myRealm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == False")
+        for bookmark in bookmarks{
+            for tag in bookmark.tags{
+                if !tags.contains(tag.tag){
+                    tags.append(tag.tag)
+                }
+            }
+        }
+        return tags
+    }
 }
 
 func getRealm() -> Realm? {
