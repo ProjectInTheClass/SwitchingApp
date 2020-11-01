@@ -17,19 +17,19 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var feedTableView: UITableView!
     @IBOutlet weak var filteredTagsCollectionView: UICollectionView!
     @IBAction func unwindVC (segue : UIStoryboardSegue) {}
+    var bookmarks: [Bookmark] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let realm = SharedData.instance.realm
-        var objects = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == False")
-        var bookmarks = realm.objects(Bookmark.self).filter("character = 'main'").filter("isTemp == False")
-        return objects.count
+        return bookmarks.count
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedfeedCell", for: indexPath) as! FeedTableViewCell
         let realm = SharedData.instance.realm
-        if let bookmark: Bookmark = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == False")[indexPath.row]{
+        if let bookmark: Bookmark = bookmarks[indexPath.row]{
             cell.feedfeedURLLabel.text = bookmark.url
             cell.feedfeedTitleLabel.text = bookmark.desc
             
@@ -72,6 +72,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.feedTableView.refreshControl = UIRefreshControl()
         self.feedTableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
         
+        updateBookmarksData()
         NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(notification:)), name: Notification.Name("characterChanged"), object: nil)
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -81,15 +82,37 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @objc func notificationReceived(notification: Notification) {
         // Notification에 담겨진 object와 userInfo를 얻어 처리 가능
+        updateBookmarksData()
         self.feedTableView.reloadData()
     }
     
     @objc private func didPullToRefresh() {
         print("start refresh")
+        updateBookmarksData()
         self.feedTableView.reloadData()
         DispatchQueue.main.async {
             self.feedTableView.refreshControl?.endRefreshing()
         }
+    }
+    
+    private func updateBookmarksData() {
+        let realm = SharedData.instance.realm
+        let bookmarks_: Results<Bookmark> = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == False")
+        bookmarks = []
+        if filteredTags.count == 0{
+            for bookmark in bookmarks_{
+                bookmarks.append(bookmark)
+            }
+        }else{
+            for bookmark in bookmarks_{
+                for tag in bookmark.tags{
+                    filteredTags.contains(tag.tag)
+                    bookmarks.append(bookmark)
+                    break
+                }
+            }
+        }
+        
     }
     
     
