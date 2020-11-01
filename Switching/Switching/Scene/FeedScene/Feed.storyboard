@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uci-Oj-wXG">
-                                <rect key="frame" x="0.0" y="186" width="414" height="676"/>
+                                <rect key="frame" x="0.0" y="166" width="414" height="696"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedfeedCell" id="LXE-4K-VX4" customClass="FeedTableViewCell" customModule="Switching" customModuleProvider="target">
@@ -84,6 +84,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
+                                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="bottom" secondItem="rwk-WZ-Jmm" secondAttribute="bottom" constant="5" id="Lmp-9f-4t5"/>
                                                                     <constraint firstItem="rwk-WZ-Jmm" firstAttribute="top" secondItem="44F-rI-DY2" secondAttribute="top" constant="5" id="W2m-1P-q4B"/>
@@ -163,27 +164,27 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cae-xP-BUs">
-                                <rect key="frame" x="20" y="144" width="374" height="42"/>
+                                <rect key="frame" x="15" y="134" width="384" height="32"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="gbH-wB-kFX"/>
+                                    <constraint firstAttribute="height" constant="32" id="gbH-wB-kFX"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rnx-Ig-ECR" customClass="TagsCollectionViewFlowLayout" customModule="Switching" customModuleProvider="target">
-                                    <size key="itemSize" width="128" height="36"/>
+                                    <size key="itemSize" width="128" height="28"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filteredTagsCell" id="jnr-xa-Yr8" customClass="FilteredTagsCollectionViewCell" customModule="Switching" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DZb-g7-1uC">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="36"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="28"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbX-cb-l0t">
-                                                    <rect key="frame" x="10" y="0.0" width="108" height="36"/>
+                                                    <rect key="frame" x="10" y="0.0" width="108" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                     <state key="normal" title="Button"/>
                                                 </button>
@@ -197,7 +198,7 @@
                                                 <constraint firstItem="pbX-cb-l0t" firstAttribute="leading" secondItem="DZb-g7-1uC" secondAttribute="leading" constant="10" id="sOz-MA-4mc"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="128" height="36"/>
+                                        <size key="customSize" width="128" height="28"/>
                                         <connections>
                                             <outlet property="filteredTagButton" destination="pbX-cb-l0t" id="oCb-X5-EO6"/>
                                         </connections>
@@ -209,7 +210,8 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-1E-LkO">
-                                <rect key="frame" x="314" y="106" width="80" height="22"/>
+                                <rect key="frame" x="328.5" y="106" width="65.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="태그 선택" image="chevron.right" catalog="system">
                                     <color key="titleColor" name="AccentColor"/>
                                 </state>
@@ -222,17 +224,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TCS-m5-Oop" firstAttribute="centerY" secondItem="HJL-yy-i2Q" secondAttribute="centerY" id="0ip-lu-lqB"/>
-                            <constraint firstItem="cae-xP-BUs" firstAttribute="top" secondItem="VoZ-aP-Ujy" secondAttribute="top" constant="100" id="85T-UK-ZPd"/>
+                            <constraint firstItem="cae-xP-BUs" firstAttribute="top" secondItem="VoZ-aP-Ujy" secondAttribute="top" constant="90" id="85T-UK-ZPd"/>
                             <constraint firstItem="yjb-1E-LkO" firstAttribute="top" secondItem="TCS-m5-Oop" secondAttribute="bottom" constant="15" id="EHF-YU-omH"/>
                             <constraint firstItem="HJL-yy-i2Q" firstAttribute="top" secondItem="VoZ-aP-Ujy" secondAttribute="top" constant="15" id="HSJ-4b-W1r"/>
                             <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="u4r-ef-Mvd" secondAttribute="trailing" constant="30" id="HVk-fW-IdB"/>
                             <constraint firstItem="uci-Oj-wXG" firstAttribute="leading" secondItem="VoZ-aP-Ujy" secondAttribute="leading" id="K84-3D-nJ0"/>
                             <constraint firstItem="TCS-m5-Oop" firstAttribute="width" secondItem="TCS-m5-Oop" secondAttribute="height" multiplier="1:1" id="Nav-KV-yGM"/>
-                            <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="cae-xP-BUs" secondAttribute="trailing" constant="20" id="QmV-Jf-497"/>
+                            <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="cae-xP-BUs" secondAttribute="trailing" constant="15" id="QmV-Jf-497"/>
                             <constraint firstItem="VoZ-aP-Ujy" firstAttribute="bottom" secondItem="u4r-ef-Mvd" secondAttribute="bottom" constant="30" id="W7n-JI-lXy"/>
                             <constraint firstItem="HJL-yy-i2Q" firstAttribute="leading" secondItem="VoZ-aP-Ujy" secondAttribute="leading" constant="20" id="XwG-HJ-9DM"/>
                             <constraint firstItem="uci-Oj-wXG" firstAttribute="top" secondItem="cae-xP-BUs" secondAttribute="bottom" id="eil-qt-IAH"/>
-                            <constraint firstItem="cae-xP-BUs" firstAttribute="leading" secondItem="VoZ-aP-Ujy" secondAttribute="leading" constant="20" id="haJ-C0-5NI"/>
+                            <constraint firstItem="cae-xP-BUs" firstAttribute="leading" secondItem="VoZ-aP-Ujy" secondAttribute="leading" constant="15" id="haJ-C0-5NI"/>
                             <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="uci-Oj-wXG" secondAttribute="trailing" id="hf2-Ae-a4N"/>
                             <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="TCS-m5-Oop" secondAttribute="trailing" constant="20" id="r4o-ez-aig"/>
                             <constraint firstItem="TCS-m5-Oop" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HJL-yy-i2Q" secondAttribute="trailing" constant="8" symbolic="YES" id="toA-Y7-EWO"/>
@@ -350,6 +352,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -13,10 +13,15 @@ class FeedTableViewCell: UITableViewCell {
     var tags: Array<String> = []
     
     @IBOutlet weak var feedfeedImageView: UIImageView!
+
     @IBOutlet weak var feedfeedTitleLabel: UILabel!
     @IBOutlet weak var feedfeedURLLabel: UILabel!
     @IBOutlet weak var feedfeedDateLabel: UILabel!
     @IBOutlet weak var feedTagsCollectionView: UICollectionView!
+    
+    func updateUI() {
+        self.feedfeedImageView.layer.cornerRadius = 15
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

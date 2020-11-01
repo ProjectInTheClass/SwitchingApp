@@ -33,9 +33,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.feedfeedURLLabel.text = bookmark.url
             cell.feedfeedTitleLabel.text = bookmark.desc
             cell.feedfeedDateLabel.text = "2020.10.26"//UI레이아웃 테스트
-            let tags = getTagListOfSelectedBookmark(bookmark: bookmark)
-            cell.tags = tags
-            
+            cell.tags = getTagListOfSelectedBookmark(bookmark: bookmark)
+            cell.updateUI()
             if bookmark.image == nil{
                 let slp = SwiftLinkPreview(session: URLSession.shared, workQueue: SwiftLinkPreview.defaultWorkQueue, responseQueue: DispatchQueue.main, cache: DisabledCache.instance)
                 slp.preview(bookmark.url,
@@ -122,17 +121,16 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.feedTableView.reloadData()
     }
     
-    
-    private func mainCharacter(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .normal, title: "Main") { [weak self] (_, _, _) in
-            print("mainCharacter clicked \(indexPath.row)")
-        }
-        return action
-    }
-    
-    private func subCharacter(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .normal, title: "Sub") { [weak self] (_, _, _) in
-            print("subCharacter clicked \(indexPath.row)")
+    private func edit(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .normal, title: "수정") { [weak self] (_, _, _) in
+            let storyboard = UIStoryboard.init(name: "Add", bundle: nil)
+            guard let addVc = storyboard.instantiateViewController(withIdentifier: "addVC") as? AddViewController else {
+                return
+            }
+            let realm = SharedData.instance.realm
+            var objects = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == False")
+            addVc.selectedBookmark = objects[indexPath.row]
+            self?.present(addVc, animated: true, completion: nil)
         }
         return action
     }
@@ -150,11 +148,14 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         return action
     }
     
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editBtn = self.edit(rowIndexPathAt: indexPath)
+        let swipe = UISwipeActionsConfiguration(actions: [editBtn])
+        return swipe
+    }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let mainCharacterBtn = self.mainCharacter(rowIndexPathAt: indexPath)
-        let subCharacterBtn = self.subCharacter(rowIndexPathAt: indexPath)
         let deleteBtn = self.delete(rowIndexPathAt: indexPath)
-        let swipe = UISwipeActionsConfiguration(actions: [mainCharacterBtn, subCharacterBtn, deleteBtn])
+        let swipe = UISwipeActionsConfiguration(actions: [deleteBtn])
         return swipe
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
