@@ -32,6 +32,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let bookmark: Bookmark = bookmarks[indexPath.row]{
             cell.feedfeedURLLabel.text = bookmark.url
             cell.feedfeedTitleLabel.text = bookmark.desc
+            cell.feedfeedDateLabel.text = "2020.10.26"//UI레이아웃 테스트
             let tags = getTagListOfSelectedBookmark(bookmark: bookmark)
             cell.tags = tags
             
@@ -200,7 +201,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 class FilteredTagsCollectionViewCell: UICollectionViewCell{
     @IBOutlet weak var filteredTagButton: UIButton!
 }
-
 extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if filteredTags.count == 0 {

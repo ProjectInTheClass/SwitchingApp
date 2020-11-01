@@ -25,6 +25,7 @@
 		A625FFEE2531877B00F94007 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A625FFED2531877B00F94007 /* Account.storyboard */; };
 		A63A1C1F253ED192003E2BBE /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63A1C1E253ED192003E2BBE /* SettingTableViewController.swift */; };
 		A67DEC44254C9453002650B1 /* AddSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67DEC43254C9453002650B1 /* AddSelectViewController.swift */; };
+		A68C8D46254F158100287E15 /* TagsCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C8D45254F158100287E15 /* TagsCollectionViewFlowLayout.swift */; };
 		A6BCF98E254C5DAF00E42AAC /* FeedFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BCF98D254C5DAF00E42AAC /* FeedFilterViewController.swift */; };
 		A6C0FE8F2529FDC7003B1070 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C0FE8E2529FDC7003B1070 /* Setting.storyboard */; };
 		A6C0FE932529FFD9003B1070 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C0FE922529FFD9003B1070 /* Notification.storyboard */; };
@@ -100,6 +101,7 @@
 		A625FFED2531877B00F94007 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		A63A1C1E253ED192003E2BBE /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		A67DEC43254C9453002650B1 /* AddSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSelectViewController.swift; sourceTree = "<group>"; };
+		A68C8D45254F158100287E15 /* TagsCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		A6BCF98D254C5DAF00E42AAC /* FeedFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFilterViewController.swift; sourceTree = "<group>"; };
 		A6C0FE8E2529FDC7003B1070 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		A6C0FE922529FFD9003B1070 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				A61B2180252092B200272050 /* FeedViewController.swift */,
 				A625FFE42531855000F94007 /* Feed.storyboard */,
 				BD1D339525446C4E00706CF5 /* FeedTableViewCell.swift */,
+				A68C8D45254F158100287E15 /* TagsCollectionViewFlowLayout.swift */,
 				A6BCF993254C694000E42AAC /* FeedFilterScene */,
 			);
 			path = FeedScene;
@@ -501,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6DF497B253976E8004A065B /* EditAccountViewController.swift in Sources */,
+				A68C8D46254F158100287E15 /* TagsCollectionViewFlowLayout.swift in Sources */,
 				A60FD7492520AADB0069C29C /* AccountViewController.swift in Sources */,
 				BD1D339625446C4E00706CF5 /* FeedTableViewCell.swift in Sources */,
 				A61B2178252077FA00272050 /* DraftTableViewCell.swift in Sources */,
