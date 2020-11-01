@@ -29,7 +29,9 @@ class AddSelectViewController: UIViewController {
     
     @IBOutlet weak var selectTagsTableView: UITableView!
     @IBAction func createTagClicked(_ sender: Any) {
-        tags.append(createTagTextField.text!)
+        if !tags.contains(createTagTextField.text!){
+            tags.append(createTagTextField.text!)
+        }
         self.selectTagsTableView.reloadData()
     }
     
