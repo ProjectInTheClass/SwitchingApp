@@ -70,6 +70,10 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.draftTableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
         
         NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(notification:)), name: Notification.Name("characterChanged"), object: nil)
+        
+        accountButton.clipsToBounds = true
+        accountButton.contentMode = .scaleAspectFill
+        accountButton.setBackgroundImage(UIImage(named: "account1"), for: .normal)
     }
     
     @objc func notificationReceived(notification: Notification) {

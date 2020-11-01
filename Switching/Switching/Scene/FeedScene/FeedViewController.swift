@@ -112,7 +112,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
             }
         }
-        
+        accountButton.clipsToBounds = true
+        accountButton.contentMode = .scaleAspectFill
+        accountButton.setBackgroundImage(UIImage(named: "account1"), for: .normal)
     }
     
     
