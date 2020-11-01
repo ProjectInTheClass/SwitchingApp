@@ -46,3 +46,12 @@ func getRealm() -> Realm? {
     realm = try! Realm(fileURL: fileURL)
     return realm
 }
+
+
+func getTagListOfSelectedBookmark(bookmark: Bookmark) -> Array<String> {
+    var tags: Array<String> = []
+    for tag in bookmark.tags{
+        tags.append(tag.tag)
+    }
+    return tags
+}

@@ -33,6 +33,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.feedfeedURLLabel.text = bookmark.url
             cell.feedfeedTitleLabel.text = bookmark.desc
             
+            let tags = getTagListOfSelectedBookmark(bookmark: bookmark)
+            print(tags)
+            
             if bookmark.image == nil{
                 let slp = SwiftLinkPreview(session: URLSession.shared, workQueue: SwiftLinkPreview.defaultWorkQueue, responseQueue: DispatchQueue.main, cache: DisabledCache.instance)
                 slp.preview(bookmark.url,
