@@ -10,10 +10,13 @@ import RealmSwift
 
 class FeedTableViewCell: UITableViewCell {
     
+    var tags: Array<String> = []
+    
     @IBOutlet weak var feedfeedImageView: UIImageView!
     @IBOutlet weak var feedfeedTitleLabel: UILabel!
     @IBOutlet weak var feedfeedURLLabel: UILabel!
     @IBOutlet weak var feedfeedDateLabel: UILabel!
+    @IBOutlet weak var feedTagsCollectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,4 +25,26 @@ class FeedTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+}
+
+class FeedTagsCollectionViewCell: UICollectionViewCell{
+    @IBOutlet weak var feedTagsLabel: UILabel!
+}
+
+extension FeedTableViewCell: UICollectionViewDelegate,UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tags.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feedTagsCell", for: indexPath) as! FeedTagsCollectionViewCell
+        cell.feedTagsLabel.text = tags[indexPath.row]
+        cell.contentView.layer.cornerRadius = 12
+        cell.contentView.layer.borderWidth = 1.0
+        cell.contentView.layer.borderColor = UIColor.clear.cgColor
+        cell.contentView.layer.masksToBounds = true;
+        return cell
+    }
+    
+    
 }
