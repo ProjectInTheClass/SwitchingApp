@@ -81,6 +81,7 @@ class AddViewController: UIViewController {
             }
             print("add data done")
         }
+        NotificationCenter.default.post(name: Notification.Name("refreshFeedView"), object: nil)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     

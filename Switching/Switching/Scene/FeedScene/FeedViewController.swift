@@ -73,7 +73,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.feedTableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
         
         updateBookmarksData()
-        NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(notification:)), name: Notification.Name("characterChanged"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(notification:)), name: Notification.Name("refreshFeedView"), object: nil)
     }
     override func viewDidAppear(_ animated: Bool) {
         self.filteredTagsCollectionView.reloadData()
@@ -82,8 +82,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @objc func notificationReceived(notification: Notification) {
         // Notification에 담겨진 object와 userInfo를 얻어 처리 가능
+        print("noti")
         updateBookmarksData()
-        self.feedTableView.reloadData()
     }
     
     @objc private func didPullToRefresh() {
@@ -115,6 +115,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         accountButton.clipsToBounds = true
         accountButton.contentMode = .scaleAspectFill
         accountButton.setBackgroundImage(UIImage(named: "account1"), for: .normal)
+        self.feedTableView.reloadData()
     }
     
     

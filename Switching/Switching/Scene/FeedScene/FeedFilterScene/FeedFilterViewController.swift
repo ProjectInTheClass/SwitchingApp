@@ -15,6 +15,7 @@ class FeedFilterViewController: UIViewController {
     @IBOutlet weak var FeedFilterTableView: UITableView!
     @IBAction func backButtonClicked(_ sender: UIButton) {
         performSegue(withIdentifier: "unwindToFeedVC", sender: sender)
+        NotificationCenter.default.post(name: Notification.Name("refreshFeedView"), object: nil)
 //        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     

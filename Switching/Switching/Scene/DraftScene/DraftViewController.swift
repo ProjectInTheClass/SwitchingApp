@@ -69,7 +69,7 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.draftTableView.refreshControl = UIRefreshControl()
         self.draftTableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(notification:)), name: Notification.Name("characterChanged"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(notification:)), name: Notification.Name("refreshDraftView"), object: nil)
         
         accountButton.clipsToBounds = true
         accountButton.contentMode = .scaleAspectFill
