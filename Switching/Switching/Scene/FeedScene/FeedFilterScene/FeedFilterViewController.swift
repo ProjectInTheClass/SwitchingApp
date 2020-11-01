@@ -53,23 +53,17 @@ extension FeedFilterViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         if let cell = tableView.cellForRow(at: indexPath) {
             if cell.accessoryType == .none {
                 cell.accessoryType = .checkmark
+                filteredTags.append(tags[indexPath.row])
+            } else if cell.accessoryType == .checkmark {
+                cell.accessoryType = .none
+                if let index = filteredTags.firstIndex(of: tags[indexPath.row]) {
+                    filteredTags.remove(at: index)
+                }
             }
-        }
-        filteredTags.append(tags[indexPath.row])
-        print("선택된 태그는 \(filteredTags)")
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) {
-            if cell.accessoryType == .checkmark {
-                    cell.accessoryType = .none
-            }
-        }
-        if let index = filteredTags.firstIndex(of: tags[indexPath.row]) {
-            filteredTags.remove(at: index)
         }
         print("선택된 태그는 \(filteredTags)")
     }
