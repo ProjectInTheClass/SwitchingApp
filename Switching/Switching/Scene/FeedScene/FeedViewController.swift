@@ -106,9 +106,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         }else{
             for bookmark in bookmarks_{
                 for tag in bookmark.tags{
-                    filteredTags.contains(tag.tag)
+                    if filteredTags.contains(tag.tag){
                     bookmarks.append(bookmark)
                     break
+                    }
                 }
             }
         }
@@ -140,7 +141,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             try! realm.write{
                 realm.delete(bookmark)
             }
-            self?.feedTableView.reloadData()
+            self?.updateBookmarksData()
             print("delete clicked \(indexPath.row)")
         }
         return action

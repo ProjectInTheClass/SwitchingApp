@@ -9,7 +9,7 @@ import UIKit
 
 
 class AddSelectViewController: UIViewController {
-    var tags: Array<String> = ["태그1번", "태그2번", "태그3번"] //임시데이터
+    var tags: Array<String> = SharedData.instance.getTagListOfSelectedCharacter()
     var selectedIndexPathRows: Array<Int> = [] //임시데이터
     var selectedTags: Array<String> = [] //임시데이터
 

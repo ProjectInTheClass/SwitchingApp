@@ -9,7 +9,7 @@ import UIKit
 
 class FeedFilterViewController: UIViewController {
     
-    var tags: Array<String> = SharedData.instance.getTagListOfSelectedCharacterFeed() //임시데이터
+    var tags: Array<String> = SharedData.instance.getTagListOfSelectedCharacter()
     var filteredTags: Array<String> = [] //임시데이터
     
     @IBOutlet weak var FeedFilterTableView: UITableView!

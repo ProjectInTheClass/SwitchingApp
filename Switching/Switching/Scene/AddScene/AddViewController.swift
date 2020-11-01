@@ -26,6 +26,9 @@ class AddViewController: UIViewController {
         if let savedBookmark: Bookmark = selectedBookmark{
             urlTextField.text = savedBookmark.url
             titleTextField.text = savedBookmark.desc
+            for tag in savedBookmark.tags{
+                selectedTags.append(tag.tag)
+            }
         }
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -61,6 +64,12 @@ class AddViewController: UIViewController {
             bookmark.desc = title!
             bookmark.character = "main"
             bookmark.isTemp = false
+            
+            for tag in selectedTags{
+                let tag_ = Tag()
+                tag_.tag = tag
+                bookmark.tags.append(tag_)
+            }
             
             guard var fileURL = FileManager.default.containerURL(
                 forSecurityApplicationGroupIdentifier: "group.switching.SwitchingApp"
