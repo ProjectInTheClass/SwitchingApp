@@ -95,29 +95,22 @@ extension AddSelectViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         if let cell = tableView.cellForRow(at: indexPath) {
             if cell.accessoryType == .none {
                 cell.accessoryType = .checkmark
+                selectedTags.append(tags[indexPath.row])
+                selectedIndexPathRows.append(indexPath.row)
+            } else if cell.accessoryType == .checkmark {
+                cell.accessoryType = .none
+                if let index = selectedTags.firstIndex(of: tags[indexPath.row]) {
+                            selectedTags.remove(at: index)
+                }
+                if let index = selectedIndexPathRows.firstIndex(of: indexPath.row) {
+                    selectedIndexPathRows.remove(at: index)
+                }
             }
-        }
-        selectedTags.append(tags[indexPath.row])
-        selectedIndexPathRows.append(indexPath.row)
-        print("선택된 태그는 \(selectedIndexPathRows)")
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) {
-            if cell.accessoryType == .checkmark {
-                    cell.accessoryType = .none
-            }
-        }
-        if let index = selectedTags.firstIndex(of: tags[indexPath.row]) {
-                    selectedTags.remove(at: index)
-        }
-        if let index = selectedIndexPathRows.firstIndex(of: indexPath.row) {
-            selectedIndexPathRows.remove(at: index)
         }
         print("선택된 태그는 \(selectedIndexPathRows)")
     }
