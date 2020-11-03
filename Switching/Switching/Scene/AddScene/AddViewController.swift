@@ -40,7 +40,7 @@ class AddViewController: UIViewController {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func addBoomarkButtonPressed(_ sender: UIButton) {
+    @IBAction func addBoomarkButtonPressed(_ sender: Any) {
         if let savedBookmark: Bookmark = selectedBookmark{
             urlTextField.text = savedBookmark.url
             titleTextField.text = savedBookmark.desc
