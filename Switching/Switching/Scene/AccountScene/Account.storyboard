@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WMZ-fn-LiF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -164,10 +164,10 @@
                                     <action selector="summitClicked:" destination="0wT-rx-QVy" eventType="touchUpInside" id="Ptt-Mu-SE4"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="캐릭터 이름을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tM9-Yh-eIB">
-                                <rect key="frame" x="20" y="150" width="374" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름을 입력해주세요 (10글자 제한)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tM9-Yh-eIB">
+                                <rect key="frame" x="50" y="220" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gM-jg-6R7">
                                 <rect key="frame" x="20" y="20" width="30" height="30"/>
@@ -177,22 +177,34 @@
                                     <action selector="cancelClicked:" destination="WMZ-fn-LiF" eventType="touchUpInside" id="pRc-QP-SsV"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wMP-p8-H1w">
+                                <rect key="frame" x="157" y="100" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Kfu-q5-R5J"/>
+                                    <constraint firstAttribute="width" constant="100" id="gNm-TN-tkB"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ccr-oC-lJp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8gM-jg-6R7" firstAttribute="top" secondItem="ccr-oC-lJp" secondAttribute="top" constant="20" id="4Vi-BK-HJY"/>
                             <constraint firstItem="8gM-jg-6R7" firstAttribute="leading" secondItem="ccr-oC-lJp" secondAttribute="leading" constant="20" id="5Cw-VR-Z4b"/>
-                            <constraint firstItem="tM9-Yh-eIB" firstAttribute="leading" secondItem="ccr-oC-lJp" secondAttribute="leading" constant="20" id="BPh-j1-7Gf"/>
+                            <constraint firstItem="tM9-Yh-eIB" firstAttribute="leading" secondItem="ccr-oC-lJp" secondAttribute="leading" constant="50" id="BPh-j1-7Gf"/>
                             <constraint firstItem="rqA-4h-OcU" firstAttribute="top" secondItem="ccr-oC-lJp" secondAttribute="top" constant="20" id="CBr-sS-CLM"/>
-                            <constraint firstItem="ccr-oC-lJp" firstAttribute="trailing" secondItem="tM9-Yh-eIB" secondAttribute="trailing" constant="20" id="Dxf-ce-lGK"/>
-                            <constraint firstItem="tM9-Yh-eIB" firstAttribute="top" secondItem="rqA-4h-OcU" secondAttribute="bottom" constant="100" id="jNg-eU-JXZ"/>
+                            <constraint firstItem="ccr-oC-lJp" firstAttribute="trailing" secondItem="tM9-Yh-eIB" secondAttribute="trailing" constant="50" id="Dxf-ce-lGK"/>
+                            <constraint firstItem="tM9-Yh-eIB" firstAttribute="top" secondItem="wMP-p8-H1w" secondAttribute="bottom" constant="20" id="E86-jt-8Hd"/>
+                            <constraint firstItem="wMP-p8-H1w" firstAttribute="top" secondItem="ccr-oC-lJp" secondAttribute="top" constant="100" id="HRS-O0-wxa"/>
+                            <constraint firstItem="wMP-p8-H1w" firstAttribute="centerX" secondItem="ccr-oC-lJp" secondAttribute="centerX" id="PGW-8i-Vmn"/>
                             <constraint firstItem="ccr-oC-lJp" firstAttribute="trailing" secondItem="rqA-4h-OcU" secondAttribute="trailing" constant="20" id="pTV-dz-9DT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tNh-Mp-p1a"/>
                     <connections>
+                        <outlet property="accountImage" destination="wMP-p8-H1w" id="Pat-YR-9HS"/>
                         <outlet property="accountTextField" destination="tM9-Yh-eIB" id="5mg-hC-tq6"/>
+                        <outlet property="summitButton" destination="rqA-4h-OcU" id="lHJ-21-tPs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRS-1Y-zgC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
