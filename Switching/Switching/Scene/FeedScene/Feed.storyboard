@@ -122,6 +122,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="feedTagsCollectionView" destination="XPj-k2-twe" id="YbG-cO-vf0"/>
                                             <outlet property="feedfeedDateLabel" destination="Smr-T4-udg" id="wU0-Ye-YBJ"/>
                                             <outlet property="feedfeedImageView" destination="jXL-fR-7pT" id="HZG-Fp-Jqb"/>
                                             <outlet property="feedfeedTitleLabel" destination="Xpm-ac-nd0" id="RgA-C0-d9M"/>
