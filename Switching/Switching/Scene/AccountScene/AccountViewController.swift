@@ -25,16 +25,22 @@ class AccountViewController: UIViewController {
 extension AccountViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let realm  = SharedData.instance.realm
-        return realm.objects(Character.self).count + 1
+        let accounts = realm.objects(Character.self)
+        if accounts.count > 3 {
+            return accounts.count
+        } else {
+            return accounts.count + 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cells : UICollectionViewCell?
         let realm  = SharedData.instance.realm
-        if indexPath.row < realm.objects(Character.self).count {
-            let character = realm.objects(Character.self)[indexPath.row]
+        let accounts = realm.objects(Character.self)
+        if indexPath.row < accounts.count {
+            let account = accounts[indexPath.row]
             let existingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "accountCell", for: indexPath) as! AccountCollectionViewCell
-            existingCell.accountNameLabel.text = character.character
+            existingCell.accountNameLabel.text = account.character
             existingCell.accountImage.image = UIImage(named: "account1.png")
             existingCell.accountImage.layer.cornerRadius = 50
             cells = existingCell
