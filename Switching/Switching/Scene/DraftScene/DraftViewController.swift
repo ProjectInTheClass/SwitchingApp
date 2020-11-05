@@ -44,7 +44,7 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
                                         }
                                     }
                                 }
-                            }, onError: {error in print("slp error")})
+                            }, onError: {error in cell.feedImageView.image = UIImage(named: "noimage")})
                 
             } else if let data = bookmark.image{
                 cell.feedImageView.image = UIImage(data: data)
