@@ -78,11 +78,14 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func updateCharacterImage(){
         let realm = SharedData.instance.realm
-        if let imageData = realm.objects(Character.self).filter("character = '\(SharedData.instance.selectedCharacter)'").first!.image{
-            accountButton.setBackgroundImage(UIImage(data: imageData), for: .normal)
+        if realm.objects(Character.self).filter("character = '\(SharedData.instance.selectedCharacter)'").count > 0{
+            if let imageData = realm.objects(Character.self).filter("character = '\(SharedData.instance.selectedCharacter)'").first!.image{
+                accountButton.setBackgroundImage(UIImage(data: imageData), for: .normal)
+            }else{
+                accountButton.setBackgroundImage(UIImage(named: "account1"), for: .normal)
+            }
         }else{
-        accountButton.setBackgroundImage(UIImage(named: "account1"), for: .normal)
-            
+            accountButton.setBackgroundImage(UIImage(named: "account1"), for: .normal)
         }
     }
     
