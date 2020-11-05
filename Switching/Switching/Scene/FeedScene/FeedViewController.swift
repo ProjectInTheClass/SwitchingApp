@@ -50,7 +50,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                                         }
                                     }
                                 }
-                            }, onError: {error in print("slp error")})
+                            }, onError: {error in cell.feedfeedImageView.image = UIImage(named: "noimage")})
                 
             } else if let data = bookmark.image{
                 cell.feedfeedImageView.image = UIImage(data: data)
