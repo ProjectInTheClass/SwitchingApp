@@ -62,7 +62,7 @@ class AddViewController: UIViewController {
             
             bookmark.url = url!
             bookmark.desc = title!
-            bookmark.character = "main"
+            bookmark.character = SharedData.instance.selectedCharacter
             bookmark.isTemp = false
             
             for tag in selectedTags{
