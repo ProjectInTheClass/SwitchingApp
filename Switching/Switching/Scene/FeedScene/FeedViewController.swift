@@ -127,15 +127,14 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     private func edit(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
+        let bookmark: Bookmark = bookmarks[indexPath.row]
         let action = UIContextualAction(style: .normal, title: "수정") { [weak self] (_, _, _) in
             let storyboard = UIStoryboard.init(name: "Add", bundle: nil)
             guard let addVC = storyboard.instantiateViewController(withIdentifier: "addVC") as? AddViewController else {
                 return
             }
             let addNav = UINavigationController(rootViewController: addVC)
-            let realm = SharedData.instance.realm
-            var objects = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == False")
-            addVC.selectedBookmark = objects[indexPath.row]
+            addVC.selectedBookmark = bookmark
             self?.present(addNav, animated: true, completion: nil)
         }
         return action
