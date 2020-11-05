@@ -35,7 +35,13 @@ extension AccountViewController: UICollectionViewDelegate, UICollectionViewDataS
             let character = realm.objects(Character.self)[indexPath.row]
             let existingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "accountCell", for: indexPath) as! AccountCollectionViewCell
             existingCell.accountNameLabel.text = character.character
-            existingCell.accountImage.image = UIImage(named: "account1.png")
+            
+            if let imageData = character.image{
+                existingCell.accountImage.image = UIImage(data: imageData)
+            }else{
+                existingCell.accountImage.image = UIImage(named: "account1.png")
+            }
+        
             existingCell.accountImage.layer.cornerRadius = 50
             cells = existingCell
         } else {
