@@ -142,9 +142,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     private func delete(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
+        let bookmark: Bookmark = bookmarks[indexPath.row]
         let action = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (_, _, _) in
             let realm = SharedData.instance.realm
-            let bookmark: Bookmark = realm.objects(Bookmark.self)[indexPath.row]
             try! realm.write{
                 realm.delete(bookmark)
             }
