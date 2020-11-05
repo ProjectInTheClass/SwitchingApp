@@ -73,11 +73,22 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         accountButton.clipsToBounds = true
         accountButton.contentMode = .scaleAspectFill
+        updateCharacterImage()
+    }
+    
+    private func updateCharacterImage(){
+        let realm = SharedData.instance.realm
+        if let imageData = realm.objects(Character.self).filter("character = '\(SharedData.instance.selectedCharacter)'").first!.image{
+            accountButton.setBackgroundImage(UIImage(data: imageData), for: .normal)
+        }else{
         accountButton.setBackgroundImage(UIImage(named: "account1"), for: .normal)
+            
+        }
     }
     
     @objc func notificationReceived(notification: Notification) {
         // Notification에 담겨진 object와 userInfo를 얻어 처리 가능
+        updateCharacterImage()
         self.draftTableView.reloadData()
     }
     
