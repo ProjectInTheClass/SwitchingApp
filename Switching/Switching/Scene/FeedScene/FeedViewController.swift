@@ -14,6 +14,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var filteredTags: Array<String> = [] //임시데이터
     
+    @IBOutlet var emptyFeedView: UIView!
     @IBOutlet weak var feedTableView: UITableView!
     @IBOutlet weak var filteredTagsCollectionView: UICollectionView!
     @IBAction func unwindVC (segue : UIStoryboardSegue) {}
@@ -22,6 +23,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let realm = SharedData.instance.realm
         var objects = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == False")
+        if objects.count == 0 {
+            tableView.backgroundView = emptyFeedView
+            tableView.separatorStyle = .none
+        } else {
+            tableView.backgroundView = nil
+            tableView.separatorStyle = .singleLine
+        }
         return objects.count
 
     }
