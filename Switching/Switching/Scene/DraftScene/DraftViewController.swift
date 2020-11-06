@@ -12,12 +12,20 @@ import SafariServices
 
 class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet var emptyDraftView: UIView!
     @IBOutlet weak var draftTableView: UITableView!
     var bookmarks: [Bookmark] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let realm = SharedData.instance.realm
         var objects = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == True")
+        if objects.count == 0 {
+            tableView.backgroundView = emptyDraftView
+            tableView.separatorStyle = .none
+        } else {
+            tableView.backgroundView = nil
+            tableView.separatorStyle = .singleLine
+        }
         return objects.count
     }
     

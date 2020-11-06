@@ -119,9 +119,28 @@
                     <connections>
                         <outlet property="accountButton" destination="b1L-lz-W2Q" id="s4U-an-37Y"/>
                         <outlet property="draftTableView" destination="KsX-Pa-ewp" id="aB4-4H-OEa"/>
+                        <outlet property="emptyDraftView" destination="iy7-3S-su4" id="5be-GH-YVw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HRK-Li-lCe" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="iy7-3S-su4">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="임시보관함에 저장된 북마크가 존재하지 않아요:(" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOB-d4-Kjt">
+                            <rect key="frame" x="-13.5" y="77.5" width="267" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="Mdj-JT-kxh"/>
+                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    <constraints>
+                        <constraint firstItem="pOB-d4-Kjt" firstAttribute="centerY" secondItem="Mdj-JT-kxh" secondAttribute="centerY" id="6v0-ju-e1W"/>
+                        <constraint firstItem="pOB-d4-Kjt" firstAttribute="centerX" secondItem="Mdj-JT-kxh" secondAttribute="centerX" id="ycB-PT-qQF"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="1031.2" y="118.22660098522168"/>
         </scene>
@@ -156,6 +175,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
