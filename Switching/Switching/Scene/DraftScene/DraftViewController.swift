@@ -13,6 +13,7 @@ import SafariServices
 class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var draftTableView: UITableView!
+    var bookmarks: [Bookmark] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let realm = SharedData.instance.realm
@@ -66,11 +67,16 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.draftTableView.refreshControl = UIRefreshControl()
         self.draftTableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
         
+        self.updateTempBookmarksData()
         NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(notification:)), name: Notification.Name("refreshDraftView"), object: nil)
         
         accountButton.clipsToBounds = true
         accountButton.contentMode = .scaleAspectFill
         updateCharacterImage()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.updateTempBookmarksData()
+        self.draftTableView.reloadData()
     }
     
     private func updateCharacterImage(){
@@ -89,6 +95,7 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @objc func notificationReceived(notification: Notification) {
         // Notification에 담겨진 object와 userInfo를 얻어 처리 가능
         updateCharacterImage()
+        self.updateTempBookmarksData()
         self.draftTableView.reloadData()
     }
     
@@ -98,6 +105,27 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         DispatchQueue.main.async {
             self.draftTableView.refreshControl?.endRefreshing()
         }
+    }
+    
+    private func updateTempBookmarksData() {
+        let realm = SharedData.instance.realm
+        let bookmarks_: Results<Bookmark> = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == True")
+        bookmarks = []
+        for bookmark in bookmarks_{
+            bookmarks.append(bookmark)
+        }
+        accountButton.clipsToBounds = true
+        accountButton.contentMode = .scaleAspectFill
+        if realm.objects(Character.self).filter("character = '\(SharedData.instance.selectedCharacter)'").count > 0{
+            if let imageData = realm.objects(Character.self).filter("character = '\(SharedData.instance.selectedCharacter)'").first!.image{
+                accountButton.setBackgroundImage(UIImage(data: imageData), for: .normal)
+            }else{
+                accountButton.setBackgroundImage(UIImage(named: "account1"), for: .normal)
+            }
+        }else{
+            accountButton.setBackgroundImage(UIImage(named: "account1"), for: .normal)
+        }
+        self.draftTableView.reloadData()
     }
     
     
@@ -119,11 +147,12 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private func delete(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (_, _, _) in
             let realm = SharedData.instance.realm
-            let bookmark: Bookmark = realm.objects(Bookmark.self)[indexPath.row]
+            let bookmark: Bookmark = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == True")[indexPath.row]
             try! realm.write{
                 realm.delete(bookmark)
             }
-            self?.draftTableView.reloadData()
+            self?.updateTempBookmarksData()
+//            self?.draftTableView.reloadData()
             print("delete clicked \(indexPath.row)")
         }
         return action
