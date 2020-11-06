@@ -55,12 +55,9 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
   
     @IBOutlet weak var accountButton: UIButton!
-    @IBOutlet weak var addButton: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addButton.layer.cornerRadius = addButton.frame.height/2
         accountButton.layer.cornerRadius = accountButton.frame.height/2
         self.draftTableView.delegate = self
         self.draftTableView.dataSource = self
