@@ -13,7 +13,8 @@ class EditAccountViewController: UIViewController {
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var summitButton: UIButton!
     
-    var account: Character?
+    var editAccount: Character?
+    @IBOutlet weak var removeAccountBtn: UIButton!
     var image: UIImage?
     
     @objc func textFieldsIsNotEmpty(sender: UITextField) {
@@ -25,7 +26,12 @@ class EditAccountViewController: UIViewController {
     }
     
     func textFieldsSetup() {
-        summitButton.isEnabled = false
+        if let account = editAccount{
+            accountTextField.text = account.character
+            summitButton.isEnabled = true
+        }else{
+            summitButton.isEnabled = false
+        }
         accountTextField.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
     }
     
@@ -91,30 +97,70 @@ class EditAccountViewController: UIViewController {
         accountImage.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(photoButtonTapped))
         accountImage.addGestureRecognizer(tapGesture)
+        if let account = editAccount{
+            if let imageData = account.image{
+                accountImage.image = UIImage(data: imageData)
+            }
+        }
     }
     
     func imagePickerControllerDidcancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func removeClicked(_ sender: Any) {
+        let realm = SharedData.instance.realm
+        try! realm.write{
+            realm.delete(editAccount!)
+        }
+        NotificationCenter.default.post(name: Notification.Name("refreshFeedView"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("refreshDraftView"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("newCharacterCreated"), object: nil)
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func cancelClicked(_ sender: UIButton) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     @IBAction func summitClicked(_ sender: Any) {
-        guard let text = accountTextField.text,
-              let image = self.image?.pngData()
-        else{ return }
-        let newCharacter = Character()
-        newCharacter.character = text
-        newCharacter.image = image
+        print("summit")
         
-        let realm = SharedData.instance.realm
-        do{
-            try realm.write{
-                realm.add(newCharacter)
+        
+        if let account = editAccount{
+            print("수정")
+            let realm = SharedData.instance.realm
+            do{
+                try realm.write{
+                    if let newText = accountTextField.text{
+                        account.character = newText
+                    }
+                    if let newImage = self.image?.pngData(){
+                        account.image = newImage
+                    }
+                 }
+            } catch{
+                print("Error Edit \(error)")
             }
-        } catch {
-            print("Error Add \(error)")
+            NotificationCenter.default.post(name: Notification.Name("refreshFeedView"), object: nil)
+            NotificationCenter.default.post(name: Notification.Name("refreshDraftView"), object: nil)
+        }
+        else{
+            print("생성")
+            guard let text = accountTextField.text,
+                  let image = self.image?.pngData()
+            else{ return }
+            let newCharacter = Character()
+            newCharacter.character = text
+            newCharacter.image = image
+            
+            let realm = SharedData.instance.realm
+            do{
+                try realm.write{
+                    realm.add(newCharacter)
+                }
+            } catch {
+                print("Error Add \(error)")
+            }
         }
         NotificationCenter.default.post(name: Notification.Name("newCharacterCreated"), object: nil)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -126,6 +172,9 @@ class EditAccountViewController: UIViewController {
         accountTextField.delegate = self
         textFieldsSetup()
         accountImageSetUp()
+        if editAccount == nil{
+            removeAccountBtn.removeFromSuperview()
+        }
     }
     
 

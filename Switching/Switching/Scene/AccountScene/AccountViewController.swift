@@ -8,10 +8,23 @@
 import UIKit
 
 class AccountViewController: UIViewController {
+    var isEditMode: Bool = false
     @IBOutlet weak var characterCollectionView: UICollectionView!
     @IBAction func cancelClicked(_ sender: UIButton) {
           self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+    @IBOutlet weak var editBtn: UIButton!
+    
+    @IBAction func editClicked(_ sender: Any) {
+        isEditing = !isEditing
+        if isEditing{
+            editBtn.setTitle("완료", for: .normal)
+        }else{
+            editBtn.setTitle("수정", for: .normal)
+        }
+        self.characterCollectionView.reloadData()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +54,11 @@ extension AccountViewController: UICollectionViewDelegate, UICollectionViewDataS
             }else{
                 existingCell.accountImage.image = UIImage(named: "account1.png")
             }
-        
+            if isEditing{
+                existingCell.editImage.image = UIImage(named: "edit")
+            }else{
+                existingCell.editImage.image = nil
+            }
             existingCell.accountImage.layer.cornerRadius = 50
             cells = existingCell
         } else {
@@ -56,11 +73,22 @@ extension AccountViewController: UICollectionViewDelegate, UICollectionViewDataS
         if indexPath.row == realm.objects(Character.self).count {
             print("추가하기")
         } else {
-            print("버튼이 클릭됨 \(indexPath.row)")
-            SharedData.instance.selectedCharacter = realm.objects(Character.self)[indexPath.row].character
-            NotificationCenter.default.post(name: Notification.Name("refreshFeedView"), object: nil)
-            NotificationCenter.default.post(name: Notification.Name("refreshDraftView"), object: nil)
-            self.presentingViewController?.dismiss(animated: true, completion: nil)
+            if isEditing{
+                let storyboard = UIStoryboard.init(name: "Account", bundle: nil)
+                guard let editVC = storyboard.instantiateViewController(identifier: "editVC") as? EditAccountViewController else{
+                    return
+                }
+                let realm  = SharedData.instance.realm
+                editVC.editAccount = realm.objects(Character.self)[indexPath.row]
+                let editNav = UINavigationController(rootViewController: editVC)
+                self.present(editNav, animated: true, completion:nil)
+            }else{
+                print("버튼이 클릭됨 \(indexPath.row)")
+                SharedData.instance.selectedCharacter = realm.objects(Character.self)[indexPath.row].character
+                NotificationCenter.default.post(name: Notification.Name("refreshFeedView"), object: nil)
+                NotificationCenter.default.post(name: Notification.Name("refreshDraftView"), object: nil)
+                self.presentingViewController?.dismiss(animated: true, completion: nil)
+            }
         }
     }
 }
