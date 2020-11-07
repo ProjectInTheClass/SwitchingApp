@@ -21,16 +21,14 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     var bookmarks: [Bookmark] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let realm = SharedData.instance.realm
-        var objects = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == False")
-        if objects.count == 0 {
+        if bookmarks.count == 0 {
             tableView.backgroundView = emptyFeedView
             tableView.separatorStyle = .none
         } else {
             tableView.backgroundView = nil
             tableView.separatorStyle = .singleLine
         }
-        return objects.count
+        return bookmarks.count
 
     }
     
@@ -38,7 +36,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedfeedCell", for: indexPath) as! FeedTableViewCell
         let realm = SharedData.instance.realm
-        if let bookmark: Bookmark = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == False")[indexPath.row]{
+        if let bookmark: Bookmark = bookmarks[indexPath.row]{
             cell.feedfeedURLLabel.text = bookmark.url
             cell.feedfeedTitleLabel.text = bookmark.desc
             cell.feedfeedDateLabel.text = "2020.10.26"//UI레이아웃 테스트
@@ -141,7 +139,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     private func edit(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
         let realm = SharedData.instance.realm
-        let bookmark: Bookmark = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == False")[indexPath.row]
+        let bookmark: Bookmark = bookmarks[indexPath.row]
         let action = UIContextualAction(style: .normal, title: "수정") { [weak self] (_, _, _) in
             let storyboard = UIStoryboard.init(name: "Add", bundle: nil)
             guard let addVC = storyboard.instantiateViewController(withIdentifier: "addVC") as? AddViewController else {
@@ -156,7 +154,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     private func delete(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
         let realm = SharedData.instance.realm
-        let bookmark: Bookmark = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == False")[indexPath.row]
+        let bookmark: Bookmark = bookmarks[indexPath.row]
         let action = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (_, _, _) in
             try! realm.write{
                 realm.delete(bookmark)
