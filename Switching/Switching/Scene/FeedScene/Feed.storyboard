@@ -245,7 +245,11 @@
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="p1q-eW-vJg"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="p1q-eW-vJg">
+                            <connections>
+                                <segue destination="UpG-8s-xN5" kind="show" id="hcO-dR-glq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="accountButton" destination="HJL-yy-i2Q" id="xVQ-a8-Vox"/>
@@ -260,18 +264,18 @@
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="저장된 북마크가 없어요 ;(" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dz8-i8-2Sr">
-                            <rect key="frame" x="99" y="54" width="171" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저장된 북마크가 존재하지 않아요 :(" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTx-GJ-JPv">
+                            <rect key="frame" x="23" y="78" width="194" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="ang-CV-Q7l"/>
                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                     <constraints>
-                        <constraint firstItem="dz8-i8-2Sr" firstAttribute="centerX" secondItem="ang-CV-Q7l" secondAttribute="centerX" id="Bgr-7H-Ibm"/>
-                        <constraint firstItem="dz8-i8-2Sr" firstAttribute="centerY" secondItem="ang-CV-Q7l" secondAttribute="centerY" id="lab-5M-9iB"/>
+                        <constraint firstItem="NTx-GJ-JPv" firstAttribute="centerY" secondItem="ang-CV-Q7l" secondAttribute="centerY" id="K2b-gA-2DS"/>
+                        <constraint firstItem="NTx-GJ-JPv" firstAttribute="centerX" secondItem="ang-CV-Q7l" secondAttribute="centerX" id="ymc-vx-WfT"/>
                     </constraints>
                 </view>
             </objects>
@@ -339,6 +343,61 @@
                 <exit id="Wdx-NY-gv0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2931.8840579710145" y="-424.55357142857139"/>
+        </scene>
+        <!--Feed Search View Controller-->
+        <scene sceneID="YtL-Us-Gp0">
+            <objects>
+                <viewController id="UpG-8s-xN5" customClass="FeedSearchViewController" customModule="Switching" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q80-ep-IHE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aBz-kx-P4X">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedSearchCell" id="dZI-NZ-9FJ" customClass="FeedSearchTableViewCell" customModule="Switching" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dZI-NZ-9FJ" id="UFM-Ga-6po">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xcy-Kr-9t0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xcy-Kr-9t0" firstAttribute="bottom" secondItem="aBz-kx-P4X" secondAttribute="bottom" id="843-Zg-mbz"/>
+                            <constraint firstItem="xcy-Kr-9t0" firstAttribute="trailing" secondItem="aBz-kx-P4X" secondAttribute="trailing" id="Ah9-6v-kwH"/>
+                            <constraint firstItem="aBz-kx-P4X" firstAttribute="leading" secondItem="xcy-Kr-9t0" secondAttribute="leading" id="g5b-i3-tcQ"/>
+                            <constraint firstItem="aBz-kx-P4X" firstAttribute="top" secondItem="xcy-Kr-9t0" secondAttribute="top" id="h7c-I8-l7H"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="l2x-Lt-sOY"/>
+                    <connections>
+                        <outlet property="searchBar" destination="N4Q-It-1s5" id="qxv-1t-oGM"/>
+                        <segue destination="EdP-P5-Wfg" kind="unwind" identifier="unwindToFeedVC2" unwindAction="unwindVCWithSegue:" id="tn1-hN-xmY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r7f-PS-qZ8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="EdP-P5-Wfg" userLabel="Exit" sceneMemberID="exit"/>
+                <searchBar contentMode="redraw" showsSearchResultsButton="YES" showsCancelButton="YES" id="N4Q-It-1s5">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                    <scopeButtonTitles>
+                        <string>Title</string>
+                        <string>Title</string>
+                    </scopeButtonTitles>
+                    <connections>
+                        <outlet property="delegate" destination="q80-ep-IHE" id="nad-6v-ppN"/>
+                    </connections>
+                </searchBar>
+            </objects>
+            <point key="canvasLocation" x="2930" y="303"/>
         </scene>
         <!--Account-->
         <scene sceneID="bCa-Kr-Kbt">
