@@ -296,7 +296,7 @@
             </objects>
             <point key="canvasLocation" x="2737" y="-940"/>
         </scene>
-        <!--Feed Filter View Controller-->
+        <!--태그 선택-->
         <scene sceneID="N2j-yB-l2t">
             <objects>
                 <viewController id="ctS-41-2ar" customClass="FeedFilterViewController" customModule="Switching" customModuleProvider="target" sceneMemberID="viewController">
@@ -304,19 +304,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzp-qn-2o4">
-                                <rect key="frame" x="20" y="108" width="52" height="30"/>
-                                <state key="normal" title="뒤로가기"/>
-                                <connections>
-                                    <action selector="backButtonClicked:" destination="ctS-41-2ar" eventType="touchUpInside" id="nAh-Tx-JnG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Np-gt-LwL">
-                                <rect key="frame" x="338" y="108" width="56" height="30"/>
-                                <state key="normal" title="모두 해제"/>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ecU-PP-Plb">
-                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tagCell" id="6wG-to-X1F">
@@ -337,17 +326,19 @@
                         <viewLayoutGuide key="safeArea" id="UYd-Vf-e8w"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Uzp-qn-2o4" firstAttribute="top" secondItem="UYd-Vf-e8w" secondAttribute="top" constant="20" id="29h-VL-rF0"/>
-                            <constraint firstItem="4Np-gt-LwL" firstAttribute="top" secondItem="UYd-Vf-e8w" secondAttribute="top" constant="20" id="CLN-no-rEW"/>
-                            <constraint firstItem="ecU-PP-Plb" firstAttribute="top" secondItem="UYd-Vf-e8w" secondAttribute="top" constant="60" id="DDS-8A-Cmg"/>
-                            <constraint firstItem="UYd-Vf-e8w" firstAttribute="trailing" secondItem="4Np-gt-LwL" secondAttribute="trailing" constant="20" id="FDT-VQ-7IG"/>
+                            <constraint firstItem="ecU-PP-Plb" firstAttribute="top" secondItem="UYd-Vf-e8w" secondAttribute="top" id="DDS-8A-Cmg"/>
                             <constraint firstItem="ecU-PP-Plb" firstAttribute="leading" secondItem="UYd-Vf-e8w" secondAttribute="leading" id="PmK-uP-45f"/>
-                            <constraint firstItem="Uzp-qn-2o4" firstAttribute="leading" secondItem="UYd-Vf-e8w" secondAttribute="leading" constant="20" id="XEN-Yj-mwQ"/>
                             <constraint firstItem="UYd-Vf-e8w" firstAttribute="bottom" secondItem="ecU-PP-Plb" secondAttribute="bottom" id="gfA-u2-UcZ"/>
                             <constraint firstItem="UYd-Vf-e8w" firstAttribute="trailing" secondItem="ecU-PP-Plb" secondAttribute="trailing" id="qoQ-7V-dba"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="TIl-Ct-Fmc"/>
+                    <navigationItem key="navigationItem" title="태그 선택" id="TIl-Ct-Fmc">
+                        <barButtonItem key="leftBarButtonItem" title="뒤로가기" id="wLN-rd-qMi">
+                            <connections>
+                                <action selector="backButtonClicked:" destination="ctS-41-2ar" id="zgj-Oh-BBq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="FeedFilterTableView" destination="ecU-PP-Plb" id="Oix-b6-gg5"/>
                         <segue destination="Wdx-NY-gv0" kind="unwind" identifier="unwindToFeedVC" unwindAction="unwindVCWithSegue:" id="Emx-F3-Mwi"/>
