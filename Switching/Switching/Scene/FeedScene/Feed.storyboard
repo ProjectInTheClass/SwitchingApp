@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbx-YM-k00">
-                                <rect key="frame" x="0.0" y="210" width="414" height="652"/>
+                                <rect key="frame" x="0.0" y="167" width="414" height="695"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uci-Oj-wXG">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="652"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="695"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedfeedCell" id="LXE-4K-VX4" customClass="FeedTableViewCell" customModule="Switching" customModuleProvider="target">
@@ -143,26 +143,6 @@
                                     <constraint firstItem="uci-Oj-wXG" firstAttribute="leading" secondItem="xbx-YM-k00" secondAttribute="leading" id="wTZ-ew-vBj"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJL-yy-i2Q">
-                                <rect key="frame" x="20" y="103" width="40" height="40"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="nca-Il-JEF"/>
-                                    <constraint firstAttribute="width" constant="40" id="p0M-JU-PLD"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="yKZ-AR-AQM" kind="presentation" id="fP4-S2-es1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCS-m5-Oop">
-                                <rect key="frame" x="370" y="111" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="TCS-m5-Oop" secondAttribute="height" multiplier="1:1" id="N9J-ma-KzW"/>
-                                    <constraint firstAttribute="height" constant="24" id="ekr-fu-GWZ"/>
-                                </constraints>
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <state key="normal" title="Button" image="magnifyingglass" catalog="system"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4r-ef-Mvd">
                                 <rect key="frame" x="334" y="782" width="50" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -177,10 +157,10 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cae-xP-BUs">
-                                <rect key="frame" x="15" y="178" width="384" height="32"/>
+                                <rect key="frame" x="15" y="131" width="384" height="36"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="gbH-wB-kFX"/>
+                                    <constraint firstAttribute="height" constant="36" id="gbH-wB-kFX"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rnx-Ig-ECR" customClass="TagsCollectionViewFlowLayout" customModule="Switching" customModuleProvider="target">
                                     <size key="itemSize" width="128" height="28"/>
@@ -223,7 +203,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-1E-LkO">
-                                <rect key="frame" x="328.5" y="150" width="65.5" height="18"/>
+                                <rect key="frame" x="328.5" y="103" width="65.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="태그 선택" image="chevron.right" catalog="system">
                                     <color key="titleColor" name="AccentColor"/>
@@ -236,26 +216,37 @@
                         <viewLayoutGuide key="safeArea" id="VoZ-aP-Ujy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TCS-m5-Oop" firstAttribute="centerY" secondItem="HJL-yy-i2Q" secondAttribute="centerY" id="0ip-lu-lqB"/>
-                            <constraint firstItem="cae-xP-BUs" firstAttribute="top" secondItem="VoZ-aP-Ujy" secondAttribute="top" constant="90" id="85T-UK-ZPd"/>
-                            <constraint firstItem="yjb-1E-LkO" firstAttribute="top" secondItem="TCS-m5-Oop" secondAttribute="bottom" constant="15" id="EHF-YU-omH"/>
-                            <constraint firstItem="HJL-yy-i2Q" firstAttribute="top" secondItem="VoZ-aP-Ujy" secondAttribute="top" constant="15" id="HSJ-4b-W1r"/>
+                            <constraint firstItem="cae-xP-BUs" firstAttribute="top" secondItem="yjb-1E-LkO" secondAttribute="bottom" constant="10" id="85T-UK-ZPd"/>
                             <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="u4r-ef-Mvd" secondAttribute="trailing" constant="30" id="HVk-fW-IdB"/>
-                            <constraint firstItem="TCS-m5-Oop" firstAttribute="width" secondItem="TCS-m5-Oop" secondAttribute="height" multiplier="1:1" id="Nav-KV-yGM"/>
+                            <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="yjb-1E-LkO" secondAttribute="trailing" constant="20" id="NtE-rq-Evd"/>
                             <constraint firstItem="VoZ-aP-Ujy" firstAttribute="bottom" secondItem="xbx-YM-k00" secondAttribute="bottom" id="Pd0-ZU-CX9"/>
                             <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="cae-xP-BUs" secondAttribute="trailing" constant="15" id="QmV-Jf-497"/>
                             <constraint firstItem="VoZ-aP-Ujy" firstAttribute="bottom" secondItem="u4r-ef-Mvd" secondAttribute="bottom" constant="30" id="W7n-JI-lXy"/>
-                            <constraint firstItem="HJL-yy-i2Q" firstAttribute="leading" secondItem="VoZ-aP-Ujy" secondAttribute="leading" constant="20" id="XwG-HJ-9DM"/>
+                            <constraint firstItem="yjb-1E-LkO" firstAttribute="top" secondItem="VoZ-aP-Ujy" secondAttribute="top" constant="15" id="WVx-OT-p7s"/>
                             <constraint firstItem="xbx-YM-k00" firstAttribute="top" secondItem="cae-xP-BUs" secondAttribute="bottom" id="bXd-cV-Ghw"/>
                             <constraint firstItem="cae-xP-BUs" firstAttribute="leading" secondItem="VoZ-aP-Ujy" secondAttribute="leading" constant="15" id="haJ-C0-5NI"/>
-                            <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="TCS-m5-Oop" secondAttribute="trailing" constant="20" id="r4o-ez-aig"/>
                             <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="xbx-YM-k00" secondAttribute="trailing" id="tDo-Rw-Zcj"/>
-                            <constraint firstItem="TCS-m5-Oop" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HJL-yy-i2Q" secondAttribute="trailing" constant="8" symbolic="YES" id="toA-Y7-EWO"/>
-                            <constraint firstItem="yjb-1E-LkO" firstAttribute="trailing" secondItem="TCS-m5-Oop" secondAttribute="trailing" id="xOU-rN-BJv"/>
                             <constraint firstItem="xbx-YM-k00" firstAttribute="leading" secondItem="VoZ-aP-Ujy" secondAttribute="leading" id="xkC-Uh-YBz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Kj0-yc-XRN"/>
+                    <navigationItem key="navigationItem" id="Kj0-yc-XRN">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="KJH-ad-NX6">
+                            <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="HJL-yy-i2Q">
+                                <rect key="frame" x="20" y="2" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nca-Il-JEF"/>
+                                    <constraint firstAttribute="width" constant="40" id="p0M-JU-PLD"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="yKZ-AR-AQM" kind="presentation" id="fP4-S2-es1"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="p1q-eW-vJg"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="accountButton" destination="HJL-yy-i2Q" id="xVQ-a8-Vox"/>
                         <outlet property="addButton" destination="u4r-ef-Mvd" id="Knp-rT-WiR"/>
@@ -386,9 +377,6 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
