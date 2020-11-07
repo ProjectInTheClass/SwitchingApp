@@ -204,7 +204,6 @@
                                 <state key="normal" title="취소"/>
                                 <connections>
                                     <action selector="cancelClicked:" destination="0wT-rx-QVy" eventType="touchUpInside" id="jcL-vz-Ias"/>
-                                    <action selector="cancelClicked:" destination="WMZ-fn-LiF" eventType="touchUpInside" id="pRc-QP-SsV"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wMP-p8-H1w">
