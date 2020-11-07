@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kSO-Hi-qj3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jjT-KY-3lg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--피드-->
+        <!--Feed View Controller-->
         <scene sceneID="Cum-TI-PqZ">
             <objects>
                 <viewController id="kSO-Hi-qj3" customClass="FeedViewController" customModule="Switching" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbx-YM-k00">
-                                <rect key="frame" x="0.0" y="166" width="414" height="696"/>
+                                <rect key="frame" x="0.0" y="210" width="414" height="652"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uci-Oj-wXG">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="696"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="652"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedfeedCell" id="LXE-4K-VX4" customClass="FeedTableViewCell" customModule="Switching" customModuleProvider="target">
@@ -144,18 +144,18 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJL-yy-i2Q">
-                                <rect key="frame" x="20" y="59" width="40" height="40"/>
+                                <rect key="frame" x="20" y="103" width="40" height="40"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="nca-Il-JEF"/>
                                     <constraint firstAttribute="width" constant="40" id="p0M-JU-PLD"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="yKZ-AR-AQM" kind="show" id="fP4-S2-es1"/>
+                                    <segue destination="yKZ-AR-AQM" kind="presentation" id="fP4-S2-es1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCS-m5-Oop">
-                                <rect key="frame" x="370" y="67" width="24" height="24"/>
+                                <rect key="frame" x="370" y="111" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="TCS-m5-Oop" secondAttribute="height" multiplier="1:1" id="N9J-ma-KzW"/>
                                     <constraint firstAttribute="height" constant="24" id="ekr-fu-GWZ"/>
@@ -173,11 +173,11 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="plus" catalog="system"/>
                                 <connections>
-                                    <segue destination="xrg-vl-XhZ" kind="show" id="Q5W-e6-NC5"/>
+                                    <segue destination="xrg-vl-XhZ" kind="presentation" id="Q5W-e6-NC5"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cae-xP-BUs">
-                                <rect key="frame" x="15" y="134" width="384" height="32"/>
+                                <rect key="frame" x="15" y="178" width="384" height="32"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="gbH-wB-kFX"/>
@@ -223,13 +223,13 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-1E-LkO">
-                                <rect key="frame" x="328.5" y="106" width="65.5" height="18"/>
+                                <rect key="frame" x="328.5" y="150" width="65.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="태그 선택" image="chevron.right" catalog="system">
                                     <color key="titleColor" name="AccentColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ctS-41-2ar" kind="presentation" modalPresentationStyle="fullScreen" id="eyf-xJ-lfT"/>
+                                    <segue destination="ctS-41-2ar" kind="show" id="eyf-xJ-lfT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -255,7 +255,7 @@
                             <constraint firstItem="xbx-YM-k00" firstAttribute="leading" secondItem="VoZ-aP-Ujy" secondAttribute="leading" id="xkC-Uh-YBz"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="피드" id="qSp-pa-bUe"/>
+                    <navigationItem key="navigationItem" id="Kj0-yc-XRN"/>
                     <connections>
                         <outlet property="accountButton" destination="HJL-yy-i2Q" id="xVQ-a8-Vox"/>
                         <outlet property="addButton" destination="u4r-ef-Mvd" id="Knp-rT-WiR"/>
@@ -284,7 +284,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1030.4347826086957" y="-604.01785714285711"/>
+            <point key="canvasLocation" x="1940.5797101449277" y="-604.01785714285711"/>
         </scene>
         <!--Add-->
         <scene sceneID="qKC-GM-P78">
@@ -294,7 +294,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZdU-Km-flb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1808" y="-960"/>
+            <point key="canvasLocation" x="2737" y="-940"/>
         </scene>
         <!--Feed Filter View Controller-->
         <scene sceneID="N2j-yB-l2t">
@@ -305,18 +305,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzp-qn-2o4">
-                                <rect key="frame" x="20" y="64" width="52" height="30"/>
+                                <rect key="frame" x="20" y="108" width="52" height="30"/>
                                 <state key="normal" title="뒤로가기"/>
                                 <connections>
                                     <action selector="backButtonClicked:" destination="ctS-41-2ar" eventType="touchUpInside" id="nAh-Tx-JnG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Np-gt-LwL">
-                                <rect key="frame" x="338" y="64" width="56" height="30"/>
+                                <rect key="frame" x="338" y="108" width="56" height="30"/>
                                 <state key="normal" title="모두 해제"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ecU-PP-Plb">
-                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tagCell" id="6wG-to-X1F">
@@ -356,7 +356,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hnb-pL-qaQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Wdx-NY-gv0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2022" y="-424"/>
+            <point key="canvasLocation" x="2931.8840579710145" y="-424.55357142857139"/>
         </scene>
         <!--Account-->
         <scene sceneID="bCa-Kr-Kbt">
@@ -366,7 +366,26 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kji-bz-ofS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1827" y="-873"/>
+            <point key="canvasLocation" x="2736.9565217391305" y="-873.21428571428567"/>
+        </scene>
+        <!--피드-->
+        <scene sceneID="QAu-wD-dAt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jjT-KY-3lg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="피드" id="qSp-pa-bUe"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AGY-CO-bh0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kSO-Hi-qj3" kind="relationship" relationship="rootViewController" id="l2i-HP-By6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W7J-jf-IOJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030.4347826086957" y="-604.01785714285711"/>
         </scene>
     </scenes>
     <resources>
