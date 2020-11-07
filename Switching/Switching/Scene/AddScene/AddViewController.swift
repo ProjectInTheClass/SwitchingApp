@@ -50,6 +50,11 @@ class AddViewController: UIViewController {
                     savedBookmark.url = urlTextField.text!
                     savedBookmark.desc = titleTextField.text!
                     savedBookmark.isTemp = false
+                    for tag in selectedTags{
+                        let tag_ = Tag()
+                        tag_.tag = tag
+                        savedBookmark.tags.append(tag_)
+                    }
                 }
             } catch {
                 print("Error Add \(error)")
@@ -62,7 +67,7 @@ class AddViewController: UIViewController {
             
             bookmark.url = url!
             bookmark.desc = title!
-            bookmark.character = "main"
+            bookmark.character = SharedData.instance.selectedCharacter
             bookmark.isTemp = false
             
             for tag in selectedTags{

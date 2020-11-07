@@ -21,6 +21,7 @@ class FeedTableViewCell: UITableViewCell {
     
     func updateUI() {
         self.feedfeedImageView.layer.cornerRadius = 15
+        self.feedTagsCollectionView.reloadData()
     }
     
     override func awakeFromNib() {

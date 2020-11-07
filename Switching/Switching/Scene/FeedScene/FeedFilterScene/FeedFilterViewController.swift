@@ -13,7 +13,7 @@ class FeedFilterViewController: UIViewController {
     var filteredTags: Array<String> = [] //임시데이터
     
     @IBOutlet weak var FeedFilterTableView: UITableView!
-    @IBAction func backButtonClicked(_ sender: UIButton) {
+    @IBAction func backButtonClicked(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "unwindToFeedVC", sender: sender)
         NotificationCenter.default.post(name: Notification.Name("refreshFeedView"), object: nil)
 //        self.presentingViewController?.dismiss(animated: true, completion: nil)

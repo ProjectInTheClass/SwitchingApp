@@ -23,6 +23,7 @@
 		A625FFE52531855000F94007 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A625FFE42531855000F94007 /* Feed.storyboard */; };
 		A625FFE92531863100F94007 /* Draft.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A625FFE82531863100F94007 /* Draft.storyboard */; };
 		A625FFEE2531877B00F94007 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A625FFED2531877B00F94007 /* Account.storyboard */; };
+		A62ECF802556E2F00047B6F2 /* FeedSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62ECF7F2556E2F00047B6F2 /* FeedSearchViewController.swift */; };
 		A63A1C1F253ED192003E2BBE /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63A1C1E253ED192003E2BBE /* SettingTableViewController.swift */; };
 		A67DEC44254C9453002650B1 /* AddSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67DEC43254C9453002650B1 /* AddSelectViewController.swift */; };
 		A68C8D46254F158100287E15 /* TagsCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C8D45254F158100287E15 /* TagsCollectionViewFlowLayout.swift */; };
@@ -31,6 +32,7 @@
 		A6C0FE932529FFD9003B1070 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C0FE922529FFD9003B1070 /* Notification.storyboard */; };
 		A6C0FE99252A012A003B1070 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C0FE98252A012A003B1070 /* NotificationViewController.swift */; };
 		A6C0FE9D252A032C003B1070 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C0FE9C252A032C003B1070 /* NotificationTableViewCell.swift */; };
+		A6C1A7412556EF2600D3ADEF /* FeedSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C1A7402556EF2600D3ADEF /* FeedSearchTableViewCell.swift */; };
 		A6DF497125396A4C004A065B /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF497025396A4C004A065B /* AccountCollectionViewCell.swift */; };
 		A6DF497525396BE0004A065B /* AddAccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF497425396BE0004A065B /* AddAccountCollectionViewCell.swift */; };
 		A6DF497B253976E8004A065B /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF497A253976E8004A065B /* EditAccountViewController.swift */; };
@@ -99,6 +101,7 @@
 		A625FFE42531855000F94007 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		A625FFE82531863100F94007 /* Draft.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Draft.storyboard; sourceTree = "<group>"; };
 		A625FFED2531877B00F94007 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		A62ECF7F2556E2F00047B6F2 /* FeedSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSearchViewController.swift; sourceTree = "<group>"; };
 		A63A1C1E253ED192003E2BBE /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		A67DEC43254C9453002650B1 /* AddSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSelectViewController.swift; sourceTree = "<group>"; };
 		A68C8D45254F158100287E15 /* TagsCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -107,6 +110,7 @@
 		A6C0FE922529FFD9003B1070 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		A6C0FE98252A012A003B1070 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		A6C0FE9C252A032C003B1070 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		A6C1A7402556EF2600D3ADEF /* FeedSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSearchTableViewCell.swift; sourceTree = "<group>"; };
 		A6DF497025396A4C004A065B /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6DF497425396BE0004A065B /* AddAccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6DF497A253976E8004A065B /* EditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 				BD1D339525446C4E00706CF5 /* FeedTableViewCell.swift */,
 				A68C8D45254F158100287E15 /* TagsCollectionViewFlowLayout.swift */,
 				A6BCF993254C694000E42AAC /* FeedFilterScene */,
+				A62ECF832556E3310047B6F2 /* FeedSearchScene */,
 			);
 			path = FeedScene;
 			sourceTree = "<group>";
@@ -262,6 +267,15 @@
 				A6DF497A253976E8004A065B /* EditAccountViewController.swift */,
 			);
 			path = AccountScene;
+			sourceTree = "<group>";
+		};
+		A62ECF832556E3310047B6F2 /* FeedSearchScene */ = {
+			isa = PBXGroup;
+			children = (
+				A62ECF7F2556E2F00047B6F2 /* FeedSearchViewController.swift */,
+				A6C1A7402556EF2600D3ADEF /* FeedSearchTableViewCell.swift */,
+			);
+			path = FeedSearchScene;
 			sourceTree = "<group>";
 		};
 		A67DEC47254C948D002650B1 /* AddSelectScene */ = {
@@ -508,6 +522,7 @@
 				A60FD7492520AADB0069C29C /* AccountViewController.swift in Sources */,
 				BD1D339625446C4E00706CF5 /* FeedTableViewCell.swift in Sources */,
 				A61B2178252077FA00272050 /* DraftTableViewCell.swift in Sources */,
+				A6C1A7412556EF2600D3ADEF /* FeedSearchTableViewCell.swift in Sources */,
 				A6DF497525396BE0004A065B /* AddAccountCollectionViewCell.swift in Sources */,
 				A618AFC92527005B006F9CA9 /* AddViewController.swift in Sources */,
 				A61B215925206EDC00272050 /* AppDelegate.swift in Sources */,
@@ -525,6 +540,7 @@
 				A61B2181252092B200272050 /* FeedViewController.swift in Sources */,
 				EAAB80032526A9B7007815B2 /* Bookmark.swift in Sources */,
 				A6DF497125396A4C004A065B /* AccountCollectionViewCell.swift in Sources */,
+				A62ECF802556E2F00047B6F2 /* FeedSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
