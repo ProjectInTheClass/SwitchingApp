@@ -148,7 +148,7 @@
         <scene sceneID="gys-np-HX2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w6w-15-FsO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="임시보관함" id="XfD-k3-Ksc"/>
+                    <tabBarItem key="tabBarItem" title="임시보관함" image="tray" catalog="system" id="XfD-k3-Ksc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oTK-vV-zwh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -165,6 +165,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="tray" catalog="system" width="128" height="88"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

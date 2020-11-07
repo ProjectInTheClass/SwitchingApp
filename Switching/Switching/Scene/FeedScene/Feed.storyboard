@@ -354,7 +354,7 @@
         <scene sceneID="QAu-wD-dAt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jjT-KY-3lg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="피드" id="qSp-pa-bUe"/>
+                    <tabBarItem key="tabBarItem" title="피드" image="list.bullet" catalog="system" id="qSp-pa-bUe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AGY-CO-bh0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -372,6 +372,7 @@
     </scenes>
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">

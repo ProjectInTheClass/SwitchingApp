@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yXB-QA-Yz6">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -61,7 +61,7 @@
                             <constraint firstItem="m2g-jG-quz" firstAttribute="leading" secondItem="4Ms-RN-OBw" secondAttribute="leading" id="uNo-qb-W6b"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="알림" id="FkX-IP-CaH"/>
+                    <tabBarItem key="tabBarItem" title="알림" image="bell" catalog="system" id="FkX-IP-CaH"/>
                     <connections>
                         <outlet property="notificationTableView" destination="m2g-jG-quz" id="XSw-iO-aad"/>
                     </connections>
@@ -72,6 +72,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bell" catalog="system" width="128" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
