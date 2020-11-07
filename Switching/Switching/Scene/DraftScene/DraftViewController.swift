@@ -64,10 +64,15 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
   
     @IBOutlet weak var accountButton: UIButton!
+    func accountButtonSetUp() {
+        accountButton.layer.cornerRadius = accountButton.frame.height/2
+        accountButton.layer.borderColor = UIColor.lightGray.cgColor
+        accountButton.layer.borderWidth = 0.5
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        accountButton.layer.cornerRadius = accountButton.frame.height/2
+        accountButtonSetUp()
         self.draftTableView.delegate = self
         self.draftTableView.dataSource = self
         // Do any additional setup after loading the view.

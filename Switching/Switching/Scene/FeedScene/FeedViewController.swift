@@ -70,10 +70,24 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var accountButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     
+    func accountButtonSetUp() {
+        accountButton.layer.cornerRadius = accountButton.frame.height/2
+        accountButton.layer.borderColor = UIColor.lightGray.cgColor
+        accountButton.layer.borderWidth = 0.5
+    }
+    func addButtonSetUp() {
+        addButton.layer.cornerRadius = addButton.frame.height/2
+        addButton.layer.shadowColor = UIColor.black.cgColor
+        addButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        addButton.layer.shadowRadius = 5
+        addButton.layer.shadowOpacity = 0.3
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        addButton.layer.cornerRadius = addButton.frame.height/2
-        accountButton.layer.cornerRadius = accountButton.frame.height/2
+        accountButtonSetUp()
+        addButtonSetUp()
         self.feedTableView.delegate = self
         self.feedTableView.dataSource = self
         // Do any additional setup after loading the view.
