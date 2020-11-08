@@ -94,9 +94,9 @@ extension AddSelectViewController: UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.text = "등록된 태그가 없습니다"
         } else {
             cell.textLabel?.text = tags[indexPath.row]
-        }
-        if selectedTags.contains(tags[indexPath.row]) {
-            cell.accessoryType = .checkmark
+            if selectedTags.contains(tags[indexPath.row]) {
+                cell.accessoryType = .checkmark
+            }
         }
         return cell
     }
