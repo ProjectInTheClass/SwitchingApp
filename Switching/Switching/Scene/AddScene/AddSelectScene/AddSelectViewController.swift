@@ -9,7 +9,7 @@ import UIKit
 
 
 class AddSelectViewController: UIViewController {
-    var tags: Array<String> = SharedData.instance.getTagListOfSelectedCharacter()
+    var tags: Array<String> = []
     var selectedIndexPathRows: Array<Int> = [] //임시데이터
     var selectedTags: Array<String> = [] //임시데이터
 
@@ -53,6 +53,11 @@ class AddSelectViewController: UIViewController {
         super.viewDidLoad()
         textFieldsSetUp()
         createTagButton.isEnabled = false
+        for tag in SharedData.instance.getTagListOfSelectedCharacter(){
+            if !tags.contains(tag){
+                tags.append(tag)
+            }
+        }
 //        self.navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
     }
@@ -90,7 +95,7 @@ extension AddSelectViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.textLabel?.text = tags[indexPath.row]
         }
-        if selectedIndexPathRows.contains(indexPath.row) {
+        if selectedTags.contains(tags[indexPath.row]) {
             cell.accessoryType = .checkmark
         }
         return cell

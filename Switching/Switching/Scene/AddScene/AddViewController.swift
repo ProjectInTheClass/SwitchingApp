@@ -27,7 +27,10 @@ class AddViewController: UIViewController {
             urlTextField.text = savedBookmark.url
             titleTextField.text = savedBookmark.desc
             for tag in savedBookmark.tags{
+                if !selectedTags.contains(tag.tag) {
                 selectedTags.append(tag.tag)
+                    
+                }
             }
         }
     }
@@ -97,6 +100,15 @@ class AddViewController: UIViewController {
         }
         NotificationCenter.default.post(name: Notification.Name("refreshFeedView"), object: nil)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func selectTagsClicked(_ sender: Any) {
+        guard let tagVC = self.storyboard?.instantiateViewController(identifier: "selectTags") as? AddSelectViewController else{
+            return
+        }
+        tagVC.selectedTags = self.selectedTags
+        tagVC.tags = self.selectedTags
+        self.selectedTags = []
+        self.navigationController?.pushViewController(tagVC, animated: true)
     }
     
 }
