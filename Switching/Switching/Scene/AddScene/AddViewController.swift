@@ -29,7 +29,7 @@ class AddViewController: UIViewController {
             for tag in savedBookmark.tags{
                 if !selectedTags.contains(tag.tag) {
                 selectedTags.append(tag.tag)
-                    print("test")
+                    print("test2")
                 }
             }
         }
