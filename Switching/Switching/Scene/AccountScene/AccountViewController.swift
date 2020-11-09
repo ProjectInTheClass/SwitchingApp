@@ -29,6 +29,14 @@ class AccountViewController: UIViewController {
     @objc func notificationReceived(notification: Notification) {
         self.characterCollectionView.reloadData()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        if let onboardingVC = storyboard.instantiateViewController(withIdentifier: "onboardingVC") as? OnboardingViewController {
+            onboardingVC.modalPresentationStyle = .fullScreen
+            self.present(onboardingVC, animated: true, completion: nil)
+        }
+    }
 }
 
 extension AccountViewController: UICollectionViewDelegate, UICollectionViewDataSource {
