@@ -72,7 +72,11 @@ extension AccountViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let realm  = SharedData.instance.realm
         if indexPath.row == realm.objects(Character.self).count {
-            print("추가하기")
+            let storyboard = UIStoryboard.init(name: "Account", bundle: nil)
+            guard let editVC = storyboard.instantiateViewController(identifier: "editVC") as? EditAccountViewController else{
+                return
+            }
+            self.present(editVC, animated: true, completion: nil)
         } else {
             if isEditing{
                 let storyboard = UIStoryboard.init(name: "Account", bundle: nil)
@@ -87,7 +91,18 @@ extension AccountViewController: UICollectionViewDelegate, UICollectionViewDataS
                 SharedData.instance.selectedCharacter = realm.objects(Character.self)[indexPath.row].character
                 NotificationCenter.default.post(name: Notification.Name("refreshFeedView"), object: nil)
                 NotificationCenter.default.post(name: Notification.Name("refreshDraftView"), object: nil)
-                self.presentingViewController?.dismiss(animated: true, completion: nil)
+                if (self.presentingViewController != nil) {
+                    presentingViewController?.dismiss(animated: true, completion: nil)
+                } else {
+                    let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                    guard let tabBarVC = storyboard.instantiateViewController(identifier: "tabBarVC") as? UITabBarController else {
+                        return
+                    }
+                    tabBarVC.modalPresentationStyle = .fullScreen
+                    tabBarVC.modalTransitionStyle = .crossDissolve
+                    self.present(tabBarVC, animated: true, completion:nil)
+                }
+                
             }
         }
     }
