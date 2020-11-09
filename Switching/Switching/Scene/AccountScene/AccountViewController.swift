@@ -31,6 +31,9 @@ class AccountViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if UserDefaults.standard.bool(forKey: "secondTime"){
+            return
+        }
         let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
         if let onboardingVC = storyboard.instantiateViewController(withIdentifier: "onboardingVC") as? OnboardingViewController {
             onboardingVC.modalPresentationStyle = .fullScreen

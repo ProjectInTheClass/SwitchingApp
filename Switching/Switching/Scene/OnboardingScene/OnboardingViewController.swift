@@ -27,6 +27,7 @@ class OnboardingViewController: UIViewController, onboardingPageViewControllerDe
     // MARK: - Actions
     
     @IBAction func skipButtonClicked(_ sender: Any) {
+        UserDefaults.standard.set(true, forKey: "secondTime")
         dismiss(animated: true, completion: nil)
     }
     @IBAction func nextButtonClicked(_ sender: Any) {
@@ -35,6 +36,7 @@ class OnboardingViewController: UIViewController, onboardingPageViewControllerDe
             case 0...1:
                 onboardingPageViewController?.forwardPage()
             case 2:
+                UserDefaults.standard.set(true, forKey: "secondTime")
                 dismiss(animated: true, completion: nil)
             default: break
             }

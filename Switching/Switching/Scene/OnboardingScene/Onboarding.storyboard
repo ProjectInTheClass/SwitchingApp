@@ -37,7 +37,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="nextButtonClicked:" destination="233-11-yY1" eventType="touchUpInside" id="NvW-6i-8sH"/>
+                                            <action selector="nextButtonClicked:" destination="233-11-yY1" eventType="touchUpInside" id="x6c-sG-Y7V"/>
                                         </connections>
                                     </button>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Lk4-W6-kzQ">
@@ -61,8 +61,7 @@
                                         <rect key="frame" x="361" y="14" width="33" height="30"/>
                                         <state key="normal" title="SKIP"/>
                                         <connections>
-                                            <action selector="skipButtonClicked:" destination="233-11-yY1" eventType="touchUpInside" id="bRZ-dP-QqW"/>
-                                            <action selector="skipButtonClickedWithSender:" destination="233-11-yY1" eventType="touchUpInside" id="x51-91-yzu"/>
+                                            <action selector="skipButtonClicked:" destination="233-11-yY1" eventType="touchUpInside" id="JUn-0D-ei0"/>
                                         </connections>
                                     </button>
                                 </subviews>
