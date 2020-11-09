@@ -35,19 +35,18 @@ extension AccountViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let realm  = SharedData.instance.realm
         let accounts = realm.objects(Character.self)
-            if accounts.count > 3 {
-                return accounts.count
-            } else {
-                return accounts.count + 1
-            }
+                if accounts.count > 3 {
+                    return accounts.count
+                } else {
+                    return accounts.count + 1
+                }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cells : UICollectionViewCell?
         let realm  = SharedData.instance.realm
-        let accounts = realm.objects(Character.self)
-        if indexPath.row < accounts.count {
-            let account = accounts[indexPath.row]
+        if indexPath.row < realm.objects(Character.self).count {
+            let character = realm.objects(Character.self)[indexPath.row]
             let existingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "accountCell", for: indexPath) as! AccountCollectionViewCell
             existingCell.accountNameLabel.text = character.character
             existingCell.updateUI()
