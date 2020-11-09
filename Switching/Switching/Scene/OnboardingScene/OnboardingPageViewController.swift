@@ -7,9 +7,14 @@
 
 import UIKit
 
+protocol onboardingPageViewControllerDelegate: class {
+    func didUpdatePageIndex(currentIndex: Int)
+}
 class OnboardingPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     // MARK: - Properties
+    
+    weak var onboardingDelegate: onboardingPageViewControllerDelegate?
     
     var pageHeadings = ["온보딩 첫번째 화면", "온보딩 두번째 화면", "온보딩 세번째 화면"]
     var pageSubHeadings = ["온보딩 첫번째 화면 설명", "온보딩 두번째 화면 설명", "온보딩 세번째 화면 설명"]
@@ -59,6 +64,23 @@ class OnboardingPageViewController: UIPageViewController, UIPageViewControllerDa
         return nil
     }
     
+    func forwardPage() {
+        currentIndex += 1
+        if let nextViewController = contentViewController(at: currentIndex) {
+            setViewControllers([nextViewController], direction: .forward, animated: true, completion: nil)
+        }
+    }
+    
+    // MARK: - Page view controller delegate
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if completed {
+            if let contentViewController = pageViewController.viewControllers?.first as? OnboardingContentViewController {
+                currentIndex = contentViewController.index
+                onboardingDelegate?.didUpdatePageIndex(currentIndex: currentIndex)
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 
