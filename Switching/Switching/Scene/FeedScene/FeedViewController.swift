@@ -39,7 +39,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let bookmark: Bookmark = bookmarks[indexPath.row]{
             cell.feedfeedURLLabel.text = bookmark.url
             cell.feedfeedTitleLabel.text = bookmark.desc
-            cell.feedfeedDateLabel.text = "2020.10.26"//UI레이아웃 테스트
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .short
+            dateFormatter.timeStyle = .short
+            cell.feedfeedDateLabel.text = dateFormatter.string(from: bookmark.createDate)
+            
             cell.tags = getTagListOfSelectedBookmark(bookmark: bookmark)
             cell.updateUI()
             if bookmark.image == nil{

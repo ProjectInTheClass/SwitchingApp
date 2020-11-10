@@ -36,6 +36,10 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if let bookmark: Bookmark = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == True")[indexPath.row]{
             cell.feedURLLabel.text = bookmark.url
             cell.feedTitleLabel.text = bookmark.desc
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .short
+            dateFormatter.timeStyle = .short
+            cell.feedDateLabel.text = dateFormatter.string(from: bookmark.createDate)
             
             if bookmark.image == nil{
                 

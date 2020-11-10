@@ -40,21 +40,23 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x00-6g-18c">
-                                                    <rect key="frame" x="98" y="36" width="296" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="URL Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x00-6g-18c">
+                                                    <rect key="frame" x="98" y="76.5" width="226" height="13.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1LJ-2r-OAI">
-                                                    <rect key="frame" x="358.5" y="73" width="35.5" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="334" y="76.5" width="60" height="13.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="hQo-xW-2Xr"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="x00-6g-18c" firstAttribute="top" secondItem="YDU-DT-SkY" secondAttribute="bottom" constant="5" id="0U2-p7-2Az"/>
                                                 <constraint firstItem="S8Z-3O-Csc" firstAttribute="top" secondItem="tGd-OZ-vFF" secondAttribute="top" constant="10" id="5CQ-Ar-6XR"/>
                                                 <constraint firstItem="S8Z-3O-Csc" firstAttribute="leading" secondItem="tGd-OZ-vFF" secondAttribute="leading" constant="10" id="6bm-Zb-mlq"/>
                                                 <constraint firstItem="1LJ-2r-OAI" firstAttribute="trailing" secondItem="YDU-DT-SkY" secondAttribute="trailing" id="AJM-B5-bCS"/>
@@ -62,8 +64,9 @@
                                                 <constraint firstItem="YDU-DT-SkY" firstAttribute="top" secondItem="S8Z-3O-Csc" secondAttribute="top" id="Gkn-Sj-43Z"/>
                                                 <constraint firstItem="x00-6g-18c" firstAttribute="leading" secondItem="YDU-DT-SkY" secondAttribute="leading" id="NQE-No-cC0"/>
                                                 <constraint firstItem="1LJ-2r-OAI" firstAttribute="bottom" secondItem="S8Z-3O-Csc" secondAttribute="bottom" id="bmF-PB-qDD"/>
+                                                <constraint firstItem="x00-6g-18c" firstAttribute="centerY" secondItem="1LJ-2r-OAI" secondAttribute="centerY" id="e9H-zg-rB2"/>
                                                 <constraint firstAttribute="trailing" secondItem="YDU-DT-SkY" secondAttribute="trailing" constant="20" id="hoa-6h-zVX"/>
-                                                <constraint firstItem="x00-6g-18c" firstAttribute="trailing" secondItem="YDU-DT-SkY" secondAttribute="trailing" id="mx5-6y-VCu"/>
+                                                <constraint firstItem="1LJ-2r-OAI" firstAttribute="leading" secondItem="x00-6g-18c" secondAttribute="trailing" constant="10" id="kOV-UB-ocz"/>
                                                 <constraint firstItem="YDU-DT-SkY" firstAttribute="leading" secondItem="S8Z-3O-Csc" secondAttribute="trailing" constant="8" symbolic="YES" id="xIu-CI-e0n"/>
                                             </constraints>
                                         </tableViewCellContentView>
