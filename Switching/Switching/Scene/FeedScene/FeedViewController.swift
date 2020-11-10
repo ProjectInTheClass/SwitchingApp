@@ -35,6 +35,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedfeedCell", for: indexPath) as! FeedTableViewCell
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         let realm = SharedData.instance.realm
         if let bookmark: Bookmark = bookmarks[indexPath.row]{
             cell.feedfeedURLLabel.text = bookmark.url

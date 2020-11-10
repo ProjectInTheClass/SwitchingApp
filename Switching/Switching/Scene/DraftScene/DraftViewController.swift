@@ -32,6 +32,7 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! DraftTableViewCell
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         let realm = SharedData.instance.realm
         if let bookmark: Bookmark = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == True")[indexPath.row]{
             cell.feedURLLabel.text = bookmark.url
