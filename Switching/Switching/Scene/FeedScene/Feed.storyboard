@@ -62,12 +62,12 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <collectionView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XPj-k2-twe">
-                                                            <rect key="frame" x="98" y="38" width="296" height="26"/>
+                                                            <rect key="frame" x="98" y="38" width="296" height="28"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="26" id="W6M-NA-mIZ"/>
+                                                                <constraint firstAttribute="height" constant="28" id="W6M-NA-mIZ"/>
                                                             </constraints>
-                                                            <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X7g-PT-Fww" customClass="TagsCollectionViewFlowLayout" customModule="Switching" customModuleProvider="target">
+                                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X7g-PT-Fww">
                                                                 <size key="itemSize" width="128" height="24"/>
                                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -75,7 +75,7 @@
                                                             </collectionViewFlowLayout>
                                                             <cells>
                                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="feedTagsCell" id="Mae-B0-Q29" customClass="FeedTagsCollectionViewCell" customModule="Switching" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="24"/>
+                                                                    <rect key="frame" x="0.0" y="2" width="128" height="24"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="44F-rI-DY2">
                                                                         <rect key="frame" x="0.0" y="0.0" width="128" height="24"/>
@@ -83,8 +83,8 @@
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwk-WZ-Jmm">
                                                                                 <rect key="frame" x="10" y="5" width="108" height="14"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                                <nil key="textColor"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
@@ -146,7 +146,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4r-ef-Mvd">
                                 <rect key="frame" x="334" y="782" width="50" height="50"/>
-                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <color key="backgroundColor" name="SwitchingBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="IOL-ob-iP3"/>
                                     <constraint firstAttribute="height" constant="50" id="Yb0-mh-eZi"/>
@@ -227,22 +227,20 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-1E-LkO">
-                            <rect key="frame" x="154.5" y="0.0" width="65.5" height="22"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <rect key="frame" x="154.5" y="0.0" width="65.5" height="17.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="태그 선택" image="chevron.right" catalog="system">
-                                <color key="titleColor" name="AccentColor"/>
+                                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
                                 <segue destination="ctS-41-2ar" kind="show" id="eyf-xJ-lfT"/>
                             </connections>
                         </button>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cae-xP-BUs">
-                            <rect key="frame" x="0.0" y="22" width="240" height="48"/>
+                            <rect key="frame" x="0.0" y="17.5" width="240" height="52.5"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="48" id="gbH-wB-kFX"/>
-                            </constraints>
-                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rnx-Ig-ECR" customClass="TagsCollectionViewFlowLayout" customModule="Switching" customModuleProvider="target">
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rnx-Ig-ECR">
                                 <size key="itemSize" width="128" height="28"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -250,7 +248,7 @@
                             </collectionViewFlowLayout>
                             <cells>
                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filteredTagsCell" id="jnr-xa-Yr8" customClass="FilteredTagsCollectionViewCell" customModule="Switching" customModuleProvider="target">
-                                    <rect key="frame" x="10" y="10" width="128" height="28"/>
+                                    <rect key="frame" x="10" y="12.5" width="128" height="28"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DZb-g7-1uC">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="28"/>
@@ -262,8 +260,6 @@
                                                 <state key="normal" title="Button"/>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="pbX-cb-l0t" firstAttribute="top" secondItem="DZb-g7-1uC" secondAttribute="top" id="BKi-Ej-oxU"/>
                                             <constraint firstAttribute="bottom" secondItem="pbX-cb-l0t" secondAttribute="bottom" id="e3f-92-aOs"/>
@@ -445,18 +441,15 @@
             <point key="canvasLocation" x="1030.4347826086957" y="-604.01785714285711"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="0.10000000000000001" green="0.46000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" name="SwitchingBlue"/>
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="SwitchingBlue">
+            <color red="0.10000000149011612" green="0.45899999141693115" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

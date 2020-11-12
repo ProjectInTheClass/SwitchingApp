@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -208,8 +209,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="0.10000000000000001" green="0.46000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="selectedImageTintColor" red="0.099999999999999978" green="0.4600000000000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" name="SwitchingBlue"/>
+                        <color key="selectedImageTintColor" name="SwitchingBlue"/>
                     </tabBar>
                     <connections>
                         <segue destination="7Uu-8H-1Ni" kind="relationship" relationship="viewControllers" id="8aT-4V-Wdn"/>
@@ -233,9 +234,13 @@
             <point key="canvasLocation" x="1008" y="146"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="SwitchingBlue"/>
     <resources>
         <image name="plusButton" width="360" height="360"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
+        <namedColor name="SwitchingBlue">
+            <color red="0.099999999999999978" green="0.4600000000000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

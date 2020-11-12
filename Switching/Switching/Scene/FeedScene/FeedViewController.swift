@@ -32,7 +32,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var addButton: UIButton!{
         didSet{
             addButton.layer.cornerRadius = addButton.frame.height/2
-            addButton.layer.shadowColor = UIColor.black.cgColor
+            addButton.layer.shadowColor = UIColor(named: "SwitchingBlue")?.cgColor
             addButton.layer.shadowOffset = CGSize(width: 2, height: 2)
             addButton.layer.shadowRadius = 5
             addButton.layer.shadowOpacity = 0.3
@@ -65,8 +65,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.feedfeedURLLabel.text = bookmark.url
             cell.feedfeedTitleLabel.text = bookmark.desc
             let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .short
-            dateFormatter.timeStyle = .short
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
             cell.feedfeedDateLabel.text = dateFormatter.string(from: bookmark.createDate)
             
             cell.tags = getTagListOfSelectedBookmark(bookmark: bookmark)
@@ -257,9 +257,9 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
         } else {
             cell.filteredTagButton?.setTitle(filteredTags[indexPath.row], for: .normal)
         }
-        cell.contentView.layer.cornerRadius = 15 //cell.contentView.frame.height/2 적용 오류
-        cell.contentView.layer.borderWidth = 1.0
-        cell.contentView.layer.borderColor = UIColor.white.cgColor
+        cell.contentView.layer.cornerRadius = cell.contentView.frame.height/2
+        cell.contentView.layer.borderWidth = 1.5
+        cell.contentView.layer.borderColor = UIColor(named: "SwitchingBlue")?.cgColor
         cell.contentView.layer.masksToBounds = true;
         return cell
     }
