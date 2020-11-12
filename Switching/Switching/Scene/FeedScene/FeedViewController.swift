@@ -12,13 +12,37 @@ import SafariServices
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var filteredTags: Array<String> = [] //임시데이터
-    
     @IBOutlet var emptyFeedView: UIView!
-    @IBOutlet weak var feedTableView: UITableView!
+    @IBOutlet var tagView: UIView!
+    @IBOutlet weak var feedTableView: UITableView!{
+        didSet{
+            feedTableView.tableHeaderView = tagView
+        }
+    }
     @IBOutlet weak var filteredTagsCollectionView: UICollectionView!
     @IBAction func unwindVC (segue : UIStoryboardSegue) {}
+    
+    @IBOutlet weak var accountButton: UIButton!{
+        didSet{
+            accountButton.layer.cornerRadius = accountButton.frame.height/2
+            accountButton.layer.borderColor = UIColor.clear.cgColor
+            accountButton.layer.borderWidth = 0.5
+        }
+    }
+    @IBOutlet weak var addButton: UIButton!{
+        didSet{
+            addButton.layer.cornerRadius = addButton.frame.height/2
+            addButton.layer.shadowColor = UIColor.black.cgColor
+            addButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+            addButton.layer.shadowRadius = 5
+            addButton.layer.shadowOpacity = 0.3
+        }
+    }
+    
+    
     var bookmarks: [Bookmark] = []
+    var filteredTags: Array<String> = [] //임시데이터
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if bookmarks.count == 0 {
@@ -70,29 +94,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         return cell
     }
-    
-    
-    @IBOutlet weak var accountButton: UIButton!
-    @IBOutlet weak var addButton: UIButton!
-    
-    func accountButtonSetUp() {
-        accountButton.layer.cornerRadius = accountButton.frame.height/2
-        accountButton.layer.borderColor = UIColor.lightGray.cgColor
-        accountButton.layer.borderWidth = 0.5
-    }
-    func addButtonSetUp() {
-        addButton.layer.cornerRadius = addButton.frame.height/2
-        addButton.layer.shadowColor = UIColor.black.cgColor
-        addButton.layer.shadowOffset = CGSize(width: 2, height: 2)
-        addButton.layer.shadowRadius = 5
-        addButton.layer.shadowOpacity = 0.3
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        accountButtonSetUp()
-        addButtonSetUp()
         self.feedTableView.delegate = self
         self.feedTableView.dataSource = self
         // Do any additional setup after loading the view.
@@ -256,7 +259,7 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         cell.contentView.layer.cornerRadius = 15 //cell.contentView.frame.height/2 적용 오류
         cell.contentView.layer.borderWidth = 1.0
-        cell.contentView.layer.borderColor = UIColor.clear.cgColor
+        cell.contentView.layer.borderColor = UIColor.white.cgColor
         cell.contentView.layer.masksToBounds = true;
         return cell
     }

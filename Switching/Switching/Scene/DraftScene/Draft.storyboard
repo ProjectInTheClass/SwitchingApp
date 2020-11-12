@@ -94,14 +94,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="임시보관함" id="oiL-kt-7Q4">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="l0h-ne-3tU">
+                        <barButtonItem key="leftBarButtonItem" id="l0h-ne-3tU">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="b1L-lz-W2Q">
-                                <rect key="frame" x="20" y="2" width="40" height="40"/>
+                                <rect key="frame" x="20" y="2" width="33" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Tbd-5T-Ckw"/>
-                                    <constraint firstAttribute="width" constant="40" id="Vkl-mf-fcV"/>
+                                    <constraint firstAttribute="height" constant="33" id="Tbd-5T-Ckw"/>
+                                    <constraint firstAttribute="width" constant="33" id="Vkl-mf-fcV"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="ACg-QA-j9y" kind="presentation" id="Gvz-sc-F2T"/>
@@ -128,7 +128,7 @@
                         </label>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="Mdj-JT-kxh"/>
-                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="pOB-d4-Kjt" firstAttribute="centerY" secondItem="Mdj-JT-kxh" secondAttribute="centerY" id="6v0-ju-e1W"/>
                         <constraint firstItem="pOB-d4-Kjt" firstAttribute="centerX" secondItem="Mdj-JT-kxh" secondAttribute="centerX" id="ycB-PT-qQF"/>
@@ -153,8 +153,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w6w-15-FsO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="임시보관함" image="tray" catalog="system" id="XfD-k3-Ksc"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oTK-vV-zwh">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="oTK-vV-zwh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -174,9 +174,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

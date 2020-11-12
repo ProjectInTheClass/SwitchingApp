@@ -14,6 +14,15 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet var emptyDraftView: UIView!
     @IBOutlet weak var draftTableView: UITableView!
+    
+    @IBOutlet weak var accountButton: UIButton!{
+        didSet{
+            accountButton.layer.cornerRadius = accountButton.frame.height/2
+            accountButton.layer.borderColor = UIColor.clear.cgColor
+            accountButton.layer.borderWidth = 0.5
+        }
+    }
+    
     var bookmarks: [Bookmark] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,17 +76,8 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
-  
-    @IBOutlet weak var accountButton: UIButton!
-    func accountButtonSetUp() {
-        accountButton.layer.cornerRadius = accountButton.frame.height/2
-        accountButton.layer.borderColor = UIColor.lightGray.cgColor
-        accountButton.layer.borderWidth = 0.5
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        accountButtonSetUp()
         self.draftTableView.delegate = self
         self.draftTableView.dataSource = self
         // Do any additional setup after loading the view.
