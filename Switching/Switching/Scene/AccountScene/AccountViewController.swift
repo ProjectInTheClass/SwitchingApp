@@ -74,6 +74,7 @@ extension AccountViewController: UICollectionViewDelegate, UICollectionViewDataS
             cells = existingCell
         } else {
             let addCell = collectionView.dequeueReusableCell(withReuseIdentifier: "addAccountCell", for: indexPath) as! AddAccountCollectionViewCell
+            addCell.updateUI()
             cells = addCell
         }
         return cells!

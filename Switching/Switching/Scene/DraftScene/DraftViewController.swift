@@ -47,10 +47,11 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.feedURLLabel.text = bookmark.url
             cell.feedTitleLabel.text = bookmark.desc
             let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .short
-            dateFormatter.timeStyle = .short
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
             cell.feedDateLabel.text = dateFormatter.string(from: bookmark.createDate)
-            
+            cell.updateUI()
+        
             if bookmark.image == nil{
                 
                 let slp = SwiftLinkPreview(session: URLSession.shared, workQueue: SwiftLinkPreview.defaultWorkQueue, responseQueue: DispatchQueue.main, cache: DisabledCache.instance)

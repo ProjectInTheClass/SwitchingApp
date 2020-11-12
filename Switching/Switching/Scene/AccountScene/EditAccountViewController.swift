@@ -12,10 +12,17 @@ class EditAccountViewController: UIViewController {
     @IBOutlet weak var accountImage: UIImageView!
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var summitButton: UIButton!
+
+    @IBOutlet weak var removeAccountBtn: UIButton!{
+        didSet{
+            removeAccountBtn.layer.borderColor = UIColor.systemRed.cgColor
+            removeAccountBtn.layer.borderWidth = 1.5
+            removeAccountBtn.layer.cornerRadius = removeAccountBtn.frame.height/2
+        }
+    }
     
-    var editAccount: Character?
-    @IBOutlet weak var removeAccountBtn: UIButton!
     var image: UIImage?
+    var editAccount: Character?
     
     @objc func textFieldsIsNotEmpty(sender: UITextField) {
         guard let name = accountTextField.text, !name.isEmpty else {
