@@ -128,8 +128,12 @@ extension AddViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "selectedTagsCell", for: indexPath) as! SelectedTagsCollectionViewCell
         if selectedTags.count == 0 {
             cell.selectedTagButton?.setTitle("등록된 태그가 없습니다", for: .normal)
+            cell.selectedTagButton.setTitleColor(UIColor.darkGray, for: .normal)
+            cell.contentView.backgroundColor = UIColor.white
         } else {
             cell.selectedTagButton?.setTitle(selectedTags[indexPath.row], for: .normal)
+            cell.selectedTagButton.setTitleColor(UIColor.white, for: .normal)
+            cell.contentView.backgroundColor = UIColor(named: "SwitchingBlue")
         }
         cell.contentView.layer.cornerRadius = 15
         cell.contentView.layer.borderWidth = 1.0

@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ViL-Bh-OXg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add View Controller-->
+        <!--북마크 추가-->
         <scene sceneID="OJQ-oi-nsd">
             <objects>
                 <viewController storyboardIdentifier="addVC" id="6XS-Xg-3Pj" customClass="AddViewController" customModule="Switching" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F43-FV-6V4">
-                                <rect key="frame" x="40" y="165" width="262" height="34"/>
+                                <rect key="frame" x="40" y="165" width="292" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -69,9 +69,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AlI-uO-OGF">
-                                <rect key="frame" x="322" y="167" width="52" height="30"/>
-                                <state key="normal" title="불러오기"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AlI-uO-OGF">
+                                <rect key="frame" x="342" y="166" width="32" height="32"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" image="link.badge.plus" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1rr-VH-Ipb">
                                 <rect key="frame" x="40" y="347" width="334" height="120"/>
@@ -79,7 +82,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="Gru-PD-2ZD"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SwO-kK-ObJ">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SwO-kK-ObJ" customClass="TagsCollectionViewFlowLayout" customModule="Switching" customModuleProvider="target">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -87,14 +90,15 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="selectedTagsCell" id="TGL-2n-89e" customClass="SelectedTagsCollectionViewCell" customModule="Switching" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="66" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="71" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Pbn-NZ-gmK">
-                                            <rect key="frame" x="0.0" y="0.0" width="66" height="30"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="71" height="32"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ga3-ct-9Vi">
-                                                    <rect key="frame" x="10" y="0.0" width="46" height="30"/>
+                                                    <rect key="frame" x="10" y="0.0" width="51" height="32"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <state key="normal" title="Button"/>
                                                 </button>
                                             </subviews>
@@ -119,9 +123,9 @@
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd2-3f-zhU">
                                 <rect key="frame" x="308.5" y="319.5" width="65.5" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <state key="normal" title="태그 선택" image="chevron.right" catalog="system">
-                                    <color key="titleColor" name="AccentColor"/>
+                                    <color key="titleColor" name="SwitchingBlue"/>
                                 </state>
                                 <connections>
                                     <action selector="selectTagsClicked:" destination="6XS-Xg-3Pj" eventType="touchUpInside" id="bW5-t3-JX9"/>
@@ -143,7 +147,7 @@
                             <constraint firstItem="1rr-VH-Ipb" firstAttribute="leading" secondItem="xyA-Xx-W0T" secondAttribute="leading" id="OHH-Ys-lvG"/>
                             <constraint firstItem="F43-FV-6V4" firstAttribute="leading" secondItem="62y-gU-gSC" secondAttribute="leading" id="RJY-ha-9or"/>
                             <constraint firstItem="1rr-VH-Ipb" firstAttribute="top" secondItem="xyA-Xx-W0T" secondAttribute="bottom" constant="10" id="ScV-gQ-KRQ"/>
-                            <constraint firstItem="AlI-uO-OGF" firstAttribute="leading" secondItem="F43-FV-6V4" secondAttribute="trailing" constant="20" id="ZUE-Pb-NCu"/>
+                            <constraint firstItem="AlI-uO-OGF" firstAttribute="leading" secondItem="F43-FV-6V4" secondAttribute="trailing" constant="10" id="ZUE-Pb-NCu"/>
                             <constraint firstItem="r8L-AX-Zcx" firstAttribute="trailing" secondItem="eda-ft-62a" secondAttribute="trailing" id="bp7-fA-Jwd"/>
                             <constraint firstItem="r8L-AX-Zcx" firstAttribute="leading" secondItem="eda-ft-62a" secondAttribute="leading" id="c3G-k0-QYn"/>
                             <constraint firstItem="62y-gU-gSC" firstAttribute="top" secondItem="Oq9-xV-WeW" secondAttribute="top" constant="50" id="cdB-rT-Qzh"/>
@@ -155,7 +159,7 @@
                             <constraint firstItem="eda-ft-62a" firstAttribute="leading" secondItem="F43-FV-6V4" secondAttribute="leading" id="vTm-V8-bYe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="n9N-Kx-4v7">
+                    <navigationItem key="navigationItem" title="북마크 추가" id="n9N-Kx-4v7">
                         <barButtonItem key="leftBarButtonItem" title="취소" id="cXD-ti-uYg">
                             <connections>
                                 <action selector="cancelBookmarkButtonPressed:" destination="6XS-Xg-3Pj" id="gIu-U3-GWq"/>
@@ -204,13 +208,18 @@
                                 </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="새로운 태그를 추가하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kdp-i3-NqK">
-                                <rect key="frame" x="20" y="54" width="324" height="40"/>
+                                <rect key="frame" x="20" y="54" width="299" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExS-ge-vwY">
-                                <rect key="frame" x="364" y="59" width="30" height="30"/>
-                                <state key="normal" title="생성"/>
+                                <rect key="frame" x="329" y="55.5" width="65" height="37"/>
+                                <color key="backgroundColor" name="SwitchingBlue"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                <state key="normal" title="생성">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="createTagClicked:" destination="gsA-ne-JOv" eventType="touchUpInside" id="p3x-Cq-8RW"/>
                                 </connections>
@@ -223,7 +232,7 @@
                             <constraint firstItem="Kdp-i3-NqK" firstAttribute="leading" secondItem="tdT-Jf-mIe" secondAttribute="leading" constant="20" id="2tN-ug-nQm"/>
                             <constraint firstItem="Kdp-i3-NqK" firstAttribute="top" secondItem="tdT-Jf-mIe" secondAttribute="top" constant="10" id="Y67-VN-nop"/>
                             <constraint firstItem="2P2-6N-Q30" firstAttribute="top" secondItem="Kdp-i3-NqK" secondAttribute="bottom" constant="10" id="dHy-C8-kHI"/>
-                            <constraint firstItem="ExS-ge-vwY" firstAttribute="leading" secondItem="Kdp-i3-NqK" secondAttribute="trailing" constant="20" id="dXp-am-zYq"/>
+                            <constraint firstItem="ExS-ge-vwY" firstAttribute="leading" secondItem="Kdp-i3-NqK" secondAttribute="trailing" constant="10" id="dXp-am-zYq"/>
                             <constraint firstItem="ExS-ge-vwY" firstAttribute="centerY" secondItem="Kdp-i3-NqK" secondAttribute="centerY" id="gKL-ag-2Dz"/>
                             <constraint firstItem="tdT-Jf-mIe" firstAttribute="trailing" secondItem="ExS-ge-vwY" secondAttribute="trailing" constant="20" id="isd-bo-HPd"/>
                             <constraint firstItem="tdT-Jf-mIe" firstAttribute="bottom" secondItem="2P2-6N-Q30" secondAttribute="bottom" id="jed-Yj-PlF"/>
@@ -269,10 +278,12 @@
             <point key="canvasLocation" x="1856.521739130435" y="-604.01785714285711"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="SwitchingBlue"/>
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="link.badge.plus" catalog="system" width="128" height="122"/>
+        <namedColor name="SwitchingBlue">
+            <color red="0.10000000149011612" green="0.45899999141693115" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

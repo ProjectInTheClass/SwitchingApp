@@ -14,7 +14,11 @@ class AddSelectViewController: UIViewController {
     var selectedTags: Array<String> = [] //임시데이터
 
     @IBOutlet weak var createTagTextField: UITextField!
-    @IBOutlet weak var createTagButton: UIButton!
+    @IBOutlet weak var createTagButton: UIButton!{
+        didSet{
+            createTagButton.layer.cornerRadius = createTagButton.frame.height/2
+        }
+    }
     @IBAction func backButtonClicked(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "unwindToAddVC", sender: sender)
 //        self.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -32,6 +36,7 @@ class AddSelectViewController: UIViewController {
         if !tags.contains(createTagTextField.text!){
             tags.append(createTagTextField.text!)
         }
+        self.createTagTextField.text = ""
         self.selectTagsTableView.reloadData()
     }
     
