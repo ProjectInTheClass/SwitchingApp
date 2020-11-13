@@ -134,11 +134,14 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }else{
             for bookmark in bookmarks_{
+                var count = 0
                 for tag in bookmark.tags{
                     if FeedFilterViewController.filteredTags.contains(tag.tag){
-                    bookmarks.append(bookmark)
-                    break
+                        count = count + 1
                     }
+                }
+                if count == FeedFilterViewController.filteredTags.count{
+                    bookmarks.append(bookmark)
                 }
             }
         }
