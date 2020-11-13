@@ -53,6 +53,7 @@ class AddViewController: UIViewController {
                     savedBookmark.url = urlTextField.text!
                     savedBookmark.desc = titleTextField.text!
                     savedBookmark.isTemp = false
+                    savedBookmark.tags.removeAll()
                     for tag in selectedTags{
                         let tag_ = Tag()
                         tag_.tag = tag
