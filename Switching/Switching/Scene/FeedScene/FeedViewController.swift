@@ -41,8 +41,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     var bookmarks: [Bookmark] = []
-    var filteredTags: Array<String> = [] //임시데이터
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if bookmarks.count == 0 {
@@ -108,7 +106,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     override func viewDidAppear(_ animated: Bool) {
         self.filteredTagsCollectionView.reloadData()
-        print("\(filteredTags)을 FeedVC에서 표시")
+        print("\(FeedFilterViewController.filteredTags)을 FeedVC에서 표시")
     }
     
     @objc func notificationReceived(notification: Notification) {
@@ -130,14 +128,14 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let realm = SharedData.instance.realm
         let bookmarks_: Results<Bookmark> = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == False")
         bookmarks = []
-        if filteredTags.count == 0{
+        if FeedFilterViewController.filteredTags.count == 0{
             for bookmark in bookmarks_{
                 bookmarks.append(bookmark)
             }
         }else{
             for bookmark in bookmarks_{
                 for tag in bookmark.tags{
-                    if filteredTags.contains(tag.tag){
+                    if FeedFilterViewController.filteredTags.contains(tag.tag){
                     bookmarks.append(bookmark)
                     break
                     }
@@ -243,19 +241,19 @@ class FilteredTagsCollectionViewCell: UICollectionViewCell{
 }
 extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if filteredTags.count == 0 {
+        if FeedFilterViewController.filteredTags.count == 0 {
             return 1
         } else {
-            return filteredTags.count
+            return FeedFilterViewController.filteredTags.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filteredTagsCell", for: indexPath) as! FilteredTagsCollectionViewCell
-        if filteredTags.count == 0 {
+        if FeedFilterViewController.filteredTags.count == 0 {
             cell.filteredTagButton?.setTitle("See All", for: .normal)
         } else {
-            cell.filteredTagButton?.setTitle(filteredTags[indexPath.row], for: .normal)
+            cell.filteredTagButton?.setTitle(FeedFilterViewController.filteredTags[indexPath.row], for: .normal)
         }
         cell.contentView.layer.cornerRadius = cell.contentView.frame.height/2
         cell.contentView.layer.borderWidth = 1.5

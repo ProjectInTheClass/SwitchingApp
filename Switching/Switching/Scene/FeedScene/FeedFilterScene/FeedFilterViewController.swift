@@ -10,7 +10,7 @@ import UIKit
 class FeedFilterViewController: UIViewController {
     
     var tags: Array<String> = SharedData.instance.getTagListOfSelectedCharacter()
-    var filteredTags: Array<String> = [] //임시데이터
+    static var filteredTags: Array<String> = [] //임시데이터
     
     @IBOutlet weak var FeedFilterTableView: UITableView!
     @IBAction func backButtonClicked(_ sender: UIBarButtonItem) {
@@ -22,13 +22,6 @@ class FeedFilterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "unwindToFeedVC" {
-            let vc = segue.destination as? FeedViewController
-            vc!.filteredTags = filteredTags
-        }
-        print("feedVC로 데이터 이동")
     }
 }
 
@@ -49,6 +42,9 @@ extension FeedFilterViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.textLabel?.text = tags[indexPath.row]
         }
+        if FeedFilterViewController.filteredTags.contains(tags[indexPath.row]){
+            cell.accessoryType = .checkmark
+        }
         return cell
     }
 
@@ -58,15 +54,15 @@ extension FeedFilterViewController: UITableViewDelegate, UITableViewDataSource {
             if tags.count != 0 {
                 if cell.accessoryType == .none {
                     cell.accessoryType = .checkmark
-                    filteredTags.append(tags[indexPath.row])
+                    FeedFilterViewController.filteredTags.append(tags[indexPath.row])
                 } else if cell.accessoryType == .checkmark {
                     cell.accessoryType = .none
-                    if let index = filteredTags.firstIndex(of: tags[indexPath.row]) {
-                        filteredTags.remove(at: index)
+                    if let index = FeedFilterViewController.filteredTags.firstIndex(of: tags[indexPath.row]) {
+                        FeedFilterViewController.filteredTags.remove(at: index)
                     }
                 }
             }
         }
-        print("선택된 태그는 \(filteredTags)")
+        print("선택된 태그는 \(FeedFilterViewController.filteredTags)")
     }
 }
