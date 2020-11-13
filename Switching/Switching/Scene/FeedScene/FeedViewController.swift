@@ -145,6 +145,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
             }
         }
+        bookmarks.reverse()
         accountButton.clipsToBounds = true
         accountButton.contentMode = .scaleAspectFill
         if realm.objects(Character.self).filter("character = '\(SharedData.instance.selectedCharacter)'").count > 0{
