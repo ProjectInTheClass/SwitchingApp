@@ -100,6 +100,7 @@ class AddViewController: UIViewController {
             print("add data done")
         }
         NotificationCenter.default.post(name: Notification.Name("refreshFeedView"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("refreshDraftView"), object: nil)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     @IBAction func selectTagsClicked(_ sender: Any) {
