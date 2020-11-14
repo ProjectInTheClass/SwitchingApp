@@ -306,6 +306,7 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
             print(indexPath.row)
             FeedFilterViewController.filteredTags.remove(at: indexPath.row)
             filteredTagsCollectionView.reloadData()
+            NotificationCenter.default.post(name: Notification.Name("refreshFeedView"), object: nil)
         }
     }
 }
