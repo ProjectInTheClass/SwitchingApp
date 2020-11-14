@@ -41,6 +41,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     var bookmarks: [Bookmark] = []
+    let searchController = UISearchController(searchResultsController: nil)
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if bookmarks.count == 0 {
@@ -100,6 +101,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.feedTableView.refreshControl = UIRefreshControl()
         self.feedTableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        
+        // Setup the Search Controller
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "북마크 검색"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
         
         updateBookmarksData()
         NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(notification:)), name: Notification.Name("refreshFeedView"), object: nil)
@@ -240,6 +248,18 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Pass the selected object to the new view controller.
     }
     */
+extension FeedViewController: UISearchBarDelegate {
+  func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+  }
+}
+
+extension FeedViewController: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    let searchBar = searchController.searchBar
+  }
+}
+
+
 class FilteredTagsCollectionViewCell: UICollectionViewCell{
     @IBOutlet weak var filteredTagButton: UIButton!
 }

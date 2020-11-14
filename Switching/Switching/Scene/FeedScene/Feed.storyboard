@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jjT-KY-3lg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jjT-KY-3lg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -227,7 +228,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-1E-LkO">
-                            <rect key="frame" x="154.5" y="0.0" width="65.5" height="17.5"/>
+                            <rect key="frame" x="154.5" y="10" width="65.5" height="17.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="태그 선택" image="chevron.right" catalog="system">
@@ -238,7 +239,7 @@
                             </connections>
                         </button>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cae-xP-BUs">
-                            <rect key="frame" x="0.0" y="17.5" width="240" height="52.5"/>
+                            <rect key="frame" x="0.0" y="27.5" width="240" height="42.5"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rnx-Ig-ECR">
                                 <size key="itemSize" width="128" height="28"/>
@@ -248,7 +249,7 @@
                             </collectionViewFlowLayout>
                             <cells>
                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filteredTagsCell" id="jnr-xa-Yr8" customClass="FilteredTagsCollectionViewCell" customModule="Switching" customModuleProvider="target">
-                                    <rect key="frame" x="10" y="12.5" width="128" height="28"/>
+                                    <rect key="frame" x="10" y="7.5" width="128" height="28"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DZb-g7-1uC">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="28"/>
@@ -287,7 +288,7 @@
                         <constraint firstAttribute="bottom" secondItem="cae-xP-BUs" secondAttribute="bottom" id="INZ-xt-zvL"/>
                         <constraint firstItem="cae-xP-BUs" firstAttribute="leading" secondItem="s1Y-x2-sGy" secondAttribute="leading" id="Tq3-Y8-YbM"/>
                         <constraint firstItem="cae-xP-BUs" firstAttribute="top" secondItem="yjb-1E-LkO" secondAttribute="bottom" id="fgX-Ry-76E"/>
-                        <constraint firstItem="yjb-1E-LkO" firstAttribute="top" secondItem="s1Y-x2-sGy" secondAttribute="top" id="hSB-qJ-cpd"/>
+                        <constraint firstItem="yjb-1E-LkO" firstAttribute="top" secondItem="s1Y-x2-sGy" secondAttribute="top" constant="10" id="hSB-qJ-cpd"/>
                     </constraints>
                 </view>
             </objects>
@@ -312,7 +313,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ecU-PP-Plb">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tagCell" id="6wG-to-X1F">
@@ -339,7 +340,7 @@
                             <constraint firstItem="UYd-Vf-e8w" firstAttribute="trailing" secondItem="ecU-PP-Plb" secondAttribute="trailing" id="qoQ-7V-dba"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="태그 선택" largeTitleDisplayMode="never" id="TIl-Ct-Fmc">
+                    <navigationItem key="navigationItem" title="태그 선택" id="TIl-Ct-Fmc">
                         <barButtonItem key="leftBarButtonItem" title="뒤로가기" id="wLN-rd-qMi">
                             <connections>
                                 <action selector="backButtonClicked:" destination="ctS-41-2ar" id="zgj-Oh-BBq"/>
