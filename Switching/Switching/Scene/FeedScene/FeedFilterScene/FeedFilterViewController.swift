@@ -41,9 +41,9 @@ extension FeedFilterViewController: UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.text = "등록된 태그가 없습니다"
         } else {
             cell.textLabel?.text = tags[indexPath.row]
-        }
-        if FeedFilterViewController.filteredTags.contains(tags[indexPath.row]){
-            cell.accessoryType = .checkmark
+            if FeedFilterViewController.filteredTags.contains(tags[indexPath.row]){
+                cell.accessoryType = .checkmark
+            }
         }
         return cell
     }
