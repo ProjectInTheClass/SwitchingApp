@@ -286,6 +286,10 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        if FeedFilterViewController.filteredTags.count != 0 {
+            print(indexPath.row)
+            FeedFilterViewController.filteredTags.remove(at: indexPath.row)
+            filteredTagsCollectionView.reloadData()
+        }
     }
 }
