@@ -255,7 +255,23 @@ extension FeedViewController: UISearchBarDelegate {
 
 extension FeedViewController: UISearchResultsUpdating {
   func updateSearchResults(for searchController: UISearchController) {
+    updateBookmarksData()
     let searchBar = searchController.searchBar
+    if let text = searchBar.text{
+        if text == ""{
+            self.feedTableView.reloadData()
+            return
+        }
+        let temp = bookmarks
+        bookmarks.removeAll()
+        for bookmark in temp{
+            if bookmark.desc.contains(text){
+                print("contain")
+                bookmarks.append(bookmark)
+            }
+        }
+    }
+    self.feedTableView.reloadData()
   }
 }
 
