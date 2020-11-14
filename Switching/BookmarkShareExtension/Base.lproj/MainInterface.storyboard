@@ -17,10 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Mu-EF-JMf">
-                                <rect key="frame" x="364" y="64" width="30" height="30"/>
-                                <state key="normal" title="완료"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캐릭터 선택하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGf-IR-h4x">
                                 <rect key="frame" x="156.5" y="164" width="101" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
@@ -73,43 +69,6 @@
                                             <outlet property="accountNameLabel" destination="1sP-hZ-qCm" id="3oN-qu-U5H"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="addAccountCell" id="o2h-PT-7P3" customClass="ShareViewAddAccountCollectionCell" customModule="BookmarkShareExtension" customModuleProvider="target">
-                                        <rect key="frame" x="214" y="0.0" width="100" height="121"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hNr-bB-VtA">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="121"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plusButton" translatesAutoresizingMaskIntoConstraints="NO" id="Fx3-5I-V8G">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="100" id="4Rm-C8-LK4"/>
-                                                        <constraint firstAttribute="width" constant="100" id="xoe-iS-uJe"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캐릭터 추가" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTP-cK-7HY">
-                                                    <rect key="frame" x="0.0" y="100" width="100" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="PTP-cK-7HY" secondAttribute="trailing" id="Aat-bR-o9q"/>
-                                                <constraint firstAttribute="bottom" secondItem="PTP-cK-7HY" secondAttribute="bottom" id="KoZ-55-APC"/>
-                                                <constraint firstAttribute="trailing" secondItem="Fx3-5I-V8G" secondAttribute="trailing" id="Qtb-wQ-paw"/>
-                                                <constraint firstItem="Fx3-5I-V8G" firstAttribute="leading" secondItem="hNr-bB-VtA" secondAttribute="leading" id="e8J-8v-DO4"/>
-                                                <constraint firstItem="Fx3-5I-V8G" firstAttribute="top" secondItem="hNr-bB-VtA" secondAttribute="top" id="gb3-XV-U8E"/>
-                                                <constraint firstItem="PTP-cK-7HY" firstAttribute="leading" secondItem="hNr-bB-VtA" secondAttribute="leading" id="shg-Tk-NM8"/>
-                                                <constraint firstItem="PTP-cK-7HY" firstAttribute="top" secondItem="Fx3-5I-V8G" secondAttribute="bottom" id="vSH-yb-Rty"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <connections>
-                                            <outlet property="addAccountImage" destination="Fx3-5I-V8G" id="KSU-2J-HUb"/>
-                                            <outlet property="addAccountLabel" destination="PTP-cK-7HY" id="BzM-fD-gxA"/>
-                                            <segue destination="xWb-ck-hOC" kind="show" id="dLg-vI-FZm"/>
-                                        </connections>
-                                    </collectionViewCell>
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="Uxf-9d-5h3" id="yFo-0K-T9k"/>
@@ -123,12 +82,6 @@
                                     <action selector="cancelClicked:" destination="Uxf-9d-5h3" eventType="touchUpInside" id="WBW-Fg-I7g"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TGh-VE-6lk">
-                                <rect key="frame" x="159" y="431" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sxk-E9-nB1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -136,12 +89,9 @@
                             <constraint firstItem="sxk-E9-nB1" firstAttribute="trailing" secondItem="4bF-3h-qaT" secondAttribute="trailing" constant="50" id="BJn-mP-nqU"/>
                             <constraint firstItem="4bF-3h-qaT" firstAttribute="top" secondItem="aGf-IR-h4x" secondAttribute="bottom" constant="25" id="CAY-cL-Bf2"/>
                             <constraint firstItem="qoM-mm-F92" firstAttribute="top" secondItem="sxk-E9-nB1" secondAttribute="top" constant="20" id="DN5-cw-OEc"/>
-                            <constraint firstItem="sxk-E9-nB1" firstAttribute="trailing" secondItem="4Mu-EF-JMf" secondAttribute="trailing" constant="20" id="Huk-Lc-ZW7"/>
                             <constraint firstItem="qoM-mm-F92" firstAttribute="leading" secondItem="sxk-E9-nB1" secondAttribute="leading" constant="20" id="MCZ-GK-wcR"/>
-                            <constraint firstItem="4Mu-EF-JMf" firstAttribute="top" secondItem="sxk-E9-nB1" secondAttribute="top" constant="20" id="Zg7-Xk-sqO"/>
                             <constraint firstItem="sxk-E9-nB1" firstAttribute="bottom" secondItem="4bF-3h-qaT" secondAttribute="bottom" id="e5f-98-ePL"/>
                             <constraint firstItem="aGf-IR-h4x" firstAttribute="centerX" secondItem="sxk-E9-nB1" secondAttribute="centerX" id="eQe-jj-2XV"/>
-                            <constraint firstItem="4Mu-EF-JMf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sxk-E9-nB1" secondAttribute="leading" constant="325" id="ujZ-tX-DEp"/>
                             <constraint firstItem="4bF-3h-qaT" firstAttribute="leading" secondItem="sxk-E9-nB1" secondAttribute="leading" constant="50" id="vZI-Um-r1P"/>
                             <constraint firstItem="aGf-IR-h4x" firstAttribute="top" secondItem="sxk-E9-nB1" secondAttribute="top" constant="120" id="yxB-u9-Uw8"/>
                         </constraints>
@@ -149,65 +99,14 @@
                     <navigationItem key="navigationItem" id="heN-Yt-8B8"/>
                     <connections>
                         <outlet property="characterCollectionView" destination="4bF-3h-qaT" id="i70-43-E2V"/>
-                        <outlet property="tagTextField" destination="TGh-VE-6lk" id="qEc-r6-VWz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cNH-Ae-JPx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2121.739130434783" y="117.85714285714285"/>
         </scene>
-        <!--Share View Edit Account Controller-->
-        <scene sceneID="7u7-G3-1xw">
-            <objects>
-                <viewController id="xWb-ck-hOC" customClass="ShareViewEditAccountController" customModule="BookmarkShareExtension" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iuv-f7-1iR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1E9-nR-5ht">
-                                <rect key="frame" x="364" y="20" width="30" height="30"/>
-                                <state key="normal" title="완료"/>
-                                <connections>
-                                    <action selector="summitClicked:" destination="xWb-ck-hOC" eventType="touchUpInside" id="eUf-J8-Shb"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="캐릭터 이름을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cm3-jf-YOY">
-                                <rect key="frame" x="20" y="150" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jed-IL-w0T">
-                                <rect key="frame" x="20" y="20" width="30" height="30"/>
-                                <state key="normal" title="취소"/>
-                                <connections>
-                                    <action selector="cancelClicked:" destination="xWb-ck-hOC" eventType="touchUpInside" id="ODD-Ys-T6N"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="gZd-Fv-AK4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Jed-IL-w0T" firstAttribute="leading" secondItem="gZd-Fv-AK4" secondAttribute="leading" constant="20" id="0KE-hq-kP8"/>
-                            <constraint firstItem="cm3-jf-YOY" firstAttribute="leading" secondItem="gZd-Fv-AK4" secondAttribute="leading" constant="20" id="UTv-uc-bAK"/>
-                            <constraint firstItem="gZd-Fv-AK4" firstAttribute="trailing" secondItem="cm3-jf-YOY" secondAttribute="trailing" constant="20" id="Vel-ZE-207"/>
-                            <constraint firstItem="cm3-jf-YOY" firstAttribute="top" secondItem="1E9-nR-5ht" secondAttribute="bottom" constant="100" id="laB-GU-mmO"/>
-                            <constraint firstItem="Jed-IL-w0T" firstAttribute="top" secondItem="gZd-Fv-AK4" secondAttribute="top" constant="20" id="oPe-nY-85o"/>
-                            <constraint firstItem="1E9-nR-5ht" firstAttribute="top" secondItem="gZd-Fv-AK4" secondAttribute="top" constant="20" id="y5d-0R-O46"/>
-                            <constraint firstItem="gZd-Fv-AK4" firstAttribute="trailing" secondItem="1E9-nR-5ht" secondAttribute="trailing" constant="20" id="yLV-F0-osB"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="FoN-s6-o0U"/>
-                    <connections>
-                        <outlet property="accountTextField" destination="cm3-jf-YOY" id="rPq-7W-Z8e"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AuK-D3-mVm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2943" y="118"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="plusButton" width="360" height="360"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

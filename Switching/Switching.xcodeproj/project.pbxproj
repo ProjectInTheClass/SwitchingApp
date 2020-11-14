@@ -50,8 +50,6 @@
 		EA25D1212526C002008AAABA /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB80022526A9B7007815B2 /* Bookmark.swift */; };
 		EA25D1252526C08B008AAABA /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = EA25D1242526C08B008AAABA /* Action.js */; };
 		EA6706A8254AB7010025AFB1 /* ShareViewAccountCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6706A7254AB7010025AFB1 /* ShareViewAccountCollectionCell.swift */; };
-		EA6706AC254AB7220025AFB1 /* ShareViewAddAccountCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6706AB254AB7220025AFB1 /* ShareViewAddAccountCollectionCell.swift */; };
-		EA6706B0254AB7410025AFB1 /* ShareViewEditAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6706AF254AB7410025AFB1 /* ShareViewEditAccountController.swift */; };
 		EA6706B3254AB76E0025AFB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A61B216125206EDC00272050 /* Assets.xcassets */; };
 		EAAB80032526A9B7007815B2 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB80022526A9B7007815B2 /* Bookmark.swift */; };
 		EAAB800D2526B0B1007815B2 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB800C2526B0B1007815B2 /* ShareViewController.swift */; };
@@ -130,8 +128,6 @@
 		E661408656CB1FBB1BB99EF3 /* Pods-Switching.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switching.release.xcconfig"; path = "Target Support Files/Pods-Switching/Pods-Switching.release.xcconfig"; sourceTree = "<group>"; };
 		EA25D1242526C08B008AAABA /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
 		EA6706A7254AB7010025AFB1 /* ShareViewAccountCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewAccountCollectionCell.swift; sourceTree = "<group>"; };
-		EA6706AB254AB7220025AFB1 /* ShareViewAddAccountCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewAddAccountCollectionCell.swift; sourceTree = "<group>"; };
-		EA6706AF254AB7410025AFB1 /* ShareViewEditAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewEditAccountController.swift; sourceTree = "<group>"; };
 		EAAB80022526A9B7007815B2 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		EAAB800A2526B0B1007815B2 /* BookmarkShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BookmarkShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAB800C2526B0B1007815B2 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -355,8 +351,6 @@
 				EAAB80112526B0B1007815B2 /* Info.plist */,
 				EA25D1242526C08B008AAABA /* Action.js */,
 				EA6706A7254AB7010025AFB1 /* ShareViewAccountCollectionCell.swift */,
-				EA6706AB254AB7220025AFB1 /* ShareViewAddAccountCollectionCell.swift */,
-				EA6706AF254AB7410025AFB1 /* ShareViewEditAccountController.swift */,
 			);
 			path = BookmarkShareExtension;
 			sourceTree = "<group>";
@@ -574,9 +568,7 @@
 			files = (
 				EADDCD5B25305DB100673641 /* SharedData.swift in Sources */,
 				BDA8CB7C25278A0C00F4BDA5 /* Tag.swift in Sources */,
-				EA6706AC254AB7220025AFB1 /* ShareViewAddAccountCollectionCell.swift in Sources */,
 				EA6706A8254AB7010025AFB1 /* ShareViewAccountCollectionCell.swift in Sources */,
-				EA6706B0254AB7410025AFB1 /* ShareViewEditAccountController.swift in Sources */,
 				EAAB800D2526B0B1007815B2 /* ShareViewController.swift in Sources */,
 				EA25D1212526C002008AAABA /* Bookmark.swift in Sources */,
 				BDA8CB8125278B3E00F4BDA5 /* Character.swift in Sources */,
