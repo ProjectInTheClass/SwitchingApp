@@ -265,6 +265,7 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.contentView.layer.masksToBounds = true;
         return cell
     }
-    
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
 }
