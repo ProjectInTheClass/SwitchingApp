@@ -79,17 +79,8 @@ class AddViewController: UIViewController {
                 tag_.tag = tag
                 bookmark.tags.append(tag_)
             }
-            
-            guard var fileURL = FileManager.default.containerURL(
-                forSecurityApplicationGroupIdentifier: "group.dreamin.SwitchingApp"
-            ) else {
-                print("Container URL is nil")
-                return
-            }
 
-            fileURL.appendPathComponent("shared.realm")
-            
-            let realm = try! Realm(fileURL: fileURL)
+            let realm = SharedData.instance.realm
             do {
                 try realm.write{
                     realm.add(bookmark)
