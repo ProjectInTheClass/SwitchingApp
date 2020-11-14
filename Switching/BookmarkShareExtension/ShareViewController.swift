@@ -33,7 +33,12 @@ extension ShareViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let character = realm.objects(Character.self)[indexPath.row]
         let existingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "accountCell", for: indexPath) as! ShareViewAccountCollectionCell
         existingCell.accountNameLabel.text = character.character
-        existingCell.accountImage.image = UIImage(named: "account1.png")
+        if let image = character.image{
+            existingCell.accountImage.image = UIImage(data: image)
+        }
+        else{
+            existingCell.accountImage.image = UIImage(named: "account1")
+        }
         existingCell.accountImage.layer.cornerRadius = 50
         cells = existingCell
 
