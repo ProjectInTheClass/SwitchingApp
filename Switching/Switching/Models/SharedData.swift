@@ -37,7 +37,7 @@ class SharedData{
 func getRealm() -> Realm? {
     var realm: Realm?
     guard var fileURL = FileManager.default
-            .containerURL(forSecurityApplicationGroupIdentifier: "group.switching.SwitchingApp") else {
+            .containerURL(forSecurityApplicationGroupIdentifier: "group.com.dreamin.SwitchingApp") else {
         print("Container URL is nil")
         return realm
     }
