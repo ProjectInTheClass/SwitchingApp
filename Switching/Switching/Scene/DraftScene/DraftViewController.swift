@@ -43,36 +43,35 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! DraftTableViewCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         let realm = SharedData.instance.realm
-        if let bookmark: Bookmark = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == True")[indexPath.row]{
-            cell.feedURLLabel.text = bookmark.url
-            cell.feedTitleLabel.text = bookmark.desc
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .medium
-            dateFormatter.timeStyle = .none
-            cell.feedDateLabel.text = dateFormatter.string(from: bookmark.createDate)
-            cell.updateUI()
-        
-            if bookmark.image == nil{
-                
-                let slp = SwiftLinkPreview(session: URLSession.shared, workQueue: SwiftLinkPreview.defaultWorkQueue, responseQueue: DispatchQueue.main, cache: DisabledCache.instance)
-                slp.preview(bookmark.url,
-                            onSuccess: {
-                                result in
-                                if let imageUrl = result.image{
-                                    if let url = URL(string: imageUrl){
-                                        if let data: Data = getImageDataFromURL(url: url){
-                                            try! realm.write{
-                                                bookmark.image = data
-                                            }
-                                            cell.feedImageView.image = UIImage(data: data)
+        let bookmark: Bookmark = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == True")[indexPath.row]
+        cell.feedURLLabel.text = bookmark.url
+        cell.feedTitleLabel.text = bookmark.desc
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        cell.feedDateLabel.text = dateFormatter.string(from: bookmark.createDate)
+        cell.updateUI()
+    
+        if bookmark.image == nil{
+            
+            let slp = SwiftLinkPreview(session: URLSession.shared, workQueue: SwiftLinkPreview.defaultWorkQueue, responseQueue: DispatchQueue.main, cache: DisabledCache.instance)
+            slp.preview(bookmark.url,
+                        onSuccess: {
+                            result in
+                            if let imageUrl = result.image{
+                                if let url = URL(string: imageUrl){
+                                    if let data: Data = getImageDataFromURL(url: url){
+                                        try! realm.write{
+                                            bookmark.image = data
                                         }
+                                        cell.feedImageView.image = UIImage(data: data)
                                     }
                                 }
-                            }, onError: {error in cell.feedImageView.image = UIImage(named: "noimage")})
-                
-            } else if let data = bookmark.image{
-                cell.feedImageView.image = UIImage(data: data)
-            }
+                            }
+                        }, onError: {error in cell.feedImageView.image = UIImage(named: "noimage")})
+            
+        } else if let data = bookmark.image{
+            cell.feedImageView.image = UIImage(data: data)
         }
         return cell
     }
