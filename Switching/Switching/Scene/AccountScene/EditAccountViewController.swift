@@ -143,10 +143,15 @@ class EditAccountViewController: UIViewController {
         if let account = editAccount{
             print("수정")
             let realm = SharedData.instance.realm
+            let bookmarks = realm.objects(Bookmark.self).filter("character = '\(editAccount!.character)'")
             do{
                 try realm.write{
                     if let newText = accountTextField.text{
                         account.character = newText
+                        for bookmakr in bookmarks{
+                            bookmakr.character = newText
+                        }
+                        SharedData.instance.selectedCharacter = newText
                     }
                     if let newImage = self.image?.pngData(){
                         account.image = newImage
