@@ -15,6 +15,10 @@ class DraftTableViewCell: UITableViewCell {
     @IBOutlet weak var feedURLLabel: UILabel!
     @IBOutlet weak var feedDateLabel: UILabel!
     
+    func updateUI() {
+        self.feedImageView.layer.cornerRadius = 15
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

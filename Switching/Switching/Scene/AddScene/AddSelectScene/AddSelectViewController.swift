@@ -9,12 +9,16 @@ import UIKit
 
 
 class AddSelectViewController: UIViewController {
-    var tags: Array<String> = SharedData.instance.getTagListOfSelectedCharacter()
+    var tags: Array<String> = []
     var selectedIndexPathRows: Array<Int> = [] //임시데이터
     var selectedTags: Array<String> = [] //임시데이터
 
     @IBOutlet weak var createTagTextField: UITextField!
-    @IBOutlet weak var createTagButton: UIButton!
+    @IBOutlet weak var createTagButton: UIButton!{
+        didSet{
+            createTagButton.layer.cornerRadius = createTagButton.frame.height/2
+        }
+    }
     @IBAction func backButtonClicked(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "unwindToAddVC", sender: sender)
 //        self.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -32,6 +36,7 @@ class AddSelectViewController: UIViewController {
         if !tags.contains(createTagTextField.text!){
             tags.append(createTagTextField.text!)
         }
+        self.createTagTextField.text = ""
         self.selectTagsTableView.reloadData()
     }
     
@@ -53,6 +58,11 @@ class AddSelectViewController: UIViewController {
         super.viewDidLoad()
         textFieldsSetUp()
         createTagButton.isEnabled = false
+        for tag in SharedData.instance.getTagListOfSelectedCharacter(){
+            if !tags.contains(tag){
+                tags.append(tag)
+            }
+        }
 //        self.navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
     }
@@ -89,9 +99,9 @@ extension AddSelectViewController: UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.text = "등록된 태그가 없습니다"
         } else {
             cell.textLabel?.text = tags[indexPath.row]
-        }
-        if selectedIndexPathRows.contains(indexPath.row) {
-            cell.accessoryType = .checkmark
+            if selectedTags.contains(tags[indexPath.row]) {
+                cell.accessoryType = .checkmark
+            }
         }
         return cell
     }

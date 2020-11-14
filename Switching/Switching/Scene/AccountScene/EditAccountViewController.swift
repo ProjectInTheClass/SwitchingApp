@@ -12,10 +12,17 @@ class EditAccountViewController: UIViewController {
     @IBOutlet weak var accountImage: UIImageView!
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var summitButton: UIButton!
+
+    @IBOutlet weak var removeAccountBtn: UIButton!{
+        didSet{
+            removeAccountBtn.layer.borderColor = UIColor.systemRed.cgColor
+            removeAccountBtn.layer.borderWidth = 1.5
+            removeAccountBtn.layer.cornerRadius = removeAccountBtn.frame.height/2
+        }
+    }
     
-    var editAccount: Character?
-    @IBOutlet weak var removeAccountBtn: UIButton!
     var image: UIImage?
+    var editAccount: Character?
     
     @objc func textFieldsIsNotEmpty(sender: UITextField) {
         guard let name = accountTextField.text, !name.isEmpty else {
@@ -110,8 +117,15 @@ class EditAccountViewController: UIViewController {
     
     @IBAction func removeClicked(_ sender: Any) {
         let realm = SharedData.instance.realm
+        let bookmarks = realm.objects(Bookmark.self).filter("character = '\(editAccount!.character)'")
         try! realm.write{
             realm.delete(editAccount!)
+            for bookmark in bookmarks{
+                realm.delete(bookmark)
+            }
+        }
+        if let character = realm.objects(Character.self).first{
+            SharedData.instance.selectedCharacter = character.character
         }
         NotificationCenter.default.post(name: Notification.Name("refreshFeedView"), object: nil)
         NotificationCenter.default.post(name: Notification.Name("refreshDraftView"), object: nil)
@@ -129,10 +143,15 @@ class EditAccountViewController: UIViewController {
         if let account = editAccount{
             print("수정")
             let realm = SharedData.instance.realm
+            let bookmarks = realm.objects(Bookmark.self).filter("character = '\(editAccount!.character)'")
             do{
                 try realm.write{
                     if let newText = accountTextField.text{
                         account.character = newText
+                        for bookmakr in bookmarks{
+                            bookmakr.character = newText
+                        }
+                        SharedData.instance.selectedCharacter = newText
                     }
                     if let newImage = self.image?.pngData(){
                         account.image = newImage

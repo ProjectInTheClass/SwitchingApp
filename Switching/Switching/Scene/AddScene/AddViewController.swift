@@ -27,7 +27,10 @@ class AddViewController: UIViewController {
             urlTextField.text = savedBookmark.url
             titleTextField.text = savedBookmark.desc
             for tag in savedBookmark.tags{
+                if !selectedTags.contains(tag.tag) {
                 selectedTags.append(tag.tag)
+                    print("test3")
+                }
             }
         }
     }
@@ -50,6 +53,7 @@ class AddViewController: UIViewController {
                     savedBookmark.url = urlTextField.text!
                     savedBookmark.desc = titleTextField.text!
                     savedBookmark.isTemp = false
+                    savedBookmark.tags.removeAll()
                     for tag in selectedTags{
                         let tag_ = Tag()
                         tag_.tag = tag
@@ -96,7 +100,17 @@ class AddViewController: UIViewController {
             print("add data done")
         }
         NotificationCenter.default.post(name: Notification.Name("refreshFeedView"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("refreshDraftView"), object: nil)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func selectTagsClicked(_ sender: Any) {
+        guard let tagVC = self.storyboard?.instantiateViewController(identifier: "selectTags") as? AddSelectViewController else{
+            return
+        }
+        tagVC.selectedTags = self.selectedTags
+        tagVC.tags = self.selectedTags
+        self.selectedTags = []
+        self.navigationController?.pushViewController(tagVC, animated: true)
     }
     
 }
@@ -116,8 +130,12 @@ extension AddViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "selectedTagsCell", for: indexPath) as! SelectedTagsCollectionViewCell
         if selectedTags.count == 0 {
             cell.selectedTagButton?.setTitle("등록된 태그가 없습니다", for: .normal)
+            cell.selectedTagButton.setTitleColor(UIColor.darkGray, for: .normal)
+            cell.contentView.backgroundColor = UIColor.white
         } else {
             cell.selectedTagButton?.setTitle(selectedTags[indexPath.row], for: .normal)
+            cell.selectedTagButton.setTitleColor(UIColor.white, for: .normal)
+            cell.contentView.backgroundColor = UIColor(named: "SwitchingBlue")
         }
         cell.contentView.layer.cornerRadius = 15
         cell.contentView.layer.borderWidth = 1.0

@@ -12,12 +12,34 @@ import SafariServices
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var filteredTags: Array<String> = [] //임시데이터
-    
     @IBOutlet var emptyFeedView: UIView!
-    @IBOutlet weak var feedTableView: UITableView!
+    @IBOutlet var tagView: UIView!
+    @IBOutlet weak var feedTableView: UITableView!{
+        didSet{
+            feedTableView.tableHeaderView = tagView
+        }
+    }
     @IBOutlet weak var filteredTagsCollectionView: UICollectionView!
     @IBAction func unwindVC (segue : UIStoryboardSegue) {}
+    
+    @IBOutlet weak var accountButton: UIButton!{
+        didSet{
+            accountButton.layer.cornerRadius = accountButton.frame.height/2
+            accountButton.layer.borderColor = UIColor.clear.cgColor
+            accountButton.layer.borderWidth = 0.5
+        }
+    }
+    @IBOutlet weak var addButton: UIButton!{
+        didSet{
+            addButton.layer.cornerRadius = addButton.frame.height/2
+            addButton.layer.shadowColor = UIColor(named: "SwitchingBlue")?.cgColor
+            addButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+            addButton.layer.shadowRadius = 5
+            addButton.layer.shadowOpacity = 0.3
+        }
+    }
+    
+    
     var bookmarks: [Bookmark] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,11 +57,16 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedfeedCell", for: indexPath) as! FeedTableViewCell
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         let realm = SharedData.instance.realm
         if let bookmark: Bookmark = bookmarks[indexPath.row]{
             cell.feedfeedURLLabel.text = bookmark.url
             cell.feedfeedTitleLabel.text = bookmark.desc
-            cell.feedfeedDateLabel.text = "2020.10.26"//UI레이아웃 테스트
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            cell.feedfeedDateLabel.text = dateFormatter.string(from: bookmark.createDate)
+            
             cell.tags = getTagListOfSelectedBookmark(bookmark: bookmark)
             cell.updateUI()
             if bookmark.image == nil{
@@ -65,29 +92,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         return cell
     }
-    
-    
-    @IBOutlet weak var accountButton: UIButton!
-    @IBOutlet weak var addButton: UIButton!
-    
-    func accountButtonSetUp() {
-        accountButton.layer.cornerRadius = accountButton.frame.height/2
-        accountButton.layer.borderColor = UIColor.lightGray.cgColor
-        accountButton.layer.borderWidth = 0.5
-    }
-    func addButtonSetUp() {
-        addButton.layer.cornerRadius = addButton.frame.height/2
-        addButton.layer.shadowColor = UIColor.black.cgColor
-        addButton.layer.shadowOffset = CGSize(width: 2, height: 2)
-        addButton.layer.shadowRadius = 5
-        addButton.layer.shadowOpacity = 0.3
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        accountButtonSetUp()
-        addButtonSetUp()
         self.feedTableView.delegate = self
         self.feedTableView.dataSource = self
         // Do any additional setup after loading the view.
@@ -100,7 +106,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     override func viewDidAppear(_ animated: Bool) {
         self.filteredTagsCollectionView.reloadData()
-        print("\(filteredTags)을 FeedVC에서 표시")
+        print("\(FeedFilterViewController.filteredTags)을 FeedVC에서 표시")
     }
     
     @objc func notificationReceived(notification: Notification) {
@@ -122,20 +128,24 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let realm = SharedData.instance.realm
         let bookmarks_: Results<Bookmark> = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == False")
         bookmarks = []
-        if filteredTags.count == 0{
+        if FeedFilterViewController.filteredTags.count == 0{
             for bookmark in bookmarks_{
                 bookmarks.append(bookmark)
             }
         }else{
             for bookmark in bookmarks_{
+                var count = 0
                 for tag in bookmark.tags{
-                    if filteredTags.contains(tag.tag){
-                    bookmarks.append(bookmark)
-                    break
+                    if FeedFilterViewController.filteredTags.contains(tag.tag){
+                        count = count + 1
                     }
+                }
+                if count == FeedFilterViewController.filteredTags.count{
+                    bookmarks.append(bookmark)
                 }
             }
         }
+        bookmarks.reverse()
         accountButton.clipsToBounds = true
         accountButton.contentMode = .scaleAspectFill
         if realm.objects(Character.self).filter("character = '\(SharedData.instance.selectedCharacter)'").count > 0{
@@ -191,7 +201,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let realm = SharedData.instance.realm
-        let bookmark: Bookmark = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == False")[indexPath.row]
+        let bookmark: Bookmark = bookmarks[indexPath.row]
         guard let url = URL(string: bookmark.url) else { return }
         let safariViewController = SFSafariViewController(url: url)
         print("safariviewController 실행됨")
@@ -235,23 +245,23 @@ class FilteredTagsCollectionViewCell: UICollectionViewCell{
 }
 extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if filteredTags.count == 0 {
+        if FeedFilterViewController.filteredTags.count == 0 {
             return 1
         } else {
-            return filteredTags.count
+            return FeedFilterViewController.filteredTags.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filteredTagsCell", for: indexPath) as! FilteredTagsCollectionViewCell
-        if filteredTags.count == 0 {
+        if FeedFilterViewController.filteredTags.count == 0 {
             cell.filteredTagButton?.setTitle("See All", for: .normal)
         } else {
-            cell.filteredTagButton?.setTitle(filteredTags[indexPath.row], for: .normal)
+            cell.filteredTagButton?.setTitle(FeedFilterViewController.filteredTags[indexPath.row], for: .normal)
         }
-        cell.contentView.layer.cornerRadius = 15 //cell.contentView.frame.height/2 적용 오류
-        cell.contentView.layer.borderWidth = 1.0
-        cell.contentView.layer.borderColor = UIColor.clear.cgColor
+        cell.contentView.layer.cornerRadius = cell.contentView.frame.height/2
+        cell.contentView.layer.borderWidth = 1.5
+        cell.contentView.layer.borderColor = UIColor(named: "SwitchingBlue")?.cgColor
         cell.contentView.layer.masksToBounds = true;
         return cell
     }

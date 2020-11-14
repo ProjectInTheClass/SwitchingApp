@@ -14,6 +14,15 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet var emptyDraftView: UIView!
     @IBOutlet weak var draftTableView: UITableView!
+    
+    @IBOutlet weak var accountButton: UIButton!{
+        didSet{
+            accountButton.layer.cornerRadius = accountButton.frame.height/2
+            accountButton.layer.borderColor = UIColor.clear.cgColor
+            accountButton.layer.borderWidth = 0.5
+        }
+    }
+    
     var bookmarks: [Bookmark] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,11 +41,17 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! DraftTableViewCell
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         let realm = SharedData.instance.realm
         if let bookmark: Bookmark = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == True")[indexPath.row]{
             cell.feedURLLabel.text = bookmark.url
             cell.feedTitleLabel.text = bookmark.desc
-            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            cell.feedDateLabel.text = dateFormatter.string(from: bookmark.createDate)
+            cell.updateUI()
+        
             if bookmark.image == nil{
                 
                 let slp = SwiftLinkPreview(session: URLSession.shared, workQueue: SwiftLinkPreview.defaultWorkQueue, responseQueue: DispatchQueue.main, cache: DisabledCache.instance)
@@ -62,17 +77,8 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
-  
-    @IBOutlet weak var accountButton: UIButton!
-    func accountButtonSetUp() {
-        accountButton.layer.cornerRadius = accountButton.frame.height/2
-        accountButton.layer.borderColor = UIColor.lightGray.cgColor
-        accountButton.layer.borderWidth = 0.5
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        accountButtonSetUp()
         self.draftTableView.delegate = self
         self.draftTableView.dataSource = self
         // Do any additional setup after loading the view.

@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jjT-KY-3lg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Feed View Controller-->
+        <!--피드-->
         <scene sceneID="Cum-TI-PqZ">
             <objects>
                 <viewController id="kSO-Hi-qj3" customClass="FeedViewController" customModule="Switching" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbx-YM-k00">
-                                <rect key="frame" x="0.0" y="169" width="414" height="693"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uci-Oj-wXG">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="693"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedfeedCell" id="LXE-4K-VX4" customClass="FeedTableViewCell" customModule="Switching" customModuleProvider="target">
@@ -61,11 +61,11 @@
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XPj-k2-twe">
-                                                            <rect key="frame" x="98" y="38" width="296" height="26"/>
+                                                        <collectionView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XPj-k2-twe">
+                                                            <rect key="frame" x="98" y="38" width="296" height="28"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="26" id="W6M-NA-mIZ"/>
+                                                                <constraint firstAttribute="height" constant="28" id="W6M-NA-mIZ"/>
                                                             </constraints>
                                                             <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X7g-PT-Fww" customClass="TagsCollectionViewFlowLayout" customModule="Switching" customModuleProvider="target">
                                                                 <size key="itemSize" width="128" height="24"/>
@@ -74,7 +74,7 @@
                                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             </collectionViewFlowLayout>
                                                             <cells>
-                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="feedTagsCell" id="Mae-B0-Q29" customClass="FeedTagsCollectionViewCell" customModule="Switching" customModuleProvider="target">
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" reuseIdentifier="feedTagsCell" id="Mae-B0-Q29" customClass="FeedTagsCollectionViewCell" customModule="Switching" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="24"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="44F-rI-DY2">
@@ -83,8 +83,8 @@
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwk-WZ-Jmm">
                                                                                 <rect key="frame" x="10" y="5" width="108" height="14"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                                <nil key="textColor"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
@@ -146,7 +146,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4r-ef-Mvd">
                                 <rect key="frame" x="334" y="782" width="50" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="SwitchingBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="IOL-ob-iP3"/>
                                     <constraint firstAttribute="height" constant="50" id="Yb0-mh-eZi"/>
@@ -159,89 +159,28 @@
                                     <segue destination="xrg-vl-XhZ" kind="presentation" id="Q5W-e6-NC5"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cae-xP-BUs">
-                                <rect key="frame" x="0.0" y="121" width="414" height="48"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="gbH-wB-kFX"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rnx-Ig-ECR" customClass="TagsCollectionViewFlowLayout" customModule="Switching" customModuleProvider="target">
-                                    <size key="itemSize" width="128" height="28"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="20" minY="10" maxX="20" maxY="10"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filteredTagsCell" id="jnr-xa-Yr8" customClass="FilteredTagsCollectionViewCell" customModule="Switching" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="10" width="128" height="28"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DZb-g7-1uC">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="28"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbX-cb-l0t">
-                                                    <rect key="frame" x="10" y="0.0" width="108" height="28"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                    <state key="normal" title="Button"/>
-                                                </button>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstItem="pbX-cb-l0t" firstAttribute="top" secondItem="DZb-g7-1uC" secondAttribute="top" id="BKi-Ej-oxU"/>
-                                                <constraint firstAttribute="bottom" secondItem="pbX-cb-l0t" secondAttribute="bottom" id="e3f-92-aOs"/>
-                                                <constraint firstAttribute="trailing" secondItem="pbX-cb-l0t" secondAttribute="trailing" constant="10" id="ob7-UA-r93"/>
-                                                <constraint firstItem="pbX-cb-l0t" firstAttribute="leading" secondItem="DZb-g7-1uC" secondAttribute="leading" constant="10" id="sOz-MA-4mc"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="128" height="28"/>
-                                        <connections>
-                                            <outlet property="filteredTagButton" destination="pbX-cb-l0t" id="oCb-X5-EO6"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="kSO-Hi-qj3" id="kiM-A6-8Ln"/>
-                                    <outlet property="delegate" destination="kSO-Hi-qj3" id="LZS-08-jM6"/>
-                                </connections>
-                            </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-1E-LkO">
-                                <rect key="frame" x="328.5" y="103" width="65.5" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="태그 선택" image="chevron.right" catalog="system">
-                                    <color key="titleColor" name="AccentColor"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ctS-41-2ar" kind="show" id="eyf-xJ-lfT"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VoZ-aP-Ujy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cae-xP-BUs" firstAttribute="top" secondItem="yjb-1E-LkO" secondAttribute="bottom" id="85T-UK-ZPd"/>
                             <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="u4r-ef-Mvd" secondAttribute="trailing" constant="30" id="HVk-fW-IdB"/>
-                            <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="yjb-1E-LkO" secondAttribute="trailing" constant="20" id="NtE-rq-Evd"/>
                             <constraint firstItem="VoZ-aP-Ujy" firstAttribute="bottom" secondItem="xbx-YM-k00" secondAttribute="bottom" id="Pd0-ZU-CX9"/>
-                            <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="cae-xP-BUs" secondAttribute="trailing" id="QmV-Jf-497"/>
                             <constraint firstItem="VoZ-aP-Ujy" firstAttribute="bottom" secondItem="u4r-ef-Mvd" secondAttribute="bottom" constant="30" id="W7n-JI-lXy"/>
-                            <constraint firstItem="yjb-1E-LkO" firstAttribute="top" secondItem="VoZ-aP-Ujy" secondAttribute="top" constant="15" id="WVx-OT-p7s"/>
-                            <constraint firstItem="xbx-YM-k00" firstAttribute="top" secondItem="cae-xP-BUs" secondAttribute="bottom" id="bXd-cV-Ghw"/>
-                            <constraint firstItem="cae-xP-BUs" firstAttribute="leading" secondItem="VoZ-aP-Ujy" secondAttribute="leading" id="haJ-C0-5NI"/>
                             <constraint firstItem="VoZ-aP-Ujy" firstAttribute="trailing" secondItem="xbx-YM-k00" secondAttribute="trailing" id="tDo-Rw-Zcj"/>
+                            <constraint firstItem="xbx-YM-k00" firstAttribute="top" secondItem="VoZ-aP-Ujy" secondAttribute="top" id="uBL-VQ-1PI"/>
                             <constraint firstItem="xbx-YM-k00" firstAttribute="leading" secondItem="VoZ-aP-Ujy" secondAttribute="leading" id="xkC-Uh-YBz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Kj0-yc-XRN">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="KJH-ad-NX6">
+                    <navigationItem key="navigationItem" title="피드" id="Kj0-yc-XRN">
+                        <barButtonItem key="leftBarButtonItem" id="KJH-ad-NX6">
                             <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="HJL-yy-i2Q">
-                                <rect key="frame" x="20" y="2" width="40" height="40"/>
+                                <rect key="frame" x="20" y="5.5" width="33" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="nca-Il-JEF"/>
-                                    <constraint firstAttribute="width" constant="40" id="p0M-JU-PLD"/>
+                                    <constraint firstAttribute="height" constant="33" id="nca-Il-JEF"/>
+                                    <constraint firstAttribute="width" constant="33" id="p0M-JU-PLD"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="yKZ-AR-AQM" kind="presentation" id="fP4-S2-es1"/>
@@ -261,6 +200,7 @@
                         <outlet property="emptyFeedView" destination="LqK-Ya-JYX" id="uxt-aK-bOi"/>
                         <outlet property="feedTableView" destination="uci-Oj-wXG" id="mgf-BG-QA3"/>
                         <outlet property="filteredTagsCollectionView" destination="cae-xP-BUs" id="8fq-Wt-q1n"/>
+                        <outlet property="tagView" destination="s1Y-x2-sGy" id="2k0-k2-DWW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m82-Th-96u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -268,18 +208,86 @@
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저장된 북마크가 존재하지 않아요 :(" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTx-GJ-JPv">
-                            <rect key="frame" x="23" y="77.5" width="194" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="태그를 지정한 북마크가 존재하지 않아요 :(" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTx-GJ-JPv">
+                            <rect key="frame" x="2.5" y="77.5" width="235" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="ang-CV-Q7l"/>
-                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="NTx-GJ-JPv" firstAttribute="centerY" secondItem="ang-CV-Q7l" secondAttribute="centerY" id="K2b-gA-2DS"/>
                         <constraint firstItem="NTx-GJ-JPv" firstAttribute="centerX" secondItem="ang-CV-Q7l" secondAttribute="centerX" id="ymc-vx-WfT"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" id="s1Y-x2-sGy">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-1E-LkO">
+                            <rect key="frame" x="154.5" y="0.0" width="65.5" height="17.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="태그 선택" image="chevron.right" catalog="system">
+                                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <segue destination="ctS-41-2ar" kind="show" id="eyf-xJ-lfT"/>
+                            </connections>
+                        </button>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cae-xP-BUs">
+                            <rect key="frame" x="0.0" y="17.5" width="240" height="52.5"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rnx-Ig-ECR">
+                                <size key="itemSize" width="128" height="28"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="10" minY="5" maxX="10" maxY="5"/>
+                            </collectionViewFlowLayout>
+                            <cells>
+                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filteredTagsCell" id="jnr-xa-Yr8" customClass="FilteredTagsCollectionViewCell" customModule="Switching" customModuleProvider="target">
+                                    <rect key="frame" x="10" y="12.5" width="128" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DZb-g7-1uC">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbX-cb-l0t">
+                                                <rect key="frame" x="10" y="0.0" width="108" height="28"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="pbX-cb-l0t" firstAttribute="top" secondItem="DZb-g7-1uC" secondAttribute="top" id="BKi-Ej-oxU"/>
+                                            <constraint firstAttribute="bottom" secondItem="pbX-cb-l0t" secondAttribute="bottom" id="e3f-92-aOs"/>
+                                            <constraint firstAttribute="trailing" secondItem="pbX-cb-l0t" secondAttribute="trailing" constant="10" id="ob7-UA-r93"/>
+                                            <constraint firstItem="pbX-cb-l0t" firstAttribute="leading" secondItem="DZb-g7-1uC" secondAttribute="leading" constant="10" id="sOz-MA-4mc"/>
+                                        </constraints>
+                                    </collectionViewCellContentView>
+                                    <size key="customSize" width="128" height="28"/>
+                                    <connections>
+                                        <outlet property="filteredTagButton" destination="pbX-cb-l0t" id="oCb-X5-EO6"/>
+                                    </connections>
+                                </collectionViewCell>
+                            </cells>
+                            <connections>
+                                <outlet property="dataSource" destination="kSO-Hi-qj3" id="kiM-A6-8Ln"/>
+                                <outlet property="delegate" destination="kSO-Hi-qj3" id="LZS-08-jM6"/>
+                            </connections>
+                        </collectionView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="qmc-B2-Hil"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="cae-xP-BUs" secondAttribute="trailing" id="6oT-lj-z95"/>
+                        <constraint firstAttribute="trailing" secondItem="yjb-1E-LkO" secondAttribute="trailing" constant="20" id="7pd-zu-bF4"/>
+                        <constraint firstAttribute="bottom" secondItem="cae-xP-BUs" secondAttribute="bottom" id="INZ-xt-zvL"/>
+                        <constraint firstItem="cae-xP-BUs" firstAttribute="leading" secondItem="s1Y-x2-sGy" secondAttribute="leading" id="Tq3-Y8-YbM"/>
+                        <constraint firstItem="cae-xP-BUs" firstAttribute="top" secondItem="yjb-1E-LkO" secondAttribute="bottom" id="fgX-Ry-76E"/>
+                        <constraint firstItem="yjb-1E-LkO" firstAttribute="top" secondItem="s1Y-x2-sGy" secondAttribute="top" id="hSB-qJ-cpd"/>
                     </constraints>
                 </view>
             </objects>
@@ -331,7 +339,7 @@
                             <constraint firstItem="UYd-Vf-e8w" firstAttribute="trailing" secondItem="ecU-PP-Plb" secondAttribute="trailing" id="qoQ-7V-dba"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="태그 선택" id="TIl-Ct-Fmc">
+                    <navigationItem key="navigationItem" title="태그 선택" largeTitleDisplayMode="never" id="TIl-Ct-Fmc">
                         <barButtonItem key="leftBarButtonItem" title="뒤로가기" id="wLN-rd-qMi">
                             <connections>
                                 <action selector="backButtonClicked:" destination="ctS-41-2ar" id="zgj-Oh-BBq"/>
@@ -357,7 +365,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aBz-kx-P4X">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedSearchCell" id="dZI-NZ-9FJ" customClass="FeedSearchTableViewCell" customModule="Switching" customModuleProvider="target">
@@ -419,8 +427,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jjT-KY-3lg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="피드" image="list.bullet" catalog="system" id="qSp-pa-bUe"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AGY-CO-bh0">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="AGY-CO-bh0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -433,13 +441,14 @@
             <point key="canvasLocation" x="1030.4347826086957" y="-604.01785714285711"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="SwitchingBlue"/>
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="SwitchingBlue">
+            <color red="0.10000000149011612" green="0.45899999141693115" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -449,9 +458,6 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

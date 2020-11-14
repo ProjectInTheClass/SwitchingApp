@@ -11,4 +11,9 @@ class AddAccountCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var addAccountImage: UIImageView!
     @IBOutlet weak var addAccountLabel: UILabel!
+    
+    func updateUI() {
+        self.addAccountImage.layer.cornerRadius = self.addAccountImage.frame.height/2
+        self.addAccountImage.clipsToBounds = true
+    }
 }
