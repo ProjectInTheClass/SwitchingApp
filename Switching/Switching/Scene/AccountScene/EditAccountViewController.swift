@@ -165,12 +165,15 @@ class EditAccountViewController: UIViewController {
         }
         else{
             print("생성")
-            guard let text = accountTextField.text,
-                  let image = self.image?.pngData()
+            guard let text = accountTextField.text
             else{ return }
             let newCharacter = Character()
             newCharacter.character = text
-            newCharacter.image = image
+            if let image = self.image?.pngData(){
+                newCharacter.image = image
+            }else{
+                newCharacter.image = nil
+            }
             
             let realm = SharedData.instance.realm
             do{
