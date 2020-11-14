@@ -117,8 +117,15 @@ class EditAccountViewController: UIViewController {
     
     @IBAction func removeClicked(_ sender: Any) {
         let realm = SharedData.instance.realm
+        let bookmarks = realm.objects(Bookmark.self).filter("character = '\(editAccount!.character)'")
         try! realm.write{
             realm.delete(editAccount!)
+            for bookmark in bookmarks{
+                realm.delete(bookmark)
+            }
+        }
+        if let character = realm.objects(Character.self).first{
+            SharedData.instance.selectedCharacter = character.character
         }
         NotificationCenter.default.post(name: Notification.Name("refreshFeedView"), object: nil)
         NotificationCenter.default.post(name: Notification.Name("refreshDraftView"), object: nil)
