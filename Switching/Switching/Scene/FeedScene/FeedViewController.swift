@@ -201,7 +201,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let realm = SharedData.instance.realm
-        let bookmark: Bookmark = realm.objects(Bookmark.self).filter("character = '\(SharedData.instance.selectedCharacter)'").filter("isTemp == False")[indexPath.row]
+        let bookmark: Bookmark = bookmarks[indexPath.row]
         guard let url = URL(string: bookmark.url) else { return }
         let safariViewController = SFSafariViewController(url: url)
         print("safariviewController 실행됨")
