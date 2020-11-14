@@ -81,7 +81,7 @@ class AddViewController: UIViewController {
             }
             
             guard var fileURL = FileManager.default.containerURL(
-                forSecurityApplicationGroupIdentifier: "group.switching.SwitchingApp"
+                forSecurityApplicationGroupIdentifier: "group.dreamin.SwitchingApp"
             ) else {
                 print("Container URL is nil")
                 return

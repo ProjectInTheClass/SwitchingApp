@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.dreamin.SwitchingApp</string>
+		<string>group.dreamin.SwitchingApp</string>
 	</array>
 </dict>
 </plist>
