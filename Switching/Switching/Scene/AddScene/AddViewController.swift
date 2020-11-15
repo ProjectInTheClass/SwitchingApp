@@ -46,8 +46,6 @@ class AddViewController: UIViewController {
     
     @IBAction func addBoomarkButtonPressed(_ sender: Any) {
         if let savedBookmark: Bookmark = selectedBookmark{
-            urlTextField.text = savedBookmark.url
-            titleTextField.text = savedBookmark.desc
             let realm = SharedData.instance.realm
             do {
                 try realm.write{
