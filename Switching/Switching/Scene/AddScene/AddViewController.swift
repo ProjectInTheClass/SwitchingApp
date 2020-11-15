@@ -20,6 +20,7 @@ class AddViewController: UIViewController {
     var selectedBookmark: Bookmark?
     
     var selectedTags: Array<String> = [] //임시데이터
+    var loadedTitle: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,6 +95,41 @@ class AddViewController: UIViewController {
         NotificationCenter.default.post(name: Notification.Name("refreshDraftView"), object: nil)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func getTitle(_ sender: Any) {
+        let urlPath: String = urlTextField.text!
+//        guard let url = URL(string: urlPath) else {return}
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "get"
+//        print(request)
+        let url = NSURL(string: urlPath)
+        let session = URLSession.shared
+        let task = session.dataTask(with: url! as URL) { (data, response, error) in
+            guard let loadedData = data else { return }
+            guard let contents = String(data: loadedData, encoding: .utf8) else {return}
+            
+            var startRange: Range<String.Index>? = nil
+            var endRange: Range<String.Index>? = nil
+            
+            if let stRange: Range<String.Index> = contents.range(of: "<title>") {
+                let stIndex: Int = (contents.distance(from: contents.startIndex, to: stRange.lowerBound))
+                startRange = stRange
+//                let substring = contents[...stRange.lowerBound]
+            }
+            if let edRange: Range<String.Index> = contents.range(of: "</title>") {
+                let edIndex: Int = (contents.distance(from: contents.startIndex, to: edRange.lowerBound))
+                endRange = edRange
+            }
+            let substring = contents[startRange!.upperBound..<endRange!.lowerBound]
+            print(substring)
+            self.loadedTitle = String(substring)
+        }
+        task.resume()
+        titleTextField.text = loadedTitle
+    }
+    
+    
+    
     @IBAction func selectTagsClicked(_ sender: Any) {
         guard let tagVC = self.storyboard?.instantiateViewController(identifier: "selectTags") as? AddSelectViewController else{
             return
