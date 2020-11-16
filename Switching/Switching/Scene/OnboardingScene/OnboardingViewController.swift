@@ -82,14 +82,37 @@ class OnboardingViewController: UIViewController, onboardingPageViewControllerDe
         // 여기에 북마크 데이터 입력 !!
         
         let feedBookmarks = [
-            ["naver.com", "naver", "main", ["tag1", "tag2", "tag3"]],
-            ["google.com", "google", "sub1", ["tag1"]],
-            ["apple.com", "apple", "sub2", []],
+            [
+                "https://naver.com",
+                "naver",
+                "main",
+                ["tag1", "tag2", "tag3"]
+            ],
+            [
+                "https://google.com",
+                "google",
+                "sub1",
+                ["tag1"]
+            ],
+            [
+                "https://apple.com",
+                "apple",
+                "sub2",
+                []
+            ],
         ]
         
         let darftBookmarks = [
-            ["https://www.daum.net/", "daum", "main"],
-            ["https://www.youtube.com/", "youtube", "sub1"],
+            [
+                "https://www.daum.net/",
+                "daum",
+                "main"
+            ],
+            [
+                "https://www.youtube.com/",
+                "youtube",
+                "sub1"
+            ],
         ]
 
         
