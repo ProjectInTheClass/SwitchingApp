@@ -73,45 +73,173 @@ class OnboardingViewController: UIViewController, onboardingPageViewControllerDe
 
         //  여기에 캐릭터 데이터 입력 !!
         let characters = [
-            ["main", "account1"],
-            ["sub1", "account1"],
-            ["sub2", "account1"],
-            ["sub3", "account1"],
+            ["커리어하이", "account1"],
+            ["스타2자유의날개", "account1"],
+            ["거위의꿈", "account1"],
         ]
         
         // 여기에 북마크 데이터 입력 !!
         
         let feedBookmarks = [
             [
-                "https://naver.com",
-                "naver",
-                "main",
-                ["tag1", "tag2", "tag3"]
+                "https://www.ei.go.kr/ei/eih/eg/pb/pbPersonBnef/retrievePb0201Info.do",
+                "고용보험-실업급여",
+                "스타2자유의날개",
+                ["고용보험", "실업급여"]
             ],
             [
-                "https://google.com",
-                "google",
-                "sub1",
-                ["tag1"]
+                "https://m.blog.naver.com/welcomebank1/221816485735",
+                "2020실업급여조건",
+                "스타2자유의날개",
+                ["실업급여"]
             ],
             [
-                "https://apple.com",
-                "apple",
-                "sub2",
-                []
+                "https://brunch.co.kr/@bookfit/2738",
+                "퇴직하면 실업급여",
+                "스타2자유의날개",
+                ["실업금여", "블로그"]
+            ],
+            [
+                "https://brunch.co.kr/@dprnrn234/564",
+                "퇴식사유는 어떻게?",
+                "스타2자유의날개",
+                ["사직서", "퇴직사유", "블로그"]
+            ],
+            [
+                "https://brunch.co.kr/@dprnrn234/431",
+                "사직서 쓰는 법",
+                "스타2자유의날개",
+                ["사직서", "블로그"]
+            ],
+            [
+                "https://brunch.co.kr/@driver888/2",
+                "사직서 쓰면 생기는 일",
+                "스타2자유의날개",
+                ["사직서", "후기", "블로그",]
+            ],
+            [
+                "https://brunch.co.kr/@imagineer/222",
+                "[번역]아이폰 앱 개발자가 알아야 할 14가지",
+                "거위의꿈",
+                ["iOS개발", "블로그"]
+            ],
+            [
+                "https://brunch.co.kr/@rainpour/4",
+                "iOS 개발자는 외롭다?",
+                "거위의꿈",
+                ["iOS개발", "블로그"]
+            ],
+            [
+                "https://brunch.co.kr/@yoonms/3",
+                "iOS개발을 시작하려 하는 당신에게",
+                "거위의꿈",
+                ["iOS개발", "블로그"]
+            ],
+            [
+                "https://brunch.co.kr/@yoonms/9",
+                "아이폰 앱 개발을 시작하기 전에",
+                "거위의꿈",
+                ["iOS개발", "블로그"]
+            ],
+            [
+                "https://brunch.co.kr/@yoonms/4",
+                "iOS 개발을 시작하려 하는 당신에게 2",
+                "거위의꿈",
+                ["iOS개발", "블로그"]
+            ],
+            [
+                "https://brunch.co.kr/@banksalad/322",
+                "iOS Engineer가 일하는 방식을 들어보았습니다.",
+                "거위의꿈",
+                ["iOS개발", "블로그"]
+            ],
+            [
+                "https://codershigh.github.io/WebSite/#/",
+                "코더스하이",
+                "거위의꿈",
+                ["iOS개발", "코더스하이"]
+            ],
+            [
+                "http://codershigh.dscloud.biz:30004/t/topic/8",
+                "코더스하이 라운지에 오신 걸 환영합니다 - 코더스하이 라운지",
+                "거위의꿈",
+                ["iOS개발", "코더스하이", "포럼"]
+            ],
+            [
+                "https://www.youtube.com/channel/UCebXwimGkd5YrhPV7vmqKgA",
+                "SwiftHigh",
+                "거위의꿈",
+                ["iOS개발", "유튜브"]
+            ],
+            [
+                "https://corykim0829.github.io/ios/UICollectionViewCell-dynamic-height/#",
+                "[iOS] UICollectionViewCell Dynamic Height, 동적 높이 구현하기 with Dummy Cell",
+                "거위의꿈",
+                ["iOS개발", "블로그"]
+            ],
+            [
+                "https://www.perfomatix.com/ios-best-practices-and-swift-coding-standards-iphone-app-development-companies/",
+                "iOS Best practices and SWIFT coding standards | iOS App Development Company",
+                "거위의꿈",
+                ["iOS개발", "블로그", "BestPractice"]
+            ],
+            [
+                "https://yunjjang.tistory.com/6",
+                "Swift 사진찍기 / 사진앨범에서 사진 가져오기 (Camera and Phone Library)",
+                "거위의꿈",
+                ["iOS개발", "블로그", "사진앨범가져오기"]
             ],
         ]
         
         let darftBookmarks = [
             [
-                "https://www.daum.net/",
-                "daum",
-                "main"
+                "https://brunch.co.kr/@cardgorilla/627",
+                "개인사업자카드는 필수? 초기사업자가 놓치기 쉬운 금융팁",
+                "스타2자유의날개"
             ],
             [
-                "https://www.youtube.com/",
-                "youtube",
-                "sub1"
+                "https://brunch.co.kr/@choi200231/19",
+                "퇴사하면 누구나 실업급여를 받을 수 있나요?",
+                "스타2자유의날개",
+            ],
+            [
+                "https://brunch.co.kr/@vigorous21/432",
+                "사직서, 그 무거움에 대하여",
+                "스타2자유의날개",
+            ],
+            [
+                "https://brunch.co.kr/@ummi/15",
+                "회사를 언제 그만두면 좋을까",
+                "스타2자유의날개",
+            ],
+            [
+                "https://brunch.co.kr/@kkw119/30",
+                "사직서를 준비하는 네가 알면 좋을 세 가지",
+                "스타2자유의날개",
+            ],
+            [
+                "https://forums.swift.org/t/dispatchqueue-async-within-infinite-loop/6768",
+                "DispatchQueue.async within infinite loop - Using Swift - Swift Forums",
+                "거위의꿈",
+//                ["iOS개발", "DispatchQueue", "스위프트포럼"]
+            ],
+            [
+                "https://tonyw.tistory.com/3",
+                "IOS - 간단한 Swift Realm 라이브러리 사용법",
+                "거위의꿈",
+//                ["iOS개발", "블로그", "Realm"]
+            ],
+            [
+                "https://learnappmaking.com/cocoapods-playground-how-to/",
+                "Using CocoaPods With Xcode Playground – LearnAppMaking",
+                "거위의꿈",
+//                ["iOS개발", "Realm", "Tutorial"]
+            ],
+            [
+                "https://cs193p.sites.stanford.edu/",
+                "CS193p - Developing Apps for iOS",
+                "거위의꿈",
+//                ["iOS개발", "강의"]
             ],
         ]
 
