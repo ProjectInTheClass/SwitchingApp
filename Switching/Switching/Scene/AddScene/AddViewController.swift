@@ -121,9 +121,11 @@ class AddViewController: UIViewController {
             let substring = contents[startRange!.upperBound..<endRange!.lowerBound]
             print(substring)
             self.loadedTitle = String(substring)
+            DispatchQueue.main.async {
+                self.titleTextField.text = String(substring)
+            }
         }
         task.resume()
-        titleTextField.text = loadedTitle
     }
     
     
