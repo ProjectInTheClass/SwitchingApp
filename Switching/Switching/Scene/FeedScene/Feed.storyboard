@@ -338,9 +338,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="태그 선택" id="TIl-Ct-Fmc">
-                        <barButtonItem key="rightBarButtonItem" title="선택 완료" id="wLN-rd-qMi">
+                        <barButtonItem key="leftBarButtonItem" title="선택완료" image="chevron.left" catalog="system" id="clG-l7-Nxw">
+                            <color key="tintColor" name="SwitchingBlue"/>
                             <connections>
-                                <action selector="backButtonClicked:" destination="ctS-41-2ar" id="zgj-Oh-BBq"/>
+                                <action selector="backButtonClicked:" destination="ctS-41-2ar" id="cCD-Br-2Mm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -441,11 +442,12 @@
     </scenes>
     <color key="tintColor" name="SwitchingBlue"/>
     <resources>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="SwitchingBlue">
-            <color red="0.19999999999999996" green="0.52000000000000024" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20000000298023224" green="0.51999998092651367" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
