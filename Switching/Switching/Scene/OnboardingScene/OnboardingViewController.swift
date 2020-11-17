@@ -74,8 +74,8 @@ class OnboardingViewController: UIViewController, onboardingPageViewControllerDe
         //  여기에 캐릭터 데이터 입력 !!
         let characters = [
             ["커리어하이", "account1"],
-            ["스타2자유의날개", "account1"],
-            ["거위의꿈", "account1"],
+            ["스타2자유의날개", "account2"],
+            ["거위의꿈", "account3"],
         ]
         
         // 여기에 북마크 데이터 입력 !!
@@ -189,6 +189,79 @@ class OnboardingViewController: UIViewController, onboardingPageViewControllerDe
                 "거위의꿈",
                 ["iOS개발", "블로그", "사진앨범가져오기"]
             ],
+// 본캐
+            [
+                "https://brunch.co.kr/@vivishin/15",
+                "인공 지능 시대의 UX, UI",
+                "커리어하이",
+                ["AI", "UX"]
+            ],
+            [
+                "https://dbdlab.tistory.com/entry/UXBenchmark",
+                "UX 벤치 마킹 - 사용자 경험을 트래킹 하는 법",
+                "커리어하이",
+                ["UX"]
+            ],
+            [
+                "https://www.shinhancardblog.com/914",
+                "나의, 나에 의한, 나를 위한 정기 구독",
+                "커리어하이",
+                ["구독경제", "Product", "Trend"]
+            ],
+            [
+                "https://brunch.co.kr/@andsalt/24",
+                "디지털 제품의 라이팅 : 작은 개선부터 가이드 제작까지",
+                "커리어하이",
+                ["UX", "Product", "UX writing"]
+            ],
+            [
+                "https://brunch.co.kr/@aykim13/49",
+                "프로덕트 역기획 : 틱톡의 추천 알고리즘",
+                "커리어하이",
+                ["GenZ", "Product", "PM"]
+            ],
+            [
+                "https://www.careet.net/113",
+                "Z세대에게 먹히는 기획? 엔터 업계는 답을 알고 있다",
+                "커리어하이",
+                ["GenZ", "Trend", "Marketing"]
+            ],
+            [
+                "https://www.chrischae.kr/time-blocking/",
+                "하루를 1시간, 30분 단위로 계획하고 할 일에 시간을 할당해야 하는 이유 (Time Blocking)",
+                "커리어하이",
+                ["시간관리"]
+            ],
+            [
+                "https://www.careet.net/231",
+                "인스타 계정이 포트폴리오라고?예상 밖의 Z세대 SNS 활용법",
+                "커리어하이",
+                ["GenZ", "Trend", "Marketing"]
+            ],
+            [
+                "https://brunch.co.kr/@aykim13/53",
+                "구독해지를 재고하게 만드는 기술",
+                "커리어하이",
+                ["구독경제", "Product"]
+            ],
+            [
+                "https://brunch.co.kr/@kys4620/197",
+                "노션 업무요청 템플릿",
+                "커리어하이",
+                ["Notion", "Tool"]
+            ],
+            [
+                "https://brunch.co.kr/@kakaoventures/14",
+                "노션, 스파크, 아지트… 그게 다 뭔데요? - 카카오 벤처스는 어떻게 일하나",
+                "커리어하이",
+                ["Notion", "Tool"]
+            ],
+            [
+                "https://brunch.co.kr/@theora/14",
+                "노션으로 업무 일지를 씁니다.",
+                "커리어하이",
+                ["Notion", "Tool"]
+            ],
         ]
         
         let darftBookmarks = [
@@ -240,6 +313,27 @@ class OnboardingViewController: UIViewController, onboardingPageViewControllerDe
                 "CS193p - Developing Apps for iOS",
                 "거위의꿈",
 //                ["iOS개발", "강의"]
+            ],
+// 본캐
+            [
+                "https://brunch.co.kr/@ywkim36/28",
+                "좋은 PM을 위한 MVP 프라이머",
+                "커리어하이"
+            ],
+            [
+                "https://brunch.co.kr/@jaehyun-design/48",
+                "내가 PM하기 전에 알았으면 좋았을 것들",
+                "커리어하이"
+            ],
+            [
+                "https://brunch.co.kr/@hamuix/2",
+                "[번역] 게이미피케이션: 기초 이해하기",
+                "커리어하이"
+            ],
+            [
+                "https://brunch.co.kr/@byoungchaneum/30",
+                "Global AI Talent Report 2020",
+                "커리어하이"
             ],
         ]
 
