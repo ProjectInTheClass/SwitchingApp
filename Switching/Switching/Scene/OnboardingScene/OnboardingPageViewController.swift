@@ -16,9 +16,9 @@ class OnboardingPageViewController: UIPageViewController, UIPageViewControllerDa
     
     weak var onboardingDelegate: onboardingPageViewControllerDelegate?
     
-    var pageHeadings = ["캐릭터별로 북마크 지정이 가능해요!", "공유하기로 추가한 북마크는 임시보관함에 저장 돼요!", "태그를 여러개 지정할 수 있어요!👏"]
-    var pageSubHeadings = ["마치 북마크 계의 넷플릭스😎\n최대 4개의 캐릭터를 생성할 수 있어요!", "태그를 지정하면서 저장해놓았던 링크를 확인하세요!\n분명 왜 저장했지…. 싶은 링크가 있을거에요.", "특정 태그의 북마크만 모아서 볼 수도 있어요!\n태그 기능, 알차게 활용해보세요!!😘"]
-    var pageImages = ["account1", "noimage", "plusButton"]
+    var pageHeadings = ["캐릭터별로 북마크 지정이 가능해요!", "공유하기로 추가한 북마크는\n임시보관함에 저장 돼요!", "태그를 여러개 지정할 수 있어요!👏"]
+    var pageSubHeadings = ["마치 북마크 계의 넷플릭스😎\n최대 4개의 캐릭터를 생성할 수 있어요!", "태그를 지정하면서 저장해놓았던 북마크를 확인하세요!\n분명 왜 저장했지…. 싶은게 있을 거예요.", "특정 태그의 북마크만 모아서 볼 수도 있어요!\n다중 태그 기능, 알차게 활용해보세요!!😘"]
+    var pageImages = ["onboarding1", "onboarding2", "onboarding3"]
     
     var currentIndex = 0
     
