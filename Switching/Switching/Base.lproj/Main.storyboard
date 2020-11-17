@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pVx-fA-CdT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pVx-fA-CdT">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -215,7 +216,6 @@
                     <connections>
                         <segue destination="7Uu-8H-1Ni" kind="relationship" relationship="viewControllers" id="8aT-4V-Wdn"/>
                         <segue destination="NaI-gn-Gel" kind="relationship" relationship="viewControllers" id="FRj-Ae-8Ok"/>
-                        <segue destination="kNb-dk-Z4D" kind="relationship" relationship="viewControllers" id="PRL-5D-Ssg"/>
                         <segue destination="hWG-MY-eyi" kind="relationship" relationship="viewControllers" id="hb7-Df-QUG"/>
                     </connections>
                 </tabBarController>
@@ -239,7 +239,7 @@
         <image name="plusButton" width="360" height="360"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <namedColor name="SwitchingBlue">
-            <color red="0.099999999999999978" green="0.4600000000000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20000000298023224" green="0.51999998092651367" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
