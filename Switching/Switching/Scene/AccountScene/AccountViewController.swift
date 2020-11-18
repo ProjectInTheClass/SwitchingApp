@@ -100,6 +100,7 @@ extension AccountViewController: UICollectionViewDelegate, UICollectionViewDataS
             }else{
                 print("버튼이 클릭됨 \(indexPath.row)")
                 SharedData.instance.selectedCharacter = realm.objects(Character.self)[indexPath.row].character
+                FeedFilterViewController.filteredTags = []
                 NotificationCenter.default.post(name: Notification.Name("refreshFeedView"), object: nil)
                 NotificationCenter.default.post(name: Notification.Name("refreshDraftView"), object: nil)
                 if (self.presentingViewController != nil) {
