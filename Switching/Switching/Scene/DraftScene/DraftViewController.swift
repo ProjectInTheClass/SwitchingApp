@@ -69,6 +69,12 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
                                 }
                             }
                         }, onError: {error in cell.feedImageView.image = UIImage(named: "noimage")})
+            if bookmark.image == nil{
+                try! realm.write{
+                    bookmark.image = UIImage(named: "noimage")?.pngData()
+                    cell.feedImageView.image = UIImage(named: "noimage")
+                }
+            }
             
         } else if let data = bookmark.image{
             cell.feedImageView.image = UIImage(data: data)

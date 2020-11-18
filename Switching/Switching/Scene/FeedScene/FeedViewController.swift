@@ -86,7 +86,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                                 }
                             }
                         }, onError: {error in cell.feedfeedImageView.image = UIImage(named: "noimage")})
-            
+            if bookmark.image == nil{
+                try! realm.write{
+                    bookmark.image = UIImage(named: "noimage")?.pngData()
+                    cell.feedfeedImageView.image = UIImage(named: "noimage")
+                }
+            }
         } else if let data = bookmark.image{
             cell.feedfeedImageView.image = UIImage(data: data)
         }
