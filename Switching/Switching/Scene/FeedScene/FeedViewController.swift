@@ -106,7 +106,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.feedTableView.refreshControl = UIRefreshControl()
         self.feedTableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
-        
         // Setup the Search Controller
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -126,6 +125,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Notification에 담겨진 object와 userInfo를 얻어 처리 가능
         print("noti")
         updateBookmarksData()
+        self.filteredTagsCollectionView.reloadData()
     }
     
     @objc private func didPullToRefresh() {
