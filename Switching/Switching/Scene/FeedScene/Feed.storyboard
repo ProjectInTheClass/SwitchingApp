@@ -344,6 +344,11 @@
                                 <action selector="backButtonClicked:" destination="ctS-41-2ar" id="cCD-Br-2Mm"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="모두 해제" id="IwY-UC-ui3">
+                            <connections>
+                                <action selector="deselectAllButtonClicked:" destination="ctS-41-2ar" id="uax-2G-C5J"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="FeedFilterTableView" destination="ecU-PP-Plb" id="Oix-b6-gg5"/>
