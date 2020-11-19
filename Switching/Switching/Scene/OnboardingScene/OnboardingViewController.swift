@@ -75,7 +75,7 @@ class OnboardingViewController: UIViewController, onboardingPageViewControllerDe
         let characters = [
             ["커리어하이", "account1"],
             ["스타2자유의날개", "account2"],
-            ["거위의꿈", "account3"],
+            ["거위의꿈", "account4"],
         ]
         
         // 여기에 북마크 데이터 입력 !!
@@ -93,66 +93,66 @@ class OnboardingViewController: UIViewController, onboardingPageViewControllerDe
                 "스타2자유의날개",
                 ["실업급여"]
             ],
-            [
-                "https://brunch.co.kr/@bookfit/2738",
-                "퇴직하면 실업급여",
-                "스타2자유의날개",
-                ["실업금여", "블로그"]
-            ],
-            [
-                "https://brunch.co.kr/@dprnrn234/564",
-                "퇴식사유는 어떻게?",
-                "스타2자유의날개",
-                ["사직서", "퇴직사유", "블로그"]
-            ],
-            [
-                "https://brunch.co.kr/@dprnrn234/431",
-                "사직서 쓰는 법",
-                "스타2자유의날개",
-                ["사직서", "블로그"]
-            ],
-            [
-                "https://brunch.co.kr/@driver888/2",
-                "사직서 쓰면 생기는 일",
-                "스타2자유의날개",
-                ["사직서", "후기", "블로그",]
-            ],
-            [
-                "https://brunch.co.kr/@imagineer/222",
-                "[번역]아이폰 앱 개발자가 알아야 할 14가지",
-                "거위의꿈",
-                ["iOS개발", "블로그"]
-            ],
-            [
-                "https://brunch.co.kr/@rainpour/4",
-                "iOS 개발자는 외롭다?",
-                "거위의꿈",
-                ["iOS개발", "블로그"]
-            ],
-            [
-                "https://brunch.co.kr/@yoonms/3",
-                "iOS개발을 시작하려 하는 당신에게",
-                "거위의꿈",
-                ["iOS개발", "블로그"]
-            ],
-            [
-                "https://brunch.co.kr/@yoonms/9",
-                "아이폰 앱 개발을 시작하기 전에",
-                "거위의꿈",
-                ["iOS개발", "블로그"]
-            ],
-            [
-                "https://brunch.co.kr/@yoonms/4",
-                "iOS 개발을 시작하려 하는 당신에게 2",
-                "거위의꿈",
-                ["iOS개발", "블로그"]
-            ],
-            [
-                "https://brunch.co.kr/@banksalad/322",
-                "iOS Engineer가 일하는 방식을 들어보았습니다.",
-                "거위의꿈",
-                ["iOS개발", "블로그"]
-            ],
+//            [
+//                "https://brunch.co.kr/@bookfit/2738",
+//                "퇴직하면 실업급여",
+//                "스타2자유의날개",
+//                ["실업금여", "블로그"]
+//            ],
+//            [
+//                "https://brunch.co.kr/@dprnrn234/564",
+//                "퇴식사유는 어떻게?",
+//                "스타2자유의날개",
+//                ["사직서", "퇴직사유", "블로그"]
+//            ],
+//            [
+//                "https://brunch.co.kr/@dprnrn234/431",
+//                "사직서 쓰는 법",
+//                "스타2자유의날개",
+//                ["사직서", "블로그"]
+//            ],
+//            [
+//                "https://brunch.co.kr/@driver888/2",
+//                "사직서 쓰면 생기는 일",
+//                "스타2자유의날개",
+//                ["사직서", "후기", "블로그",]
+//            ],
+//            [
+//                "https://brunch.co.kr/@imagineer/222",
+//                "[번역]아이폰 앱 개발자가 알아야 할 14가지",
+//                "거위의꿈",
+//                ["iOS개발", "블로그"]
+//            ],
+//            [
+//                "https://brunch.co.kr/@rainpour/4",
+//                "iOS 개발자는 외롭다?",
+//                "거위의꿈",
+//                ["iOS개발", "블로그"]
+//            ],
+//            [
+//                "https://brunch.co.kr/@yoonms/3",
+//                "iOS개발을 시작하려 하는 당신에게",
+//                "거위의꿈",
+//                ["iOS개발", "블로그"]
+//            ],
+//            [
+//                "https://brunch.co.kr/@yoonms/9",
+//                "아이폰 앱 개발을 시작하기 전에",
+//                "거위의꿈",
+//                ["iOS개발", "블로그"]
+//            ],
+//            [
+//                "https://brunch.co.kr/@yoonms/4",
+//                "iOS 개발을 시작하려 하는 당신에게 2",
+//                "거위의꿈",
+//                ["iOS개발", "블로그"]
+//            ],
+//            [
+//                "https://brunch.co.kr/@banksalad/322",
+//                "iOS Engineer가 일하는 방식을 들어보았습니다.",
+//                "거위의꿈",
+//                ["iOS개발", "블로그"]
+//            ],
             [
                 "https://codershigh.github.io/WebSite/#/",
                 "코더스하이",
@@ -165,12 +165,12 @@ class OnboardingViewController: UIViewController, onboardingPageViewControllerDe
                 "거위의꿈",
                 ["iOS개발", "코더스하이", "포럼"]
             ],
-            [
-                "https://www.youtube.com/channel/UCebXwimGkd5YrhPV7vmqKgA",
-                "SwiftHigh",
-                "거위의꿈",
-                ["iOS개발", "유튜브"]
-            ],
+//            [
+//                "https://www.youtube.com/channel/UCebXwimGkd5YrhPV7vmqKgA",
+//                "SwiftHigh",
+//                "거위의꿈",
+//                ["iOS개발", "유튜브"]
+//            ],
             [
                 "https://corykim0829.github.io/ios/UICollectionViewCell-dynamic-height/#",
                 "[iOS] UICollectionViewCell Dynamic Height, 동적 높이 구현하기 with Dummy Cell",
@@ -189,36 +189,43 @@ class OnboardingViewController: UIViewController, onboardingPageViewControllerDe
                 "거위의꿈",
                 ["iOS개발", "블로그", "사진앨범가져오기"]
             ],
+            
+            [
+                "https://medium.com/jinshine-%EA%B8%B0%EC%88%A0-%EB%B8%94%EB%A1%9C%EA%B7%B8/%EC%BD%94%EB%93%9C%EC%82%AC%EC%9D%B4%EB%8B%9D-%EC%9D%B8%EC%A6%9D%EC%84%9C-%ED%94%84%EB%A1%9C%EB%B9%84%EC%A0%80%EB%8B%9D-%ED%94%84%EB%A1%9C%ED%8C%8C%EC%9D%BC%EC%9D%B4%EB%9E%80-2bd2c652d00f",
+                "코드사이닝, 인증서, 프로비저닝 프로파일이란?",
+                "거위의꿈",
+                ["iOS개발", "블로그", "인증서"]
+            ],
 // 본캐
             [
-                "https://brunch.co.kr/@vivishin/15",
-                "인공 지능 시대의 UX, UI",
+                "https://www.careet.net/242",
+                "코리아 하이틴의 하루가 궁금해? Z세대가 직접 들려주는 요즘 라이프 스타일",
                 "커리어하이",
-                ["AI", "UX"]
+                ["GenZ", "Trend", "Marketing"]
             ],
             [
-                "https://dbdlab.tistory.com/entry/UXBenchmark",
-                "UX 벤치 마킹 - 사용자 경험을 트래킹 하는 법",
+                "https://spoqa.github.io/2017/01/17/policy.html",
+                "정책 콘텐츠 디자인하기 - Spoqa Policy 작업기",
                 "커리어하이",
-                ["UX"]
+                ["Product", "UX", "Digital"]
             ],
             [
-                "https://www.shinhancardblog.com/914",
-                "나의, 나에 의한, 나를 위한 정기 구독",
+                "https://post.naver.com/viewer/postView.nhn?volumeNo=29656768&memberNo=6384148",
+                "애플의 휴먼 인터페이스 디자인 수장, 앨런 다이는 누구인가?",
                 "커리어하이",
-                ["구독경제", "Product", "Trend"]
+                ["Product", "UI", "애플"]
             ],
             [
-                "https://brunch.co.kr/@andsalt/24",
-                "디지털 제품의 라이팅 : 작은 개선부터 가이드 제작까지",
+                "https://uxdesign.cc/ux-writing-and-the-systematization-of-content-b5a8cf7ffdb0",
+                "UX Writing and the systematization of content",
                 "커리어하이",
-                ["UX", "Product", "UX writing"]
+                ["Product", "UX"]
             ],
             [
-                "https://brunch.co.kr/@aykim13/49",
-                "프로덕트 역기획 : 틱톡의 추천 알고리즘",
+                "https://www.nngroup.com/articles/text-scanning-patterns-eyetracking/",
+                "Text Scanning Patterns: Eyetracking Evidence",
                 "커리어하이",
-                ["GenZ", "Product", "PM"]
+                ["Product", "UX", "Digital"]
             ],
             [
                 "https://www.careet.net/113",
@@ -239,57 +246,51 @@ class OnboardingViewController: UIViewController, onboardingPageViewControllerDe
                 ["GenZ", "Trend", "Marketing"]
             ],
             [
-                "https://brunch.co.kr/@aykim13/53",
-                "구독해지를 재고하게 만드는 기술",
-                "커리어하이",
-                ["구독경제", "Product"]
-            ],
-            [
-                "https://brunch.co.kr/@kys4620/197",
-                "노션 업무요청 템플릿",
-                "커리어하이",
-                ["Notion", "Tool"]
-            ],
-            [
                 "https://brunch.co.kr/@kakaoventures/14",
                 "노션, 스파크, 아지트… 그게 다 뭔데요? - 카카오 벤처스는 어떻게 일하나",
                 "커리어하이",
-                ["Notion", "Tool"]
+                ["Notion", "Tool", "Digital"]
             ],
             [
-                "https://brunch.co.kr/@theora/14",
-                "노션으로 업무 일지를 씁니다.",
+                "https://blog.duolingo.com/hi-its-duo-the-ai-behind-the-meme/",
+                "“Hi, it’s Duo”: The AI behind the meme",
                 "커리어하이",
-                ["Notion", "Tool"]
+                ["Product", "UX", "AI"]
+            ],
+            [
+                "https://medium.muz.li/designing-notifications-for-applications-3cad56fecf96",
+                "Designing notifications for apps",
+                "커리어하이",
+                ["Product", "UX", "Digital"]
             ],
         ]
         
         let darftBookmarks = [
-            [
-                "https://brunch.co.kr/@cardgorilla/627",
-                "개인사업자카드는 필수? 초기사업자가 놓치기 쉬운 금융팁",
-                "스타2자유의날개"
-            ],
-            [
-                "https://brunch.co.kr/@choi200231/19",
-                "퇴사하면 누구나 실업급여를 받을 수 있나요?",
-                "스타2자유의날개",
-            ],
-            [
-                "https://brunch.co.kr/@vigorous21/432",
-                "사직서, 그 무거움에 대하여",
-                "스타2자유의날개",
-            ],
-            [
-                "https://brunch.co.kr/@ummi/15",
-                "회사를 언제 그만두면 좋을까",
-                "스타2자유의날개",
-            ],
-            [
-                "https://brunch.co.kr/@kkw119/30",
-                "사직서를 준비하는 네가 알면 좋을 세 가지",
-                "스타2자유의날개",
-            ],
+//            [
+//                "https://brunch.co.kr/@cardgorilla/627",
+//                "개인사업자카드는 필수? 초기사업자가 놓치기 쉬운 금융팁",
+//                "스타2자유의날개"
+//            ],
+//            [
+//                "https://brunch.co.kr/@choi200231/19",
+//                "퇴사하면 누구나 실업급여를 받을 수 있나요?",
+//                "스타2자유의날개",
+//            ],
+//            [
+//                "https://brunch.co.kr/@vigorous21/432",
+//                "사직서, 그 무거움에 대하여",
+//                "스타2자유의날개",
+//            ],
+//            [
+//                "https://brunch.co.kr/@ummi/15",
+//                "회사를 언제 그만두면 좋을까",
+//                "스타2자유의날개",
+//            ],
+//            [
+//                "https://brunch.co.kr/@kkw119/30",
+//                "사직서를 준비하는 네가 알면 좋을 세 가지",
+//                "스타2자유의날개",
+//            ],
             [
                 "https://forums.swift.org/t/dispatchqueue-async-within-infinite-loop/6768",
                 "DispatchQueue.async within infinite loop - Using Swift - Swift Forums",
@@ -316,23 +317,13 @@ class OnboardingViewController: UIViewController, onboardingPageViewControllerDe
             ],
 // 본캐
             [
-                "https://brunch.co.kr/@ywkim36/28",
-                "좋은 PM을 위한 MVP 프라이머",
+                "https://post.naver.com/viewer/postView.nhn?volumeNo=28328967&memberNo=10673855",
+                "기록이 기록을 넘어설 수 있을까요?<기록의 쓸모> 저자 이승희 인터뷰",
                 "커리어하이"
             ],
             [
-                "https://brunch.co.kr/@jaehyun-design/48",
-                "내가 PM하기 전에 알았으면 좋았을 것들",
-                "커리어하이"
-            ],
-            [
-                "https://brunch.co.kr/@hamuix/2",
-                "[번역] 게이미피케이션: 기초 이해하기",
-                "커리어하이"
-            ],
-            [
-                "https://brunch.co.kr/@byoungchaneum/30",
-                "Global AI Talent Report 2020",
+                "http://the-edit.co.kr/24336",
+                "일잘러를 위한 5가지 원칙",
                 "커리어하이"
             ],
         ]
