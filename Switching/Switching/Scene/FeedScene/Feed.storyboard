@@ -48,15 +48,15 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="URLLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRQ-6v-34w">
-                                                            <rect key="frame" x="98" y="74" width="226" height="14"/>
+                                                            <rect key="frame" x="98" y="74" width="216" height="14"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="highlightedColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.10.26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smr-T4-udg">
-                                                            <rect key="frame" x="334" y="74" width="60" height="14"/>
+                                                            <rect key="frame" x="324" y="74" width="70" height="14"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="gm4-bo-Kdr"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="gm4-bo-Kdr"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -173,10 +173,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="피드" id="Kj0-yc-XRN">
-                        <barButtonItem key="leftBarButtonItem" id="KJH-ad-NX6">
+                        <barButtonItem key="rightBarButtonItem" id="KJH-ad-NX6">
                             <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="HJL-yy-i2Q">
-                                <rect key="frame" x="20" y="5.5" width="33" height="33"/>
+                                <rect key="frame" x="361" y="5.5" width="33" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
@@ -187,12 +187,6 @@
                                     <segue destination="yKZ-AR-AQM" kind="presentation" id="fP4-S2-es1"/>
                                 </connections>
                             </button>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="p1q-eW-vJg">
-                            <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="medium"/>
-                            <connections>
-                                <segue destination="UpG-8s-xN5" kind="show" id="hcO-dR-glq"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -245,11 +239,11 @@
                                 <size key="itemSize" width="128" height="28"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                <inset key="sectionInset" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <inset key="sectionInset" minX="15" minY="2" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                             <cells>
                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filteredTagsCell" id="jnr-xa-Yr8" customClass="FilteredTagsCollectionViewCell" customModule="Switching" customModuleProvider="target">
-                                    <rect key="frame" x="10" y="7.5" width="128" height="28"/>
+                                    <rect key="frame" x="15" y="8.5" width="128" height="28"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DZb-g7-1uC">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="28"/>
@@ -258,9 +252,12 @@
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbX-cb-l0t">
                                                 <rect key="frame" x="10" y="0.0" width="108" height="28"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                             </button>
                                         </subviews>
+                                        <color key="backgroundColor" name="SwitchingBlue"/>
                                         <constraints>
                                             <constraint firstItem="pbX-cb-l0t" firstAttribute="top" secondItem="DZb-g7-1uC" secondAttribute="top" id="BKi-Ej-oxU"/>
                                             <constraint firstAttribute="bottom" secondItem="pbX-cb-l0t" secondAttribute="bottom" id="e3f-92-aOs"/>
@@ -341,9 +338,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="태그 선택" id="TIl-Ct-Fmc">
-                        <barButtonItem key="leftBarButtonItem" title="뒤로가기" id="wLN-rd-qMi">
+                        <barButtonItem key="leftBarButtonItem" title="선택완료" image="chevron.left" catalog="system" id="clG-l7-Nxw">
+                            <color key="tintColor" name="SwitchingBlue"/>
                             <connections>
-                                <action selector="backButtonClicked:" destination="ctS-41-2ar" id="zgj-Oh-BBq"/>
+                                <action selector="backButtonClicked:" destination="ctS-41-2ar" id="cCD-Br-2Mm"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="모두 해제" id="IwY-UC-ui3">
+                            <connections>
+                                <action selector="deselectAllButtonClicked:" destination="ctS-41-2ar" id="uax-2G-C5J"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -366,7 +369,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aBz-kx-P4X">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedSearchCell" id="dZI-NZ-9FJ" customClass="FeedSearchTableViewCell" customModule="Switching" customModuleProvider="target">
@@ -444,12 +447,12 @@
     </scenes>
     <color key="tintColor" name="SwitchingBlue"/>
     <resources>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="SwitchingBlue">
-            <color red="0.10000000149011612" green="0.45899999141693115" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20000000298023224" green="0.51999998092651367" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

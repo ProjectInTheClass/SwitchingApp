@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uxf-9d-5h3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uxf-9d-5h3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -17,14 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캐릭터 선택하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGf-IR-h4x">
-                                <rect key="frame" x="156.5" y="164" width="101" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="북마크를 저장할 캐릭터를 선택해 주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGf-IR-h4x">
+                                <rect key="frame" x="81" y="164" width="252" height="20"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4bF-3h-qaT">
-                                <rect key="frame" x="50" y="208.5" width="314" height="653.5"/>
+                                <rect key="frame" x="50" y="209" width="314" height="653"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lf4-xl-2VG">
                                     <size key="itemSize" width="128" height="128"/>
@@ -34,10 +35,10 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="accountCell" id="pAY-RH-BLL" customClass="ShareViewAccountCollectionCell" customModule="BookmarkShareExtension" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="121"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="130.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2PB-xa-h5C">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="121"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="130.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Leo-E4-ueg">
@@ -47,16 +48,16 @@
                                                         <constraint firstAttribute="height" constant="100" id="l0c-bi-Arh"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sP-hZ-qCm">
-                                                    <rect key="frame" x="0.0" y="100" width="100" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sP-hZ-qCm">
+                                                    <rect key="frame" x="0.0" y="110" width="100" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="1sP-hZ-qCm" firstAttribute="leading" secondItem="2PB-xa-h5C" secondAttribute="leading" id="7ml-Xj-yba"/>
-                                                <constraint firstItem="1sP-hZ-qCm" firstAttribute="top" secondItem="Leo-E4-ueg" secondAttribute="bottom" id="dZi-6l-mrh"/>
+                                                <constraint firstItem="1sP-hZ-qCm" firstAttribute="top" secondItem="Leo-E4-ueg" secondAttribute="bottom" constant="10" id="dZi-6l-mrh"/>
                                                 <constraint firstAttribute="bottom" secondItem="1sP-hZ-qCm" secondAttribute="bottom" id="f8Y-32-doG"/>
                                                 <constraint firstAttribute="trailing" secondItem="Leo-E4-ueg" secondAttribute="trailing" id="ksH-mi-0Hw"/>
                                                 <constraint firstItem="Leo-E4-ueg" firstAttribute="leading" secondItem="2PB-xa-h5C" secondAttribute="leading" id="kyW-LE-ry8"/>

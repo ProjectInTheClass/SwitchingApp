@@ -10,8 +10,7 @@ import UIKit
 
 class AddSelectViewController: UIViewController {
     var tags: Array<String> = []
-    var selectedIndexPathRows: Array<Int> = [] //임시데이터
-    var selectedTags: Array<String> = [] //임시데이터
+    var selectedTags: Array<String> = []
 
     @IBOutlet weak var createTagTextField: UITextField!
     @IBOutlet weak var createTagButton: UIButton!{
@@ -35,8 +34,10 @@ class AddSelectViewController: UIViewController {
     @IBAction func createTagClicked(_ sender: Any) {
         if !tags.contains(createTagTextField.text!){
             tags.append(createTagTextField.text!)
+            selectedTags.append(createTagTextField.text!)
         }
         self.createTagTextField.text = ""
+        self.view.endEditing(true)
         self.selectTagsTableView.reloadData()
     }
     
@@ -68,7 +69,6 @@ class AddSelectViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         self.selectTagsTableView.reloadData()
-        print("\(selectedIndexPathRows)")
     }
 
     /*
@@ -112,18 +112,13 @@ extension AddSelectViewController: UITableViewDelegate, UITableViewDataSource {
                 if cell.accessoryType == .none {
                     cell.accessoryType = .checkmark
                     selectedTags.append(tags[indexPath.row])
-                    selectedIndexPathRows.append(indexPath.row)
                 } else if cell.accessoryType == .checkmark {
                     cell.accessoryType = .none
                     if let index = selectedTags.firstIndex(of: tags[indexPath.row]) {
                                 selectedTags.remove(at: index)
                     }
-                    if let index = selectedIndexPathRows.firstIndex(of: indexPath.row) {
-                        selectedIndexPathRows.remove(at: index)
-                    }
                 }
             }
         }
-        print("선택된 태그는 \(selectedIndexPathRows)")
     }
 }

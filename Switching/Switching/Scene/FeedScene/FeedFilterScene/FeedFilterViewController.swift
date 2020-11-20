@@ -18,6 +18,10 @@ class FeedFilterViewController: UIViewController {
         NotificationCenter.default.post(name: Notification.Name("refreshFeedView"), object: nil)
 //        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+    @IBAction func deselectAllButtonClicked(_ sender: Any) {
+        FeedFilterViewController.filteredTags.removeAll()
+        FeedFilterTableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +47,8 @@ extension FeedFilterViewController: UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.text = tags[indexPath.row]
             if FeedFilterViewController.filteredTags.contains(tags[indexPath.row]){
                 cell.accessoryType = .checkmark
+            } else {
+                cell.accessoryType = .none
             }
         }
         return cell
