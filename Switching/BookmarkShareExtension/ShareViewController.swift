@@ -61,7 +61,7 @@ extension ShareViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
 //     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        for item in extensionContext!.inputItems {
+        for item in extensionContext!.inputItems.first as? NSExtensionItem {
         if let attachments = item.attachments {
             for itemProvider in attachments! {
                 itemProvider.loadItemForTypeIdentifier("public.url", options: nil, completionHandler: { (object, error) -> Void in
