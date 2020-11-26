@@ -61,7 +61,22 @@ extension ShareViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
 //     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        for item in extensionContext!.inputItems.first as? NSExtensionItem {
+        let realm  = SharedData.instance.realm
+        let characters = realm.objects(Character.self)
+
+        print("버튼이 클릭됨 \(indexPath.row)")
+        var bookmark: Bookmark?
+        if let item = extensionContext?.inputItems.first as? NSExtensionItem {
+            bookmark = accessWebpageProperties(extensionItem: item, characterName: characters[indexPath.row].character)
+        }
+        bookmark?.character = characters[indexPath.row].character
+        usleep(1000 * 20)
+        self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item in extensionContext!.inputItems.first as? NSExtensionItem
+
         if let attachments = item.attachments {
             for itemProvider in attachments! {
                 itemProvider.loadItemForTypeIdentifier("public.url", options: nil, completionHandler: { (object, error) -> Void in
@@ -71,8 +86,8 @@ extension ShareViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 })
             }
         }
-    }
 
+    }
     }
 }
 
