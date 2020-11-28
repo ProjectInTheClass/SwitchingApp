@@ -84,11 +84,8 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1rr-VH-Ipb">
-                                <rect key="frame" x="40" y="347" width="334" height="120"/>
+                                <rect key="frame" x="40" y="347" width="334" height="505"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="Gru-PD-2ZD"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SwO-kK-ObJ" customClass="TagsCollectionViewFlowLayout" customModule="Switching" customModuleProvider="target">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -143,6 +140,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xyA-Xx-W0T" firstAttribute="leading" secondItem="r8L-AX-Zcx" secondAttribute="leading" id="13R-eA-oaS"/>
+                            <constraint firstItem="Oq9-xV-WeW" firstAttribute="bottom" secondItem="1rr-VH-Ipb" secondAttribute="bottom" constant="10" id="4Ph-Ir-peD"/>
                             <constraint firstItem="eda-ft-62a" firstAttribute="top" secondItem="F43-FV-6V4" secondAttribute="bottom" constant="30" id="4v2-qN-hHf"/>
                             <constraint firstItem="AlI-uO-OGF" firstAttribute="trailing" secondItem="62y-gU-gSC" secondAttribute="trailing" id="6gF-g3-OPo"/>
                             <constraint firstItem="Oq9-xV-WeW" firstAttribute="trailing" secondItem="62y-gU-gSC" secondAttribute="trailing" constant="40" id="Emw-0J-7hm"/>

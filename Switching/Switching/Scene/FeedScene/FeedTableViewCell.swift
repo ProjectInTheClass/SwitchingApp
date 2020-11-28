@@ -39,13 +39,21 @@ class FeedTagsCollectionViewCell: UICollectionViewCell{
 
 extension FeedTableViewCell: UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tags.count
+        if tags.count > 3 {
+            return 4
+        } else {
+           return tags.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feedTagsCell", for: indexPath) as! FeedTagsCollectionViewCell
-        cell.feedTagsLabel.text = tags[indexPath.row]
-        cell.contentView.layer.cornerRadius = 12
+        if indexPath.row > 2 {
+            cell.feedTagsLabel.text = "+\(tags.count - 3)"
+        } else {
+            cell.feedTagsLabel.text = tags[indexPath.row]
+        }
+        cell.contentView.layer.cornerRadius = cell.contentView.frame.height / 2
         cell.contentView.layer.masksToBounds = true;
         return cell
     }
