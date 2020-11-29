@@ -116,7 +116,7 @@ private func accessWebpageProperties(extensionItem: NSExtensionItem, characterNa
                     print(32, item)
                     print(type(of:item))
                     guard let url = item as? NSURL else {
-                        print(42, item!)
+                        print("no url")
                         return
                     }
                     print(url)
