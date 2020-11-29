@@ -9,7 +9,22 @@ import UIKit
 
 class EditAccountViewController: UIViewController {
     
-    @IBOutlet weak var accountImage: UIImageView!
+    @IBOutlet weak var accountImage: UIImageView!{
+        didSet{
+            accountImage.layer.cornerRadius = accountImage.frame.height/2
+            accountImage.layer.borderWidth = 1.0
+            accountImage.layer.borderColor = UIColor.gray.cgColor
+            accountImage.clipsToBounds = true
+            accountImage.isUserInteractionEnabled = true
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(photoButtonTapped))
+            accountImage.addGestureRecognizer(tapGesture)
+            if let account = editAccount{
+                if let imageData = account.image{
+                    accountImage.image = UIImage(data: imageData)
+                }
+            }
+        }
+    }
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var summitButton: UIButton!
 
@@ -96,26 +111,11 @@ class EditAccountViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    func accountImageSetUp() {
-        accountImage.layer.cornerRadius = 50
-        accountImage.layer.borderWidth = 1.0
-        accountImage.layer.borderColor = UIColor.gray.cgColor
-        accountImage.clipsToBounds = true
-        accountImage.isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(photoButtonTapped))
-        accountImage.addGestureRecognizer(tapGesture)
-        if let account = editAccount{
-            if let imageData = account.image{
-                accountImage.image = UIImage(data: imageData)
-            }
-        }
-    }
-    
     func imagePickerControllerDidcancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func removeClicked(_ sender: Any) {
+    func removeAccountHandler(alert: UIAlertAction!) {
         let realm = SharedData.instance.realm
         let bookmarks = realm.objects(Bookmark.self).filter("character = '\(editAccount!.character)'")
         try! realm.write{
@@ -131,6 +131,16 @@ class EditAccountViewController: UIViewController {
         NotificationCenter.default.post(name: Notification.Name("refreshDraftView"), object: nil)
         NotificationCenter.default.post(name: Notification.Name("newCharacterCreated"), object: nil)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func removeClicked(_ sender: Any) {
+        let alert = UIAlertController(title: "캐릭터를 삭제하시겠습니까?", message: "캐릭터에 저장된 모든 북마크가 사라지고 복구할 수 없습니다.", preferredStyle: UIAlertController.Style.alert)
+        let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler: nil)
+        let deleteAction = UIAlertAction(title: "삭제", style: UIAlertAction.Style.destructive, handler: removeAccountHandler(alert:))
+        
+        alert.addAction(cancelAction)
+        alert.addAction(deleteAction)
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func cancelClicked(_ sender: UIButton) {
@@ -193,7 +203,6 @@ class EditAccountViewController: UIViewController {
         // Do any additional setup after loading the view.
         accountTextField.delegate = self
         textFieldsSetup()
-        accountImageSetUp()
         if editAccount == nil{
             removeAccountBtn.removeFromSuperview()
         }
