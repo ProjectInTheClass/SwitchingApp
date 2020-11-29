@@ -178,26 +178,6 @@
             </objects>
             <point key="canvasLocation" x="-636" y="118"/>
         </scene>
-        <!--Notification-->
-        <scene sceneID="mlH-t5-qmS">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Notification" id="kNb-dk-Z4D" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="알림" id="zwz-GH-NSV"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Sal-NT-7XR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="977" y="236"/>
-        </scene>
-        <!--Setting-->
-        <scene sceneID="BRj-OQ-LPL">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Setting" id="hWG-MY-eyi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="설정" id="Zg7-D7-naJ"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bvL-BB-d83" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1004" y="335"/>
-        </scene>
         <!--Feed-->
         <scene sceneID="IhS-EW-fks">
             <objects>
@@ -223,7 +203,6 @@
                     <connections>
                         <segue destination="7Uu-8H-1Ni" kind="relationship" relationship="viewControllers" id="8aT-4V-Wdn"/>
                         <segue destination="NaI-gn-Gel" kind="relationship" relationship="viewControllers" id="FRj-Ae-8Ok"/>
-                        <segue destination="hWG-MY-eyi" kind="relationship" relationship="viewControllers" id="hb7-Df-QUG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rgh-rN-nA8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
