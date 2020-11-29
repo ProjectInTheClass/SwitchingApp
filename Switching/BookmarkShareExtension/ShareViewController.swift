@@ -52,7 +52,9 @@ extension ShareViewController: UICollectionViewDelegate, UICollectionViewDataSou
         print("버튼이 클릭됨 \(indexPath.row)")
         var bookmark: Bookmark?
         if let item = extensionContext?.inputItems.first as? NSExtensionItem {
+            print(1)
             bookmark = accessWebpageProperties(extensionItem: item, characterName: characters[indexPath.row].character)
+            print(2)
         }
         bookmark?.character = characters[indexPath.row].character
         usleep(1000 * 20)
@@ -64,26 +66,65 @@ extension ShareViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
 private func accessWebpageProperties(extensionItem: NSExtensionItem, characterName: String) -> Bookmark{
         // url 가져오기
+        print(1, extensionItem)
         let propertyList = kUTTypePropertyList as String
+        print(1.5, kUTTypePropertyList)
+        print(2, propertyList)
         var bookmark = Bookmark()
 
-        for attachment in extensionItem.attachments! where attachment.hasItemConformingToTypeIdentifier(propertyList) {
+        print(3, extensionItem.attachments)
+        print(extensionItem.attachments![0].hasItemConformingToTypeIdentifier(String("com.apple.property-list")))
+        print(extensionItem.attachments![0].hasItemConformingToTypeIdentifier(String("public.url")))
+//        for attachment in extensionItem.attachments! where attachment.hasItemConformingToTypeIdentifier(propertyList) {
+        for attachment in extensionItem.attachments! {
+            print(4, attachment)
             attachment.loadItem(
                 forTypeIdentifier: propertyList,
                 options: nil,
                 completionHandler: { (item, error) -> Void in
-
+                    print(31, item)
                     guard let dictionary = item as? NSDictionary,
                         let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
                         let url = results["URL"] as? String,
                         let desc = results["title"] as? String else {
+                            print(41, item)
                             return
                         }
-
                     print("url: \(url)")
                     bookmark.url = url
                     print("desc: \(desc)")
                     bookmark.desc = desc
+                    bookmark.character = characterName
+                    print("character: \(bookmark.character)")
+
+                    usleep(1000 * 10)
+                    let realm = SharedData.instance.newRealm()
+                    do{
+                        try realm.write{ // realm.write{}는 git에서 commit을 해주는 것과 비슷하다.
+                            realm.add(bookmark) // 데이터베이스에 park 모델을 더한다.
+                        }
+                    } catch {
+                        print("Error Add \(error)")
+                    }
+                    print("add data done")
+                }
+            )
+            attachment.loadItem(
+                forTypeIdentifier: "public.url",
+                options: nil,
+                completionHandler: { (item, error) -> Void in
+                    print(32, item)
+                    print(type(of:item))
+                    guard let url = item as? NSURL else {
+                        print(42, item!)
+                        return
+                    }
+                    print(url)
+                    let absUrl = url.absoluteString
+                    print("url: \(url)")
+                    bookmark.url = absUrl!
+                    print("desc: \(url)")
+                    bookmark.desc = absUrl!
                     bookmark.character = characterName
                     print("character: \(bookmark.character)")
 
