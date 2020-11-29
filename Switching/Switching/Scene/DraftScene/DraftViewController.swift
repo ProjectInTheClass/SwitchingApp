@@ -63,8 +63,12 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
                                     if let data: Data = getImageDataFromURL(url: url){
                                         try! realm.write{
                                             bookmark.image = data
+                                            if let desc = result.title{
+                                                bookmark.desc = desc
+                                            }
                                         }
                                         cell.feedImageView.image = UIImage(data: data)
+                                        cell.feedTitleLabel.text = bookmark.desc
                                     }
                                 }
                             }
