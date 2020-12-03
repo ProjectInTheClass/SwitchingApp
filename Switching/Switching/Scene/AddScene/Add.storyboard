@@ -52,7 +52,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyA-Xx-W0T">
-                                <rect key="frame" x="40" y="320" width="248.5" height="17"/>
+                                <rect key="frame" x="40" y="320" width="237" height="17"/>
                                 <attributedString key="attributedText">
                                     <fragment content="태그">
                                         <attributes>
@@ -76,7 +76,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="T87-iL-oIL"/>
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                <state key="normal" image="link.badge.plus" catalog="system">
+                                <state key="normal" image="link" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -126,9 +126,9 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd2-3f-zhU">
-                                <rect key="frame" x="308.5" y="319.5" width="65.5" height="18"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                <state key="normal" title="태그 선택" image="chevron.right" catalog="system">
+                                <rect key="frame" x="297" y="316.5" width="77" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <state key="normal" title="태그 선택" image="chevron_right">
                                     <color key="titleColor" name="SwitchingBlue"/>
                                 </state>
                                 <connections>
@@ -290,8 +290,8 @@
     <color key="tintColor" name="SwitchingBlue"/>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
-        <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <image name="link.badge.plus" catalog="system" width="128" height="122"/>
+        <image name="chevron_right" width="24" height="24"/>
+        <image name="link" catalog="system" width="128" height="122"/>
         <namedColor name="SwitchingBlue">
             <color red="0.20000000298023224" green="0.51999998092651367" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

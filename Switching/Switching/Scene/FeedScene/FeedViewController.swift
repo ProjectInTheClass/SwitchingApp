@@ -13,10 +13,16 @@ import SafariServices
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var emptyFeedView: UIView!
+    @IBOutlet weak var emptyFeedLabel: UILabel!{
+        didSet{
+            emptyFeedLabel.text = "피드에 저장된 북마크가 존재하지 않아요!\n+버튼을 눌러 새로운 북마크를 추가해 볼까요?"
+        }
+    }
     @IBOutlet var tagView: UIView!
     @IBOutlet weak var feedTableView: UITableView!{
         didSet{
             feedTableView.tableHeaderView = tagView
+            feedTableView.separatorInset.left = 0
         }
     }
     @IBOutlet weak var filteredTagsCollectionView: UICollectionView!

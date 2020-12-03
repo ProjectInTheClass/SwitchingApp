@@ -41,28 +41,7 @@
                                                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="L1F-xa-Pdq"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpm-ac-nd0">
-                                                            <rect key="frame" x="98" y="12" width="301" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="URLLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRQ-6v-34w">
-                                                            <rect key="frame" x="98" y="74" width="216" height="14"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <color key="highlightedColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.10.26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smr-T4-udg">
-                                                            <rect key="frame" x="324" y="74" width="75" height="14"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="gm4-bo-Kdr"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <collectionView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XPj-k2-twe">
+                                                        <collectionView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XPj-k2-twe">
                                                             <rect key="frame" x="98" y="33" width="301" height="41"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="8" minimumInteritemSpacing="0.0" id="X7g-PT-Fww">
@@ -107,6 +86,27 @@
                                                                 <outlet property="delegate" destination="LXE-4K-VX4" id="zU9-sz-IZF"/>
                                                             </connections>
                                                         </collectionView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpm-ac-nd0">
+                                                            <rect key="frame" x="98" y="12" width="301" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="URLLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRQ-6v-34w">
+                                                            <rect key="frame" x="98" y="74" width="216" height="14"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="highlightedColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.10.26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smr-T4-udg">
+                                                            <rect key="frame" x="324" y="74" width="75" height="14"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="gm4-bo-Kdr"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="jXL-fR-7pT" firstAttribute="top" secondItem="I9l-GU-A55" secondAttribute="top" constant="10" id="4bO-UZ-ps7"/>
@@ -192,6 +192,7 @@
                     <connections>
                         <outlet property="accountButton" destination="HJL-yy-i2Q" id="xVQ-a8-Vox"/>
                         <outlet property="addButton" destination="u4r-ef-Mvd" id="Knp-rT-WiR"/>
+                        <outlet property="emptyFeedLabel" destination="NTx-GJ-JPv" id="Jwg-4k-oY9"/>
                         <outlet property="emptyFeedView" destination="LqK-Ya-JYX" id="uxt-aK-bOi"/>
                         <outlet property="feedTableView" destination="uci-Oj-wXG" id="mgf-BG-QA3"/>
                         <outlet property="filteredTagsCollectionView" destination="cae-xP-BUs" id="8fq-Wt-q1n"/>
@@ -203,8 +204,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="태그를 지정한 북마크가 존재하지 않아요 :(" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTx-GJ-JPv">
-                            <rect key="frame" x="2.5" y="77.5" width="235" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="태그를 지정한 북마크가 존재하지 않아요 :(" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTx-GJ-JPv">
+                            <rect key="frame" x="10" y="69.5" width="220" height="33.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -213,6 +214,8 @@
                     <viewLayoutGuide key="safeArea" id="ang-CV-Q7l"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="NTx-GJ-JPv" firstAttribute="leading" secondItem="ang-CV-Q7l" secondAttribute="leading" constant="10" id="5K2-be-agC"/>
+                        <constraint firstItem="ang-CV-Q7l" firstAttribute="trailing" secondItem="NTx-GJ-JPv" secondAttribute="trailing" constant="10" id="JuG-Al-m6r"/>
                         <constraint firstItem="NTx-GJ-JPv" firstAttribute="centerY" secondItem="ang-CV-Q7l" secondAttribute="centerY" id="K2b-gA-2DS"/>
                         <constraint firstItem="NTx-GJ-JPv" firstAttribute="centerX" secondItem="ang-CV-Q7l" secondAttribute="centerX" id="ymc-vx-WfT"/>
                     </constraints>
@@ -222,18 +225,18 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-1E-LkO">
-                            <rect key="frame" x="154.5" y="10" width="65.5" height="17.5"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal" title="태그 선택" image="chevron.right" catalog="system">
-                                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <rect key="frame" x="143" y="10" width="77" height="24"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                            <color key="tintColor" name="SwitchingBlue"/>
+                            <state key="normal" title="태그 선택" image="chevron_right">
+                                <color key="titleColor" name="SwitchingBlue"/>
                             </state>
                             <connections>
                                 <segue destination="ctS-41-2ar" kind="show" id="eyf-xJ-lfT"/>
                             </connections>
                         </button>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cae-xP-BUs">
-                            <rect key="frame" x="0.0" y="27.5" width="240" height="42.5"/>
+                            <rect key="frame" x="0.0" y="34" width="240" height="36"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rnx-Ig-ECR">
                                 <size key="itemSize" width="128" height="36"/>
@@ -243,7 +246,7 @@
                             </collectionViewFlowLayout>
                             <cells>
                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filteredTagsCell" id="jnr-xa-Yr8" customClass="FilteredTagsCollectionViewCell" customModule="Switching" customModuleProvider="target">
-                                    <rect key="frame" x="15" y="7" width="66" height="29"/>
+                                    <rect key="frame" x="15" y="3.5" width="66" height="29"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DZb-g7-1uC">
                                         <rect key="frame" x="0.0" y="0.0" width="66" height="29"/>
@@ -392,7 +395,7 @@
     <color key="tintColor" name="SwitchingBlue"/>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
-        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="chevron_right" width="24" height="24"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="SwitchingBlue">

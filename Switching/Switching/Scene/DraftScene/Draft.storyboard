@@ -113,6 +113,7 @@
                     <connections>
                         <outlet property="accountButton" destination="b1L-lz-W2Q" id="s4U-an-37Y"/>
                         <outlet property="draftTableView" destination="KsX-Pa-ewp" id="aB4-4H-OEa"/>
+                        <outlet property="emptyDraftLabel" destination="pOB-d4-Kjt" id="nJW-YL-70H"/>
                         <outlet property="emptyDraftView" destination="iy7-3S-su4" id="5be-GH-YVw"/>
                     </connections>
                 </viewController>
@@ -121,8 +122,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="임시보관함에 저장된 북마크가 존재하지 않아요:(" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOB-d4-Kjt">
-                            <rect key="frame" x="-13.5" y="77.5" width="267" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="임시보관함에 저장된 북마크가 존재하지 않아요:(" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOB-d4-Kjt">
+                            <rect key="frame" x="10" y="69.5" width="220" height="33.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -132,6 +133,8 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="pOB-d4-Kjt" firstAttribute="centerY" secondItem="Mdj-JT-kxh" secondAttribute="centerY" id="6v0-ju-e1W"/>
+                        <constraint firstItem="pOB-d4-Kjt" firstAttribute="leading" secondItem="iy7-3S-su4" secondAttribute="leading" constant="10" id="9Db-Hs-l44"/>
+                        <constraint firstAttribute="trailing" secondItem="pOB-d4-Kjt" secondAttribute="trailing" constant="10" id="S6H-tc-93B"/>
                         <constraint firstItem="pOB-d4-Kjt" firstAttribute="centerX" secondItem="Mdj-JT-kxh" secondAttribute="centerX" id="ycB-PT-qQF"/>
                     </constraints>
                 </view>

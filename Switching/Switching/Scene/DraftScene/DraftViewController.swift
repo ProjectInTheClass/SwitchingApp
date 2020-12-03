@@ -13,7 +13,16 @@ import SafariServices
 class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var emptyDraftView: UIView!
-    @IBOutlet weak var draftTableView: UITableView!
+    @IBOutlet weak var emptyDraftLabel: UILabel!{
+        didSet{
+            emptyDraftLabel.text = "아직 임시보관함에 저장된 북마크가 존재하지 않아요!\n사파리나 크롬 등에서 공유하기로 추가한 북마크가 여기에 보관됩니다!😘"
+        }
+    }
+    @IBOutlet weak var draftTableView: UITableView!{
+        didSet{
+            draftTableView.separatorInset.left = 0
+        }
+    }
     
     @IBOutlet weak var accountButton: UIButton!{
         didSet{
