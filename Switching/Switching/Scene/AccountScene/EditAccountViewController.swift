@@ -148,8 +148,36 @@ class EditAccountViewController: UIViewController {
     }
     @IBAction func summitClicked(_ sender: Any) {
         print("summit")
-        
-        
+        let realm = SharedData.instance.realm
+        if let newCharacterName = accountTextField.text{
+            var isSameNameCharacterExist = false
+            
+            if let account = editAccount{
+                if(realm.objects(Character.self).filter("character = '\(newCharacterName)'").count > 0 && newCharacterName != account.character){
+                    isSameNameCharacterExist = true
+                }
+            }else{
+                if(realm.objects(Character.self).filter("character = '\(newCharacterName)'").count > 0){
+                    isSameNameCharacterExist = true
+                }
+            }
+            
+            if isSameNameCharacterExist{
+                // Create new Alert
+                 var dialogMessage = UIAlertController(title: "캐릭터 이름 중복", message: "같은 이름의 캐릭터를 생성할 수 없습니다.", preferredStyle: .alert)
+                 
+                 // Create OK button with action handler
+                 let ok = UIAlertAction(title: "확인", style: .default, handler: { (action) -> Void in
+                     print("Ok button tapped")
+                  })
+                 
+                 //Add OK button to a dialog message
+                 dialogMessage.addAction(ok)
+                 // Present Alert to
+                 self.present(dialogMessage, animated: true, completion: nil)
+                return
+            }
+        }
         if let account = editAccount{
             print("수정")
             let realm = SharedData.instance.realm
