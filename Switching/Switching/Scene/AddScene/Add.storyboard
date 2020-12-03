@@ -22,7 +22,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F43-FV-6V4">
                                 <rect key="frame" x="40" y="165" width="292" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="url"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="url"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62y-gU-gSC">
                                 <rect key="frame" x="40" y="138" width="334" height="17"/>
@@ -68,7 +68,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="제목을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8L-AX-Zcx">
                                 <rect key="frame" x="40" y="256" width="334" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AlI-uO-OGF">
                                 <rect key="frame" x="342" y="166" width="32" height="32"/>
@@ -186,7 +186,7 @@
             </objects>
             <point key="canvasLocation" x="2766.666666666667" y="-604.01785714285711"/>
         </scene>
-        <!--Add Select View Controller-->
+        <!--태그 선택-->
         <scene sceneID="JrJ-tB-PiS">
             <objects>
                 <viewController storyboardIdentifier="selectTags" id="gsA-ne-JOv" customClass="AddSelectViewController" customModule="Switching" customModuleProvider="target" sceneMemberID="viewController">
@@ -212,7 +212,7 @@
                                     <outlet property="delegate" destination="gsA-ne-JOv" id="y3f-G4-NPU"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="새로운 태그를 추가하세요" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Kdp-i3-NqK">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="새로운 태그를 추가하세요 (최대 10글자)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Kdp-i3-NqK">
                                 <rect key="frame" x="20" y="54" width="299" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -220,7 +220,11 @@
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExS-ge-vwY">
                                 <rect key="frame" x="329" y="55.5" width="65" height="37"/>
                                 <color key="backgroundColor" name="SwitchingBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="xOi-DT-7pl"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <color key="tintColor" name="SwitchingBlue"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
                                 <state key="normal" title="생성">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -245,8 +249,8 @@
                             <constraint firstItem="2P2-6N-Q30" firstAttribute="top" secondItem="tdT-Jf-mIe" secondAttribute="top" constant="60" id="np0-aY-xKc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VMn-ht-dKT">
-                        <barButtonItem key="leftBarButtonItem" title="뒤로 가기" id="VC4-o2-zg4">
+                    <navigationItem key="navigationItem" title="태그 선택" id="VMn-ht-dKT">
+                        <barButtonItem key="leftBarButtonItem" title="뒤로 가기" image="chevron.left" catalog="system" id="VC4-o2-zg4">
                             <connections>
                                 <action selector="backButtonClicked:" destination="gsA-ne-JOv" id="HWD-ga-ld5"/>
                             </connections>
@@ -285,6 +289,7 @@
     </scenes>
     <color key="tintColor" name="SwitchingBlue"/>
     <resources>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="link.badge.plus" catalog="system" width="128" height="122"/>
         <namedColor name="SwitchingBlue">

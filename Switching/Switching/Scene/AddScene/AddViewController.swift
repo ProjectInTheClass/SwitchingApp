@@ -24,6 +24,8 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        urlTextField.delegate = self
+        titleTextField.delegate = self
         if let savedBookmark: Bookmark = selectedBookmark{
             urlTextField.text = savedBookmark.url
             titleTextField.text = savedBookmark.desc
@@ -156,9 +158,9 @@ extension AddViewController: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "selectedTagsCell", for: indexPath) as! SelectedTagsCollectionViewCell
         if selectedTags.count == 0 {
-            cell.selectedTagButton?.setTitle("등록된 태그가 없습니다", for: .normal)
+            cell.selectedTagButton?.setTitle("지정된 태그가 없습니다", for: .normal)
             cell.selectedTagButton.setTitleColor(UIColor.darkGray, for: .normal)
-            cell.contentView.backgroundColor = UIColor.white
+            cell.contentView.backgroundColor = UIColor.clear
         } else {
             cell.selectedTagButton?.setTitle(selectedTags[indexPath.row], for: .normal)
             cell.selectedTagButton.setTitleColor(UIColor.white, for: .normal)
@@ -172,4 +174,11 @@ extension AddViewController: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     
+}
+
+extension AddViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

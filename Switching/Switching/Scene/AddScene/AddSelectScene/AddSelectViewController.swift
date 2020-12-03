@@ -37,27 +37,33 @@ class AddSelectViewController: UIViewController {
             selectedTags.append(createTagTextField.text!)
         }
         self.createTagTextField.text = ""
+        self.createTagButton.backgroundColor = UIColor.gray
         self.view.endEditing(true)
         self.selectTagsTableView.reloadData()
     }
     
     func textFieldsSetUp() {
+        createTagButton.backgroundColor = UIColor.gray
         createTagButton.isEnabled = false
         createTagTextField.addTarget(self, action: #selector(textFieldsIsNotEmpty),
                                     for: .editingChanged)
     }
+    
     @objc func textFieldsIsNotEmpty(sender: UITextField) {
         guard let tag = createTagTextField.text, !tag.isEmpty
           else {
-          self.createTagButton.isEnabled = false
-          return
+            self.createTagButton.isEnabled = false
+            self.createTagButton.backgroundColor = UIColor.gray
+            return
         }
         createTagButton.isEnabled = true
+        createTagButton.backgroundColor = UIColor(named: "SwitchingBlue")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldsSetUp()
+        createTagTextField.delegate = self
         createTagButton.isEnabled = false
         for tag in SharedData.instance.getTagListOfSelectedCharacter(){
             if !tags.contains(tag){
@@ -120,5 +126,16 @@ extension AddSelectViewController: UITableViewDelegate, UITableViewDataSource {
                 }
             }
         }
+    }
+}
+
+extension AddSelectViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        return updatedText.count <= 10
     }
 }
