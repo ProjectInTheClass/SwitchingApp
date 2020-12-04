@@ -120,12 +120,15 @@ class AddViewController: UIViewController {
                 let edIndex: Int = (contents.distance(from: contents.startIndex, to: edRange.lowerBound))
                 endRange = edRange
             }
-            let substring = contents[startRange!.upperBound..<endRange!.lowerBound]
-            print(substring)
-            self.loadedTitle = String(substring)
-            DispatchQueue.main.async {
-                self.titleTextField.text = String(substring)
+            if let sr = startRange, let er = endRange{
+                let substring = contents[sr.upperBound..<er.lowerBound]
+                print(substring)
+                self.loadedTitle = String(substring)
+                DispatchQueue.main.async {
+                    self.titleTextField.text = String(substring)
+                }
             }
+            
         }
         task.resume()
     }
