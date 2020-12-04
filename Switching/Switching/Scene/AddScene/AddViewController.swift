@@ -19,6 +19,7 @@ class AddViewController: UIViewController {
     var bookmarkList: TempBookmarkList?
     var selectedBookmark: Bookmark?
     
+    @IBOutlet weak var addBtn: UIBarButtonItem!
     var selectedTags: Array<String> = [] //임시데이터
     var loadedTitle: String = ""
     
@@ -26,6 +27,8 @@ class AddViewController: UIViewController {
         super.viewDidLoad()
         urlTextField.delegate = self
         titleTextField.delegate = self
+        addBtn.isEnabled = false
+        urlTextField.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
         if let savedBookmark: Bookmark = selectedBookmark{
             urlTextField.text = savedBookmark.url
             titleTextField.text = savedBookmark.desc
@@ -37,6 +40,15 @@ class AddViewController: UIViewController {
             }
         }
     }
+    
+    @objc func textFieldsIsNotEmpty(sender: UITextField) {
+        guard let url = urlTextField.text, !url.isEmpty else {
+            self.addBtn.isEnabled = false
+            return
+        }
+        addBtn.isEnabled = true
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         self.selectedTagsCollectionView.reloadData()
         print("\(selectedTags)을 AddVC에서 표시")
