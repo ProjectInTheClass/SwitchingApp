@@ -9,15 +9,19 @@ import UIKit
 
 class EditAccountViewController: UIViewController {
     
+    @IBOutlet weak var accountImageView: UIView!{
+        didSet{
+            accountImageView.layer.cornerRadius = accountImageView.frame.height/2
+            accountImageView.layer.borderWidth = 1.0
+            accountImageView.layer.borderColor = UIColor.gray.cgColor
+            accountImageView.clipsToBounds = true
+            accountImageView.isUserInteractionEnabled = true
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(photoButtonTapped))
+            accountImageView.addGestureRecognizer(tapGesture)
+        }
+    }
     @IBOutlet weak var accountImage: UIImageView!{
         didSet{
-            accountImage.layer.cornerRadius = accountImage.frame.height/2
-            accountImage.layer.borderWidth = 1.0
-            accountImage.layer.borderColor = UIColor.gray.cgColor
-            accountImage.clipsToBounds = true
-            accountImage.isUserInteractionEnabled = true
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(photoButtonTapped))
-            accountImage.addGestureRecognizer(tapGesture)
             if let account = editAccount{
                 if let imageData = account.image{
                     accountImage.image = UIImage(data: imageData)
@@ -268,5 +272,17 @@ extension EditAccountViewController: UITextFieldDelegate {
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
         
         return updatedText.count <= 10
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+extension EditAccountViewController {
+// Ends editing view when touches to view
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      super.touchesBegan(touches, with: event)
+      self.view.endEditing(true)
     }
 }
