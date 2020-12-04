@@ -126,6 +126,7 @@ extension AddSelectViewController: UITableViewDelegate, UITableViewDataSource {
                 }
             }
         }
+        self.view.endEditing(true)
     }
 }
 
@@ -137,5 +138,12 @@ extension AddSelectViewController: UITextFieldDelegate {
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
         
         return updatedText.count <= 10
+    }
+}
+extension AddSelectViewController {
+// Ends editing view when touches to view
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      super.touchesBegan(touches, with: event)
+      self.view.endEditing(true)
     }
 }
