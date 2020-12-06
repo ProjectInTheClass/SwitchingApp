@@ -101,17 +101,15 @@ class EditAccountViewController: UIViewController {
                 })
             alertController.addAction(photoLibraryAction)
         }
+        let deleteAction = UIAlertAction(
+            title: "기본 이미지로 변경하기",
+            style: .default,
+            handler: { (_) in
+                self.image = UIImage(named: "account1")
+                self.accountImage.image = UIImage(named: "account1")
+            })
+        alertController.addAction(deleteAction)
         
-        if image != nil {
-            let deleteAction = UIAlertAction(
-                title: "기본 이미지로 변경하기",
-                style: .default,
-                handler: { (_) in
-                    self.image = nil
-                    self.accountImage.image = nil
-                })
-            alertController.addAction(deleteAction)
-        }
         present(alertController, animated: true, completion: nil)
     }
     

@@ -237,7 +237,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oiv-IX-I8g">
                                 <rect key="frame" x="147" y="100" width="120" height="120"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wMP-p8-H1w">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="account1" translatesAutoresizingMaskIntoConstraints="NO" id="wMP-p8-H1w">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
@@ -299,6 +299,7 @@
     </scenes>
     <color key="tintColor" name="SwitchingBlue"/>
     <resources>
+        <image name="account1" width="360" height="360"/>
         <image name="plusButton" width="360" height="360"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="trash" catalog="system" width="121" height="128"/>
