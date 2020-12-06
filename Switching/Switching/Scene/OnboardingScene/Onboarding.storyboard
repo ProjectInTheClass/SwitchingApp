@@ -60,10 +60,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="54.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLc-ED-kj0">
-                                        <rect key="frame" x="349.5" y="18.5" width="44.5" height="18"/>
+                                        <rect key="frame" x="346" y="15.5" width="48" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                        <state key="normal" title="SKIP" image="chevron.right" catalog="system">
-                                            <color key="titleColor" red="0.10000000000000001" green="0.46000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="SKIP" image="chevron_right">
+                                            <color key="titleColor" name="SwitchingBlue"/>
                                         </state>
                                         <connections>
                                             <action selector="skipButtonClicked:" destination="233-11-yY1" eventType="touchUpInside" id="JUn-0D-ei0"/>
@@ -168,7 +168,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="chevron_right" width="16" height="24"/>
         <namedColor name="SwitchingBlue">
             <color red="0.20000000298023224" green="0.51999998092651367" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

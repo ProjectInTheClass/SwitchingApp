@@ -19,11 +19,16 @@ class AddViewController: UIViewController {
     var bookmarkList: TempBookmarkList?
     var selectedBookmark: Bookmark?
     
+    @IBOutlet weak var addBtn: UIBarButtonItem!
     var selectedTags: Array<String> = [] //임시데이터
     var loadedTitle: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        urlTextField.delegate = self
+        titleTextField.delegate = self
+        addBtn.isEnabled = false
+        urlTextField.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
         if let savedBookmark: Bookmark = selectedBookmark{
             urlTextField.text = savedBookmark.url
             titleTextField.text = savedBookmark.desc
@@ -35,6 +40,15 @@ class AddViewController: UIViewController {
             }
         }
     }
+    
+    @objc func textFieldsIsNotEmpty(sender: UITextField) {
+        guard let url = urlTextField.text, !url.isEmpty else {
+            self.addBtn.isEnabled = false
+            return
+        }
+        addBtn.isEnabled = true
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         self.selectedTagsCollectionView.reloadData()
         print("\(selectedTags)을 AddVC에서 표시")
@@ -118,12 +132,15 @@ class AddViewController: UIViewController {
                 let edIndex: Int = (contents.distance(from: contents.startIndex, to: edRange.lowerBound))
                 endRange = edRange
             }
-            let substring = contents[startRange!.upperBound..<endRange!.lowerBound]
-            print(substring)
-            self.loadedTitle = String(substring)
-            DispatchQueue.main.async {
-                self.titleTextField.text = String(substring)
+            if let sr = startRange, let er = endRange{
+                let substring = contents[sr.upperBound..<er.lowerBound]
+                print(substring)
+                self.loadedTitle = String(substring)
+                DispatchQueue.main.async {
+                    self.titleTextField.text = String(substring)
+                }
             }
+            
         }
         task.resume()
     }
@@ -156,9 +173,9 @@ extension AddViewController: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "selectedTagsCell", for: indexPath) as! SelectedTagsCollectionViewCell
         if selectedTags.count == 0 {
-            cell.selectedTagButton?.setTitle("등록된 태그가 없습니다", for: .normal)
+            cell.selectedTagButton?.setTitle("지정된 태그가 없습니다", for: .normal)
             cell.selectedTagButton.setTitleColor(UIColor.darkGray, for: .normal)
-            cell.contentView.backgroundColor = UIColor.white
+            cell.contentView.backgroundColor = UIColor.clear
         } else {
             cell.selectedTagButton?.setTitle(selectedTags[indexPath.row], for: .normal)
             cell.selectedTagButton.setTitleColor(UIColor.white, for: .normal)
@@ -172,4 +189,18 @@ extension AddViewController: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     
+}
+
+extension AddViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+extension AddViewController {
+// Ends editing view when touches to view
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      super.touchesBegan(touches, with: event)
+      self.view.endEditing(true)
+    }
 }

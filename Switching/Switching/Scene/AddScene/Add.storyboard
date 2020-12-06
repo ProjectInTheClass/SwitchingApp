@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ViL-Bh-OXg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ViL-Bh-OXg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -22,7 +22,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F43-FV-6V4">
                                 <rect key="frame" x="40" y="165" width="292" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="url"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="url"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62y-gU-gSC">
                                 <rect key="frame" x="40" y="138" width="334" height="17"/>
@@ -52,7 +52,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyA-Xx-W0T">
-                                <rect key="frame" x="40" y="320" width="248.5" height="17"/>
+                                <rect key="frame" x="40" y="320" width="245" height="17"/>
                                 <attributedString key="attributedText">
                                     <fragment content="태그">
                                         <attributes>
@@ -68,7 +68,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="제목을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8L-AX-Zcx">
                                 <rect key="frame" x="40" y="256" width="334" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AlI-uO-OGF">
                                 <rect key="frame" x="342" y="166" width="32" height="32"/>
@@ -76,14 +76,14 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="T87-iL-oIL"/>
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                <state key="normal" image="link.badge.plus" catalog="system">
+                                <state key="normal" image="link" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="getTitle:" destination="6XS-Xg-3Pj" eventType="touchUpInside" id="YMW-o7-fiA"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1rr-VH-Ipb">
+                            <collectionView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1rr-VH-Ipb">
                                 <rect key="frame" x="40" y="347" width="334" height="505"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SwO-kK-ObJ" customClass="TagsCollectionViewFlowLayout" customModule="Switching" customModuleProvider="target">
@@ -126,9 +126,9 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd2-3f-zhU">
-                                <rect key="frame" x="308.5" y="319.5" width="65.5" height="18"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                <state key="normal" title="태그 선택" image="chevron.right" catalog="system">
+                                <rect key="frame" x="305" y="316.5" width="69" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <state key="normal" title="태그 선택" image="chevron_right">
                                     <color key="titleColor" name="SwitchingBlue"/>
                                 </state>
                                 <connections>
@@ -177,6 +177,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addBtn" destination="yCR-32-91e" id="lPC-Ai-2kO"/>
                         <outlet property="selectedTagsCollectionView" destination="1rr-VH-Ipb" id="UOf-zq-F7W"/>
                         <outlet property="titleTextField" destination="r8L-AX-Zcx" id="SmY-ED-U6j"/>
                         <outlet property="urlTextField" destination="F43-FV-6V4" id="Wd5-F9-mdc"/>
@@ -186,7 +187,7 @@
             </objects>
             <point key="canvasLocation" x="2766.666666666667" y="-604.01785714285711"/>
         </scene>
-        <!--Add Select View Controller-->
+        <!--태그 선택-->
         <scene sceneID="JrJ-tB-PiS">
             <objects>
                 <viewController storyboardIdentifier="selectTags" id="gsA-ne-JOv" customClass="AddSelectViewController" customModule="Switching" customModuleProvider="target" sceneMemberID="viewController">
@@ -194,9 +195,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2P2-6N-Q30">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2P2-6N-Q30">
                                 <rect key="frame" x="0.0" y="104" width="414" height="758"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tagCell" id="GyP-xt-elI">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -212,7 +214,7 @@
                                     <outlet property="delegate" destination="gsA-ne-JOv" id="y3f-G4-NPU"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="새로운 태그를 추가하세요" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Kdp-i3-NqK">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="새로운 태그를 추가하세요 (최대 10글자)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Kdp-i3-NqK">
                                 <rect key="frame" x="20" y="54" width="299" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -220,7 +222,11 @@
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExS-ge-vwY">
                                 <rect key="frame" x="329" y="55.5" width="65" height="37"/>
                                 <color key="backgroundColor" name="SwitchingBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="xOi-DT-7pl"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <color key="tintColor" name="SwitchingBlue"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
                                 <state key="normal" title="생성">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -245,8 +251,8 @@
                             <constraint firstItem="2P2-6N-Q30" firstAttribute="top" secondItem="tdT-Jf-mIe" secondAttribute="top" constant="60" id="np0-aY-xKc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VMn-ht-dKT">
-                        <barButtonItem key="leftBarButtonItem" title="뒤로 가기" id="VC4-o2-zg4">
+                    <navigationItem key="navigationItem" title="태그 선택" id="VMn-ht-dKT">
+                        <barButtonItem key="leftBarButtonItem" title="뒤로 가기" image="chevron.left" catalog="system" id="VC4-o2-zg4">
                             <connections>
                                 <action selector="backButtonClicked:" destination="gsA-ne-JOv" id="HWD-ga-ld5"/>
                             </connections>
@@ -285,8 +291,9 @@
     </scenes>
     <color key="tintColor" name="SwitchingBlue"/>
     <resources>
-        <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <image name="link.badge.plus" catalog="system" width="128" height="122"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="chevron_right" width="16" height="24"/>
+        <image name="link" catalog="system" width="128" height="122"/>
         <namedColor name="SwitchingBlue">
             <color red="0.20000000298023224" green="0.51999998092651367" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
