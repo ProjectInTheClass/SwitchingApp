@@ -104,7 +104,7 @@ class EditAccountViewController: UIViewController {
         
         if image != nil {
             let deleteAction = UIAlertAction(
-                title: "이미지 삭제하기",
+                title: "기본 이미지로 변경하기",
                 style: .default,
                 handler: { (_) in
                     self.image = nil
