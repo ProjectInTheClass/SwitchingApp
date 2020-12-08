@@ -96,10 +96,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="임시보관함" id="oiL-kt-7Q4">
                         <barButtonItem key="rightBarButtonItem" id="l0h-ne-3tU">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="b1L-lz-W2Q">
-                                <rect key="frame" x="361" y="5.5" width="33" height="33"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="b1L-lz-W2Q">
+                                <rect key="frame" x="361" y="5" width="33" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="Tbd-5T-Ckw"/>
                                     <constraint firstAttribute="width" constant="33" id="Vkl-mf-fcV"/>
@@ -173,9 +172,6 @@
     </scenes>
     <resources>
         <image name="tray" catalog="system" width="128" height="88"/>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

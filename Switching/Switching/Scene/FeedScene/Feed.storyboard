@@ -173,12 +173,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="피드" id="Kj0-yc-XRN">
-                        <barButtonItem key="rightBarButtonItem" id="KJH-ad-NX6">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="KJH-ad-NX6">
                             <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="HJL-yy-i2Q">
-                                <rect key="frame" x="361" y="5.5" width="33" height="33"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HJL-yy-i2Q">
+                                <rect key="frame" x="361" y="5" width="33" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="nca-Il-JEF"/>
                                     <constraint firstAttribute="width" constant="33" id="p0M-JU-PLD"/>
@@ -225,7 +224,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-1E-LkO">
-                            <rect key="frame" x="143" y="10" width="77" height="24"/>
+                            <rect key="frame" x="151" y="10" width="69" height="24"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                             <color key="tintColor" name="SwitchingBlue"/>
                             <state key="normal" title="태그 선택" image="chevron_right">
@@ -395,15 +394,12 @@
     <color key="tintColor" name="SwitchingBlue"/>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
-        <image name="chevron_right" width="24" height="24"/>
+        <image name="chevron_right" width="16" height="24"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="SwitchingBlue">
-            <color red="0.20000000298023224" green="0.51999998092651367" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20000000298023224" green="0.5220000147819519" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

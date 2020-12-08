@@ -33,6 +33,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             accountButton.layer.cornerRadius = accountButton.frame.height/2
             accountButton.layer.borderColor = UIColor.clear.cgColor
             accountButton.layer.borderWidth = 0.5
+            accountButton.imageView?.contentMode = .scaleAspectFit
+            accountButton.clipsToBounds = true
         }
     }
     @IBOutlet weak var addButton: UIButton!{
@@ -169,12 +171,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         accountButton.contentMode = .scaleAspectFill
         if realm.objects(Character.self).filter("character = '\(SharedData.instance.selectedCharacter)'").count > 0{
             if let imageData = realm.objects(Character.self).filter("character = '\(SharedData.instance.selectedCharacter)'").first!.image{
-                accountButton.setBackgroundImage(UIImage(data: imageData), for: .normal)
+                accountButton.setImage(UIImage(data: imageData), for: .normal)
             }else{
-                accountButton.setBackgroundImage(UIImage(named: "account1"), for: .normal)
+                accountButton.setImage(UIImage(named: "account1"), for: .normal)
             }
         }else{
-            accountButton.setBackgroundImage(UIImage(named: "account1"), for: .normal)
+            accountButton.setImage(UIImage(named: "account1"), for: .normal)
         }
         
         self.feedTableView.reloadData()
