@@ -28,7 +28,7 @@ class AddViewController: UIViewController {
         urlTextField.delegate = self
         titleTextField.delegate = self
         urlTextField.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
-        addBtn.isEnabled = false
+
         if let savedBookmark: Bookmark = selectedBookmark{
             urlTextField.text = savedBookmark.url
             titleTextField.text = savedBookmark.desc
@@ -38,6 +38,13 @@ class AddViewController: UIViewController {
                     print("test3")
                 }
             }
+        }
+        if let url = urlTextField.text{
+            if url.isEmpty{
+                addBtn.isEnabled = false
+            }
+        }else{
+            addBtn.isEnabled = true
         }
     }
     
