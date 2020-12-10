@@ -28,6 +28,7 @@ class AddViewController: UIViewController {
         urlTextField.delegate = self
         titleTextField.delegate = self
         urlTextField.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
+        addBtn.isEnabled = false
         if let savedBookmark: Bookmark = selectedBookmark{
             urlTextField.text = savedBookmark.url
             titleTextField.text = savedBookmark.desc
