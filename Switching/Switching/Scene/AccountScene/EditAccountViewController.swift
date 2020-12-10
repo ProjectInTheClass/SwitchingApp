@@ -136,6 +136,21 @@ class EditAccountViewController: UIViewController {
     }
     
     @IBAction func removeClicked(_ sender: Any) {
+        let realm = SharedData.instance.realm
+        if realm.objects(Character.self).count == 1{
+            var dialogMessage = UIAlertController(title: "캐릭터 삭제 불가", message: "캐릭터는 1개 이상 있어야 합니다.", preferredStyle: .alert)
+            
+            // Create OK button with action handler
+            let ok = UIAlertAction(title: "확인", style: .default, handler: { (action) -> Void in
+                print("Ok button tapped")
+             })
+            
+            //Add OK button to a dialog message
+            dialogMessage.addAction(ok)
+            // Present Alert to
+            self.present(dialogMessage, animated: true, completion: nil)
+           return
+        }
         let alert = UIAlertController(title: "캐릭터를 삭제하시겠습니까?", message: "캐릭터에 저장된 모든 북마크가 사라지고 복구할 수 없습니다.", preferredStyle: UIAlertController.Style.alert)
         let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler: nil)
         let deleteAction = UIAlertAction(title: "삭제", style: UIAlertAction.Style.destructive, handler: removeAccountHandler(alert:))
