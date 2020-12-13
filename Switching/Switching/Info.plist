@@ -26,9 +26,9 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>카메라 촬영</string>
+	<string>캐릭터 프로필에 사용할 사진을 찍으세요</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>앨범 사용</string>
+	<string>캐릭터 프로필에 사용할 사진을 선택하세요</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
