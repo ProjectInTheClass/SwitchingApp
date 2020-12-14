@@ -108,7 +108,15 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func getTitle(_ sender: Any) {
-        let urlPath: String = urlTextField.text!
+        var urlPath: String = urlTextField.text!
+        let isHttp: Bool = urlPath.starts(with: "http://") || urlPath.starts(with: "https://")
+        if urlPath.isEmpty {
+            return
+        }
+        if !isHttp {
+            urlTextField.text = "http://" + urlTextField.text!
+            urlPath = urlTextField.text!
+        }
 //        guard let url = URL(string: urlPath) else {return}
 //        var request = URLRequest(url: url)
 //        request.httpMethod = "get"
@@ -116,6 +124,14 @@ class AddViewController: UIViewController {
         let url = NSURL(string: urlPath)
         let session = URLSession.shared
         let task = session.dataTask(with: url! as URL) { (data, response, error) in
+            if error != nil {
+                let alert = UIAlertController(title: "Please check URL", message: "URL을 확인해주세요!" , preferredStyle: UIAlertController.Style.alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(okAction)
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
             guard let loadedData = data else { return }
             guard let contents = String(data: loadedData, encoding: .utf8) else {return}
             
