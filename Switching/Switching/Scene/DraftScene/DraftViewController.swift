@@ -29,6 +29,8 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
             accountButton.layer.cornerRadius = accountButton.frame.height/2
             accountButton.layer.borderColor = UIColor.clear.cgColor
             accountButton.layer.borderWidth = 0.5
+            accountButton.imageView?.contentMode = .scaleAspectFit
+            accountButton.clipsToBounds = true
         }
     }
     
@@ -106,9 +108,7 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         self.updateTempBookmarksData()
         NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(notification:)), name: Notification.Name("refreshDraftView"), object: nil)
-        
-        accountButton.clipsToBounds = true
-        accountButton.contentMode = .scaleAspectFill
+    
         updateCharacterImage()
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -120,12 +120,12 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let realm = SharedData.instance.realm
         if realm.objects(Character.self).filter("character = '\(SharedData.instance.selectedCharacter)'").count > 0{
             if let imageData = realm.objects(Character.self).filter("character = '\(SharedData.instance.selectedCharacter)'").first!.image{
-                accountButton.setBackgroundImage(UIImage(data: imageData), for: .normal)
+                accountButton.setImage(UIImage(data: imageData), for: .normal)
             }else{
-                accountButton.setBackgroundImage(UIImage(named: "account1"), for: .normal)
+                accountButton.setImage(UIImage(named: "account1"), for: .normal)
             }
         }else{
-            accountButton.setBackgroundImage(UIImage(named: "account1"), for: .normal)
+            accountButton.setImage(UIImage(named: "account1"), for: .normal)
         }
     }
     
@@ -151,16 +151,14 @@ class DraftViewController: UIViewController, UITableViewDelegate, UITableViewDat
         for bookmark in bookmarks_{
             bookmarks.append(bookmark)
         }
-        accountButton.clipsToBounds = true
-        accountButton.contentMode = .scaleAspectFill
         if realm.objects(Character.self).filter("character = '\(SharedData.instance.selectedCharacter)'").count > 0{
             if let imageData = realm.objects(Character.self).filter("character = '\(SharedData.instance.selectedCharacter)'").first!.image{
-                accountButton.setBackgroundImage(UIImage(data: imageData), for: .normal)
+                accountButton.setImage(UIImage(data: imageData), for: .normal)
             }else{
-                accountButton.setBackgroundImage(UIImage(named: "account1"), for: .normal)
+                accountButton.setImage(UIImage(named: "account1"), for: .normal)
             }
         }else{
-            accountButton.setBackgroundImage(UIImage(named: "account1"), for: .normal)
+            accountButton.setImage(UIImage(named: "account1"), for: .normal)
         }
         self.draftTableView.reloadData()
     }
