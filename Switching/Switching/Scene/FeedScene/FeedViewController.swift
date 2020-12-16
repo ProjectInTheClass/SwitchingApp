@@ -224,9 +224,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let realm = SharedData.instance.realm
         let bookmark: Bookmark = bookmarks[indexPath.row]
         guard let url = URL(string: bookmark.url) else { return }
-        let safariViewController = SFSafariViewController(url: url)
+        if ["http", "https"].contains(url.scheme?.lowercased() ?? ""){
+            let safariViewController = SFSafariViewController(url: url)
+            present(safariViewController, animated: true, completion: nil)
+        }
         print("safariviewController 실행됨")
-        present(safariViewController, animated: true, completion: nil)
         tableView.deselectRow(at: indexPath, animated: true) //select 표시 해제
     }
 }
