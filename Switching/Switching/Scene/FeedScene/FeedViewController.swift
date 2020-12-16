@@ -223,10 +223,25 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let realm = SharedData.instance.realm
         let bookmark: Bookmark = bookmarks[indexPath.row]
-        guard let url = URL(string: bookmark.url) else { return }
+        guard let url = URL(string: bookmark.url) else {
+            let alert = UIAlertController(title: "Please check URL", message: "URL을 확인해주세요!" , preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            DispatchQueue.main.async {
+                self.present(alert, animated: true, completion: nil)
+            }
+            return
+        }
         if ["http", "https"].contains(url.scheme?.lowercased() ?? ""){
             let safariViewController = SFSafariViewController(url: url)
             present(safariViewController, animated: true, completion: nil)
+        } else{
+            let alert = UIAlertController(title: "Please check URL", message: "URL을 확인해주세요!" , preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            DispatchQueue.main.async {
+                self.present(alert, animated: true, completion: nil)
+            }
         }
         print("safariviewController 실행됨")
         tableView.deselectRow(at: indexPath, animated: true) //select 표시 해제
