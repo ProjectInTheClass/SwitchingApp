@@ -125,11 +125,8 @@ class AddViewController: UIViewController {
             urlTextField.text = "http://" + urlTextField.text!
             urlPath = urlTextField.text!
         }
-//        guard let url = URL(string: urlPath) else {return}
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "get"
-//        print(request)
-        let url = NSURL(string: urlPath)
+        let encodedString = urlPath.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let url = NSURL(string: encodedString)
         let session = URLSession.shared
         let task = session.dataTask(with: url! as URL) { (data, response, error) in
             if error != nil {
